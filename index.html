@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="description" content="Karthik Koundinya - AI Engineer, Full Stack Developer and Software Engineer specializing in AI/ML solutions and web development">
+    <meta name="keywords" content="AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
+    <meta name="author" content="Karthik Koundinya">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Portfolio</div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="toggle-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Update navbar links -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Hi, I'm <span class="highlight">Karthik Koundinya</span></h1>
+                <h2 class="typing">I'm an  <span class="dynamic-text"></span></h2>
+                <p>Transforming Complex Problems into Elegant AI Solutions</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
+                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                </div>
+            </div>
+                    <div class="hero-image" data-aos="fade-left" style="max-width: 400px; margin: 0 auto;">
+                        <img src="assets/Images/portfolio first image.png" style="width: 100%; height: 40%;">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="assets/Images/about me.jpeg" alt="About Karthik Koundinya">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-duration="800">
+                    <h3>Who am I?</h3>
+                    <p>I am a dedicated Full Stack Developer and AI/ML Enthusiast with a strong foundation in the MERN stack, Java, and
+                        Python. Over the past year, I have focused on developing scalable and user-centric applications that seamlessly
+                        integrate advanced technologies. My passion lies in merging artificial intelligence with web development to craft
+                        innovative solutions addressing real-world challenges. I take pride in writing clean, efficient code and
+                        collaborating with cross-functional teams to bring projects from conception to deployment.</p>
+                    
+                    
+                    <a href="#" class="btn primary-btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates to your skills section in index.html -->
+<section id="skills" class="skills">
+    <div class="container">
+        <div class="section-header">
+            <h2>My Skills</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="skills-content">
+            <!-- Show just a few key skills -->
+            <div class="skill-category">
+                <h3>Key Skills</h3>
+                <div class="featured-skills-grid">
+                    <!-- Left Column -->
+                    <div class="featured-column">
+                        <div class="skill-card" data-aos="fade-right" data-aos-delay="100">
+                            <i class="fas fa-brain"></i>
+                            <h4>Artificial Intelligence & Machine Learning</h4>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-project-diagram"></i>
+                            <h4>Data Structures, Algorithms & System Design</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="featured-column">
+                        <div class="skill-card" data-aos="fade-left" data-aos-delay="200">
+                            <i class="fas fa-code"></i>
+                            <h4>Full-Stack Web Development</h4>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-left" data-aos-delay="400">
+                            <i class="fas fa-code-branch"></i>
+                            <h4>Software Development & Version Control</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-40">
+            <a href="skills.html" class="btn primary-btn">View All Skills</a>
+        </div>
+    </div>
+</section>
+
+<!-- Update Projects Section in index.html -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="projects-grid">
+            <!-- Civil Sense Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/Images/Civil sense.webp" alt="Civil Sense Project">
+                </div>
+                <div class="project-info">
+                    <h3>Civil Sense</h3>
+                    <p>A full-stack educational platform...</p>
+                    <div class="project-tech">
+                        <span>MongoDB</span>
+                        <span>Express.js</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Civil-Sense--A-full-stack-application-implemented-in-MERN-stack-" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Object Detector Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="assets/Images/object detection.jpeg" alt="Object Detector Project">
+                </div>
+                <div class="project-info">
+                    <h3>Object Detector</h3>
+                    <p>Implemented YOLOv5 for real-time object detection, enhancing accuracy and speed in identifying multiple objects within images.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>YOLOv5</span>
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <!-- AI Search Tool Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <img src="assets/Images/Ai-powered seach.webp" alt="AI Search Tool Project">
+                </div>
+                <div class="project-info">
+                    <h3>AI Search Tool</h3>
+                    <p>Developed an AI-powered search and aggregation tool using FastAPI and React, integrating Google and YouTube results with NLP enhancements.</p>
+                    <div class="project-tech">
+                        <span>FastAPI</span>
+                        <span>React</span>
+                        <span>NLP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-40">
+            <a href="projects.html" class="btn primary-btn">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>karthikofficialmain@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Hyderabad,India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="800">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
+                <!-- Social links remain the same -->
+            </div>
+        </div>
+    </footer>
+<!-- Add this before your existing scripts -->
+<!-- Place at the bottom of the body in this order -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

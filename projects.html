@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="description" content="Karthik Koundinya - AI Engineer, Full Stack Developer and Software Engineer specializing in AI/ML solutions and web development">
+    <meta name="keywords" content="AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
+    <meta name="author" content="Karthik Koundinya">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Portfolio</div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="toggle-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Projects</h1>
+            <div class="underline"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section class="projects-page">
+    <div class="container">
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="daa">Algorithms & DSA</button>
+            <button class="filter-btn" data-filter="software">Software Applications</button>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Psychometric Test -->
+            <div class="project-card" data-category="software" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test">
+                </div>
+                <div class="project-info">
+                    <h3>Psychometric Test System</h3>
+                    <p>An intelligent system to assess cognitive abilities and personality traits using structured psychometric evaluations.</p>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>MySQL</span>
+                        <span>JDBC</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel Planner -->
+            <div class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/Images/travel-planner.webp" alt="Travel Planner">
+                </div>
+                <div class="project-info">
+                    <h3>Travel Planner</h3>
+                    <p>Efficient route planning using shortest path algorithms to minimize travel costs and time.</p>
+                    <div class="project-tech">
+                        <span>C</span>
+                        <span>Graphs & Dijkstra's Algorithm</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Object Detector -->
+            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="assets/Images/object detection.jpeg" alt="Object Detector">
+                </div>
+                <div class="project-info">
+                    <h3>Object Detection System</h3>
+                    <p>Real-time object detection leveraging deep learning to classify and localize objects in images.</p>
+                    <div class="project-tech">
+                        <span>YOLOv5</span>
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Search Tool -->
+            <div class="project-card" data-category="software" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="assets/Images/Ai-powered seach.webp" alt="AI Search Tool">
+                </div>
+                <div class="project-info">
+                    <h3>AI-Powered Search Tool</h3>
+                    <p>An intelligent search engine capable of retrieving context-aware results using AI-based ranking models.</p>
+                    <div class="project-tech">
+                        <span>AI</span>
+                        <span>Natural Language Processing</span>
+                        <span>Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civil Sense -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="assets/Images/Civil sense.webp" alt="Civil Sense">
+                </div>
+                <div class="project-info">
+                    <h3>Civil Sense (MERN Stack)</h3>
+                    <p>A full-stack application providing real-time monitoring and reporting of civil infrastructure issues.</p>
+                    <div class="project-tech">
+                        <span>MongoDB</span>
+                        <span>Express.js</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fake News Detection Model -->
+            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/Images/fake news.png" alt="Fake News Detection">
+                </div>
+                <div class="project-info">
+                    <h3>Fake News Detection Model</h3>
+                    <p>A deep learning model trained to classify news articles as fake or real based on linguistic and contextual cues.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Scikit-Learn</span>
+                        <span>TensorFlow</span>
+                        <span>NLP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fog Detection System -->
+            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="assets/Images/Fog detection.png" alt="Fog Detection">
+                </div>
+                <div class="project-info">
+                    <h3>Fog Detection System</h3>
+                    <p>AI-based system for detecting and predicting fog density using real-time image processing.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>Deep Learning</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot for College Website -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="assets/Images/chatbot.jpeg" alt="Chatbot">
+                </div>
+                <div class="project-info">
+                    <h3>College Chatbot</h3>
+                    <p>AI-powered chatbot for assisting students with queries related to academics and administration.</p>
+                    <div class="project-tech">
+                        <span>Dialogflow</span>
+                        <span>Node.js</span>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Word Ladder Problem -->
+            <div class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/Images/word ladder.jpg" alt="Word Ladder">
+                </div>
+                <div class="project-info">
+                    <h3>Word Ladder Problem Solver</h3>
+                    <p>An efficient solution to the Word Ladder problem using graph traversal algorithms.</p>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>Graphs</span>
+                        <span>BFS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

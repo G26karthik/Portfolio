@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "build:css": "postcss css/styles.css -o dist/styles.min.css",
+    "build:js": "terser js/script.js -o dist/script.min.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "keywords": [
+    "portfolio",
+    "website"
+  ],
+  "author": "Karthik Koundinya",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^6.1.2",
+    "live-server": "^1.2.2",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^10.1.0",
+    "terser": "^5.39.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.12.7"
+  }
+}
