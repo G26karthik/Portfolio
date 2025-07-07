@@ -1,90 +1,120 @@
 // Wait for DOM content to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Dynamic text typing effect
-    const texts = ["AI Engineer", "Full Stack Developer",  "Software Engineer",
-            "SEO Specialist"];
+    // Performance optimizations
+    const optimizedElements = {
+        dynamicText: document.querySelector('.dynamic-text'),
+        navbar: document.querySelector('.navbar'),
+        mobileMenu: document.getElementById('mobile-menu'),
+        navMenu: document.querySelector('.nav-menu'),
+        themeSwitch: document.getElementById('theme-switch'),
+        contactForm: document.getElementById('contactForm')
+    };
+    
+    // Dynamic text typing effect with performance improvements
+    const texts = ["AI Engineer", "Full Stack Developer", "Software Engineer", "SEO Specialist"];
     const typingDelay = 100;
     const erasingDelay = 50;
     const newTextDelay = 2000;
     
-    
     let textIndex = 0;
     let charIndex = 0;
-    const dynamicText = document.querySelector('.dynamic-text');
+    let typingTimer;
     
     function type() {
         if (charIndex < texts[textIndex].length) {
-            dynamicText.textContent += texts[textIndex].charAt(charIndex);
+            optimizedElements.dynamicText.textContent += texts[textIndex].charAt(charIndex);
             charIndex++;
-            setTimeout(type, typingDelay);
+            typingTimer = setTimeout(type, typingDelay);
         } else {
-            setTimeout(erase, newTextDelay);
+            typingTimer = setTimeout(erase, newTextDelay);
         }
     }
     
     function erase() {
         if (charIndex > 0) {
-            dynamicText.textContent = texts[textIndex].substring(0, charIndex-1);
+            optimizedElements.dynamicText.textContent = texts[textIndex].substring(0, charIndex-1);
             charIndex--;
-            setTimeout(erase, erasingDelay);
+            typingTimer = setTimeout(erase, erasingDelay);
         } else {
             textIndex = (textIndex + 1) % texts.length;
-            setTimeout(type, typingDelay);
+            typingTimer = setTimeout(type, typingDelay);
         }
     }
     
-    if (dynamicText) {
+    if (optimizedElements.dynamicText) {
         setTimeout(type, newTextDelay);
     }
     
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+    // Optimized navbar scroll effect with throttling
+    let ticking = false;
     
-    window.addEventListener('scroll', function() {
+    function updateNavbar() {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            optimizedElements.navbar.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            optimizedElements.navbar.classList.remove('scrolled');
         }
-    });
+        ticking = false;
+    }
     
-    // Mobile menu toggle
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }
     
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    if (optimizedElements.navbar) {
+        window.addEventListener('scroll', requestTick, { passive: true });
+    }
+    
+    // Mobile menu toggle - already handled in inline critical script
+    if (optimizedElements.mobileMenu && optimizedElements.navMenu) {
+        optimizedElements.mobileMenu.addEventListener('click', function() {
+            optimizedElements.mobileMenu.classList.toggle('active');
+            optimizedElements.navMenu.classList.toggle('active');
         });
     }
     
-    // Nav links active state
+    // Optimized nav links active state
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    let activeNavTicking = false;
     
     function setActiveLink() {
         let currentSection = '';
+        const scrollY = window.scrollY;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 100) {
+            if (scrollY >= sectionTop - 100) {
                 currentSection = section.getAttribute('id');
             }
         });
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSection) {
+            const href = link.getAttribute('href');
+            if (href && href.substring(1) === currentSection) {
                 link.classList.add('active');
             }
         });
+        activeNavTicking = false;
     }
     
-    window.addEventListener('scroll', setActiveLink);
+    function requestActiveNavTick() {
+        if (!activeNavTicking) {
+            requestAnimationFrame(setActiveLink);
+            activeNavTicking = true;
+        }
+    }
     
-    // Project filtering
+    if (navLinks.length > 0) {
+        window.addEventListener('scroll', requestActiveNavTick, { passive: true });
+    }
+    
+    // Project filtering with optimizations
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -109,11 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Contact form
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    // Optimized contact form handling
+    if (optimizedElements.contactForm) {
+        optimizedElements.contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -126,12 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = `mailto:karthikofficialmain@gmail.com?subject=${subject}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
             
             // Reset form
-            contactForm.reset();
+            optimizedElements.contactForm.reset();
         });
     }
     
-    // Theme toggling functionality
-    const themeSwitch = document.getElementById('theme-switch');
+    // Optimized theme toggling functionality
     const body = document.body;
 
     // Check for saved theme preference or use OS preference
@@ -139,23 +166,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
     // Apply the current theme
-    if (currentTheme === 'dark') {
+    if (currentTheme === 'dark' && optimizedElements.themeSwitch) {
         body.setAttribute('data-theme', 'dark');
-        themeSwitch.checked = true;
+        optimizedElements.themeSwitch.checked = true;
     }
 
     // Toggle theme when switch is clicked
-    themeSwitch.addEventListener('change', function() {
-        if (this.checked) {
-            body.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            body.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'light');
-        }
-    });
+    if (optimizedElements.themeSwitch) {
+        optimizedElements.themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 
-    // GSAP animations for hero section
+    // GSAP animations for hero section - load conditionally
     if (typeof gsap !== 'undefined') {
         // Hero section animation
         const heroTl = gsap.timeline();

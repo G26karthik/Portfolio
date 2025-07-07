@@ -58,137 +58,6 @@
             font-weight: 500;
             line-height: 1.4;
         }
-
-        /* Certification section styling */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .certificate-card {
-            display: flex;
-            background-color: var(--surface-color);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .certificate-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .certificate-logo {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-
-        .certificate-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .certificate-info {
-            flex: 1;
-        }
-
-        .certificate-info h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .certificate-issuer {
-            color: var(--gray-color);
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .certificate-date {
-            color: var(--gray-color);
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .certificate-link {
-            display: inline-block;
-            color: var(--primary-color);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .certificate-link:hover {
-            color: var(--secondary-color);
-        }
-
-        @media screen and (max-width: 768px) {
-            .certificate-card {
-                flex-direction: column;
-            }
-            
-            .certificate-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
-
-        /* Add this to your existing style section */
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-40 {
-            margin-top: 40px;
-        }
-
-        .mt-20 {
-            margin-top: 20px;
-        }
-
-        .badges-section h3 {
-            font-size: 22px;
-            color: var(--dark-color);
-        }
-
-        .profile-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .badge-profile-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            background-color: var(--surface-color);
-            color: var(--dark-color);
-            border-radius: 8px;
-            font-weight: 500;
-            transition: var(--transition);
-            box-shadow: var(--card-shadow);
-        }
-
-        .badge-profile-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            color: var(--primary-color);
-        }
-
-        .badge-profile-link i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
     </style>
 </head>
 <body>
@@ -214,6 +83,8 @@
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link active">Skills</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -390,119 +261,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Certifications Section -->
-            <div class="skills-category" data-aos="fade-up">
-                <h2><i class="fas fa-certificate category-icon"></i> Certifications & Achievements</h2>
-                <div class="certifications-grid">
-                    <!-- Certificate 1 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/Deeplearning.webp" alt="DeepLearning.AI" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>Finetuning Large Language Models</h3>
-                            <p class="certificate-issuer">Lamini & DeepLearning.AI</p>
-                            <p class="certificate-date">2025</p>
-                            <a href="https://learn.deeplearning.ai/accomplishments/17236631-fc4c-4220-a5ae-e3e336ee1dcb" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 2 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/ibm.jpg" alt="IBM" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>DevOps and Software Engineering Specialization</h3>
-                            <p class="certificate-issuer">IBM</p>
-                            <p class="certificate-date">2024</p>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/SRKQ4B85PSEU" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 3 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/Hackerrank.webp" alt="HackerRank" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>Problem Solving Certification</h3>
-                            <p class="certificate-issuer">HackerRank</p>
-                            <p class="certificate-date">2024</p>
-                            <a href="https://www.hackerrank.com/certificates/6f3a42d54907" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 4 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/Microsoftlearn.webp" alt="Microsoft and LinkedIn" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>Career Essentials in Generative AI</h3>
-                            <p class="certificate-issuer">Microsoft and LinkedIn</p>
-                            <p class="certificate-date">2024</p>
-                            <a href="https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Certificate 5 (moved inside grid) -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/aws.png" alt="AWS" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>Generative AI: Art of the Possible</h3>
-                            <p class="certificate-issuer">AWS</p>
-                            <p class="certificate-date">2023</p>
-                            <a href="assets/images/1741505572697.jpeg" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 6 (moved inside grid) -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="600">
-                        <div class="certificate-logo">
-                            <img src="assets/Images/ibm.jpg" alt="IBM" loading="lazy">
-                        </div>
-                        <div class="certificate-info">
-                            <h3>Reinforcement Learning & Deep Learning Essentials</h3>
-                            <p class="certificate-issuer">IBM</p>
-                            <p class="certificate-date">2023</p>
-                            <a href="https://courses.cognitiveclass.ai/certificates/dcd99f780cdd43589a2ae0568cc681a9" class="certificate-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Credential
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                <!-- Badges Section -->
-                <div class="badges-section" data-aos="fade-up">
-                    <h3 class="text-center mt-40">Additional Badges & Achievements</h3>
-                    <div class="text-center mt-20">
-                        <p>View my complete collection of badges and achievements:</p>
-                        <div class="profile-links">
-                            <a href="https://www.credly.com/users/g26karthik" class="badge-profile-link" target="_blank">
-                                <i class="fas fa-certificate"></i> Credly Profile
-                            </a>
-                            <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453" class="badge-profile-link" target="_blank">
-                                <i class="fab fa-microsoft"></i> Microsoft Learn Profile
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -511,15 +269,22 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
-                <!-- Social links remain the same -->
+                <div class="social-icons">
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
+                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Load scripts optimally -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

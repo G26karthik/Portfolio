@@ -37,6 +37,8 @@
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -51,190 +53,247 @@
     </section>
 
     <!-- Projects Section -->
-<section class="projects-page">
+<section class="projects-page" aria-label="Projects showcase">
     <div class="container">
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web Development</button>
-            <button class="filter-btn" data-filter="ml">Machine Learning</button>
-            <button class="filter-btn" data-filter="daa">Algorithms & DSA</button>
-            <button class="filter-btn" data-filter="software">Software Applications</button>
+        <div class="project-filters" role="tablist" aria-label="Project category filters">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="projects-grid">All Projects</button>
+            <button class="filter-btn" data-filter="software" role="tab" aria-selected="false" aria-controls="projects-grid">Software Development</button>
+            <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false" aria-controls="projects-grid">Machine Learning</button>
+            <button class="filter-btn" data-filter="daa" role="tab" aria-selected="false" aria-controls="projects-grid">Algorithms & DSA</button>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid" id="projects-grid" role="tabpanel" aria-live="polite">
 
             <!-- Psychometric Test -->
-            <div class="project-card" data-category="software" data-aos="fade-up">
+            <article class="project-card" data-category="software" data-aos="fade-up" aria-labelledby="project-1-title">
                 <div class="project-image">
-                    <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test">
+                    <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test System Interface showing cognitive assessment dashboard" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Psychometric Test System</h3>
-                    <p>An intelligent system to assess cognitive abilities and personality traits using structured psychometric evaluations.</p>
-                    <div class="project-tech">
+                    <h3 id="project-1-title">Psychometric Test System</h3>
+                    <p>An intelligent system to assess cognitive abilities and personality traits using structured psychometric evaluations with data-driven insights.</p>
+                    <div class="project-tech" aria-label="Technologies used">
                         <span>Java</span>
                         <span>MySQL</span>
                         <span>JDBC</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql" class="project-link" target="_blank" rel="noopener" aria-label="View Psychometric Test source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- Travel Planner -->
-            <div class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100">
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100" aria-labelledby="project-2-title">
                 <div class="project-image">
-                    <img src="assets/Images/travel-planner.webp" alt="Travel Planner">
+                    <img src="assets/Images/travel-planner.webp" alt="Travel Planner application showing route optimization interface" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Travel Planner</h3>
-                    <p>Efficient route planning using shortest path algorithms to minimize travel costs and time.</p>
-                    <div class="project-tech">
+                    <h3 id="project-2-title">Travel Planner</h3>
+                    <p>Efficient route planning using shortest path algorithms to minimize travel costs and time with intelligent pathfinding.</p>
+                    <div class="project-tech" aria-label="Technologies used">
                         <span>C</span>
-                        <span>Graphs & Dijkstra's Algorithm</span>
+                        <span>Graphs</span>
+                        <span>Dijkstra's Algorithm</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Travel-Planner-Data-Structures-C-" class="project-link" target="_blank" rel="noopener" aria-label="View Travel Planner source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Object Detector -->
-            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+            <!-- Object Detection System -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200" aria-labelledby="project-3-title">
                 <div class="project-image">
-                    <img src="assets/Images/object detection.jpeg" alt="Object Detector">
+                    <img src="assets/Images/object detection.jpeg" alt="YOLOv5 Real-Time Object Detection System" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Object Detection System</h3>
-                    <p>Real-time object detection leveraging deep learning to classify and localize objects in images.</p>
-                    <div class="project-tech">
+                    <h3 id="project-3-title">YOLOv5 Real-Time Object Detection</h3>
+                    <p>Colab-based object detection pipeline using YOLOv5 pretrained models, enabling real-time image capture from laptop cameras with on-the-fly object recognition.</p>
+                    <div class="project-tech" aria-label="Technologies used">
                         <span>YOLOv5</span>
                         <span>Python</span>
+                        <span>PyTorch</span>
                         <span>OpenCV</span>
-                        <span>TensorFlow</span>
+                        <span>Google Colab</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link" target="_blank" rel="noopener" aria-label="View Object Detection source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- AI Search Tool -->
-            <div class="project-card" data-category="software" data-aos="fade-up">
+            <!-- Lost and Found Web App -->
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="300" aria-labelledby="project-4-title">
                 <div class="project-image">
-                    <img src="assets/Images/Ai-powered seach.webp" alt="AI Search Tool">
+                    <img src="assets/Images/Lost.jpg" alt="Lost and Found Web Application" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>AI-Powered Search Tool</h3>
-                    <p>An intelligent search engine capable of retrieving context-aware results using AI-based ranking models.</p>
-                    <div class="project-tech">
-                        <span>AI</span>
-                        <span>Natural Language Processing</span>
-                        <span>Python</span>
+                    <h3 id="project-4-title">Lost and Found Web App</h3>
+                    <p>Full-stack MERN application enabling 1,000+ campus users to report and recover lost items with JWT authentication and Cloudinary integration, boosting recovery efficiency by 60%.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>MERN Stack</span>
+                        <span>JWT Auth</span>
+                        <span>Cloudinary</span>
+                        <span>Tailwind CSS</span>
+                        <span>Render</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link" target="_blank" rel="noopener" aria-label="View Lost and Found source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                        <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link" target="_blank" rel="noopener" aria-label="View Lost and Found live demo">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Civil Sense -->
-            <div class="project-card" data-category="web" data-aos="fade-up">
+            <!-- AgriSure -->
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="400" aria-labelledby="project-5-title">
                 <div class="project-image">
-                    <img src="assets/Images/Civil sense.webp" alt="Civil Sense">
+                    <img src="assets/Images/AgriSure.jpg" alt="AgriSure Agricultural Insurance Platform" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Civil Sense (MERN Stack)</h3>
-                    <p>A full-stack application providing real-time monitoring and reporting of civil infrastructure issues.</p>
-                    <div class="project-tech">
-                        <span>MongoDB</span>
-                        <span>Express.js</span>
+                    <h3 id="project-5-title">AgriSure: Agricultural Insurance Platform</h3>
+                    <p>Full-stack agricultural fintech platform using Flask, enabling 500+ farmers to manage crop insurance and loans with role-based access control, reducing manual errors by 70%.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Flask</span>
+                        <span>Bootstrap</span>
+                        <span>Jinja2</span>
+                        <span>WTForms</span>
+                        <span>Render</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/AgriSure" class="project-link" target="_blank" rel="noopener" aria-label="View AgriSure source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                        <a href="https://agrisure.onrender.com/" class="project-link" target="_blank" rel="noopener" aria-label="View AgriSure live demo">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Intelligent Search Platform -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="500" aria-labelledby="project-6-title">
+                <div class="project-image">
+                    <img src="assets/Images/Ai-powered seach.webp" alt="Intelligent Search Platform with AI" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-6-title">Intelligent Search Platform</h3>
+                    <p>Full-stack AI-powered search tool using FastAPI and React, expanding queries with NLP (T5/BART) and integrating Google/YouTube APIs with multithreaded backend for enhanced performance.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>FastAPI</span>
                         <span>React</span>
-                        <span>Node.js</span>
+                        <span>HuggingFace</span>
+                        <span>T5/BART</span>
+                        <span>SerpAPI</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link" target="_blank" rel="noopener" aria-label="View Intelligent Search Platform source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
+
+            <!-- Fog4Det -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="600" aria-labelledby="project-7-title">
+                <div class="project-image">
+                    <img src="assets/Images/Fog detection.png" alt="Fog4Det Vehicle Fog Detection System" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-7-title">Fog4Det: Vehicle Fog Detection System</h3>
+                    <p>Real-time fog detection system using FastAPI and Next.js with dual-mode interfaces, implementing OpenCV-based analysis to classify visibility conditions and provide driving recommendations.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>FastAPI</span>
+                        <span>Next.js</span>
+                        <span>OpenCV</span>
+                        <span>Tailwind CSS</span>
+                        <span>Framer Motion</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Fog-Detection-System-for-Vehicles" class="project-link" target="_blank" rel="noopener" aria-label="View Fog4Det source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Reddit Stock Sentiment Analyzer -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="700" aria-labelledby="project-8-title">
+                <div class="project-image">
+                    <img src="assets/Images/Stock.webp" alt="Reddit Stock Sentiment Analyzer Dashboard" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-8-title">Reddit Stock Sentiment Analyzer</h3>
+                    <p>Flask-based NLP dashboard analyzing Reddit posts from financial subreddits using VADER sentiment analysis, with interactive dark-mode UI and Matplotlib visualizations.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Flask</span>
+                        <span>NLTK</span>
+                        <span>PRAW</span>
+                        <span>Matplotlib</span>
+                        <span>VADER</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Stock-Sentement-Analyzer" class="project-link" target="_blank" rel="noopener" aria-label="View Stock Sentiment Analyzer source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
 
             <!-- Fake News Detection Model -->
-            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-10-title">
                 <div class="project-image">
-                    <img src="assets/Images/fake news.png" alt="Fake News Detection">
+                    <img src="assets/Images/fake news.png" alt="Fake News Detection Model Interface" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Fake News Detection Model</h3>
-                    <p>A deep learning model trained to classify news articles as fake or real based on linguistic and contextual cues.</p>
-                    <div class="project-tech">
+                    <h3 id="project-10-title">Fake News Detection Model</h3>
+                    <p>A deep learning model trained to classify news articles as fake or real based on linguistic and contextual cues using advanced NLP techniques.</p>
+                    <div class="project-tech" aria-label="Technologies used">
                         <span>Python</span>
                         <span>Scikit-Learn</span>
                         <span>TensorFlow</span>
                         <span>NLP</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/FakeNewsDetectionModel" class="project-link" target="_blank" rel="noopener" aria-label="View Fake News Detection source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Fog Detection System -->
-            <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+            <!-- Dining Philosopher & Word Ladder -->
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-10-title">
                 <div class="project-image">
-                    <img src="assets/Images/Fog detection.png" alt="Fog Detection">
+                    <img src="assets/Images/word ladder.jpg" alt="Dining Philosopher and Word Ladder Problem Solutions" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3>Fog Detection System</h3>
-                    <p>AI-based system for detecting and predicting fog density using real-time image processing.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OpenCV</span>
-                        <span>Deep Learning</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chatbot for College Website -->
-            <div class="project-card" data-category="web" data-aos="fade-up">
-                <div class="project-image">
-                    <img src="assets/Images/chatbot.jpeg" alt="Chatbot">
-                </div>
-                <div class="project-info">
-                    <h3>College Chatbot</h3>
-                    <p>AI-powered chatbot for assisting students with queries related to academics and administration.</p>
-                    <div class="project-tech">
-                        <span>Dialogflow</span>
-                        <span>Node.js</span>
-                        <span>Firebase</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Word Ladder Problem -->
-            <div class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-image">
-                    <img src="assets/Images/word ladder.jpg" alt="Word Ladder">
-                </div>
-                <div class="project-info">
-                    <h3>Word Ladder Problem Solver</h3>
-                    <p>An efficient solution to the Word Ladder problem using graph traversal algorithms.</p>
-                    <div class="project-tech">
+                    <h3 id="project-10-title">Dining Philosopher & Word Ladder</h3>
+                    <p>Implementation of classic computer science problems: Dining Philosopher problem for OS synchronization using semaphores, and Word Ladder problem using graph traversal algorithms with optimized pathfinding strategies.</p>
+                    <div class="project-tech" aria-label="Technologies used">
                         <span>Java</span>
+                        <span>C</span>
+                        <span>Semaphores</span>
                         <span>Graphs</span>
                         <span>BFS</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa" class="project-link" target="_blank" rel="noopener" aria-label="View Dining Philosopher and Word Ladder source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
         </div>
     </div>
@@ -246,18 +305,42 @@
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
+                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Load scripts optimally -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    
+    <!-- Optimize loading for better performance -->
+    <script>
+        // Lazy load images when they come into viewport
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
 </html>
