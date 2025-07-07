@@ -5,24 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#6c63ff">
     <meta name="color-scheme" content="light dark">
-    <title>My Portfolio</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <title>Karthik Koundinya - AI Engineer & Full Stack Developer</title>
     
     <!-- Critical CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     
     <!-- Font optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS CSS - Load non-critical CSS async -->
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"></noscript>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Karthik Koundinya - AI Engineer, Full Stack Developer and Software Engineer specializing in AI/ML solutions and web development">
@@ -366,47 +359,46 @@
 
 <!-- Optimized Script Loading -->
 <script>
-    // Inline critical scripts for better performance
-    (function() {
-        // Preloader functionality
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                preloader.classList.add('hidden');
-                setTimeout(() => preloader.style.display = 'none', 500);
-            }
-        });
+    // Preloader functionality
+    window.addEventListener('load', function() {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.classList.add('hidden');
+            setTimeout(() => preloader.style.display = 'none', 500);
+        }
+    });
+    
+    // Critical navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
         
-        // Critical navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (mobileMenu && navMenu) {
-                mobileMenu.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-            }
-        });
-    })();
+        if (mobileMenu && navMenu) {
+            mobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
 </script>
 
-<!-- Load non-critical scripts asynchronously -->
-<script src="https://unpkg.com/aos@next/dist/aos.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" async></script>
-<script src="js/script.js" defer></script>
+<!-- Load scripts in proper order -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
 
-<!-- Service Worker for caching (optional) -->
 <script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').catch(function() {
-            // Service worker registration failed, continue without caching
-        });
+    // Initialize AOS and other libraries after everything loads
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                once: true,
+                offset: 100,
+                duration: 800
+            });
+        }
     });
-}
 </script>
 </body>
 </html>
