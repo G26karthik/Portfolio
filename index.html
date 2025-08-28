@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#6c63ff">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6c63ff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212">
     <meta name="color-scheme" content="light dark">
     <title>Karthik Koundinya - AI Engineer & Full Stack Developer</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/Images/portfolio%20first%20image.png">
+    <link rel="manifest" href="manifest.webmanifest">
     
     <!-- Critical CSS -->
+    <link rel="preload" as="image" href="assets/Images/portfolio%20first%20image.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
@@ -15,6 +22,10 @@
     <!-- Font optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- SEO Meta Tags -->
@@ -27,21 +38,62 @@
     <meta property="og:title" content="Karthik Koundinya - AI Engineer & Full Stack Developer">
     <meta property="og:description" content="Transforming Complex Problems into Elegant AI Solutions">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/Images/portfolio first image.png">
+    <meta property="og:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
+    <meta property="og:url" content="https://g26karthik.github.io/Portfolio/">
+    <meta property="og:site_name" content="Karthik Koundinya Portfolio">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Karthik Koundinya - AI Engineer & Full Stack Developer">
     <meta name="twitter:description" content="Transforming Complex Problems into Elegant AI Solutions">
+    <meta name="twitter:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
+
+    <link rel="prefetch" href="projects.html" as="document">
+    <link rel="prefetch" href="skills.html" as="document">
+    <link rel="prefetch" href="experience.html" as="document">
+    <link rel="prefetch" href="certifications.html" as="document">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Karthik Koundinya",
+            "jobTitle": "AI Engineer & Full Stack Developer",
+            "url": "https://g26karthik.github.io/Portfolio/",
+            "sameAs": [
+                "https://github.com/G26karthik",
+                "https://www.linkedin.com/in/g-karthik26/",
+                "https://www.codechef.com/users/g26karthik",
+                "https://leetcode.com/u/G26Karthik/"
+            ]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Karthik Koundinya Portfolio",
+            "url": "https://g26karthik.github.io/Portfolio/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://g26karthik.github.io/Portfolio/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+        </script>
 </head>
 <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="preloader">
         <div class="loader"></div>
     </div>
     <!-- Navigation -->
-    <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
-            <div class="logo">Portfolio</div>
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch" class="theme-switch">
                 <label for="theme-switch" class="toggle-label">
@@ -50,14 +102,14 @@
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+                        <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+                        </button>
             <!-- Update navbar links -->
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <ul class="nav-menu" id="primary-navigation">
+                                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -68,11 +120,17 @@
         </div>
     </nav>
 
+    <main id="main-content" tabindex="-1" role="main">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-                <h1>Hi, I'm <span class="highlight">Karthik Koundinya</span></h1>
+                <h1>Hi, I'm <span class="highlight">Karthik Koundinya</span>
+                    <a href="https://www.codechef.com/users/g26karthik" class="badge-chip codechef" target="_blank" rel="noopener noreferrer" aria-label="CodeChef 4 star profile">
+                        <i class="fas fa-chess-king" aria-hidden="true"></i>
+                        <span class="star">4★</span>
+                    </a>
+                </h1>
                 <h2 class="typing">I'm an  <span class="dynamic-text"></span></h2>
                 <p>Transforming Complex Problems into Elegant AI Solutions</p>
                 <div class="cta-buttons">
@@ -80,17 +138,55 @@
                     <a href="#contact" class="btn secondary-btn">Contact Me</a>
                 </div>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Credly"><i class="fas fa-certificate"></i></a>
+                    
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="CodeChef (4-star)"><i class="fas fa-chess-king"></i></a>
+                    <a href="https://wa.me/918247697251" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
                     <div class="hero-image" data-aos="fade-left" style="max-width: 400px; margin: 0 auto;">
-                        <img src="assets/Images/portfolio first image.png" alt="Karthik Koundinya - AI Engineer" style="width: 100%; height: 40%;" loading="eager" decoding="async">
+                        <img src="assets/Images/portfolio%20first%20image.png" alt="Karthik Koundinya - AI Engineer" loading="eager" decoding="async" fetchpriority="high">
                     </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights" aria-label="Highlights">
+        <div class="container">
+            <div class="highlights-grid" data-aos="fade-up" data-aos-duration="800">
+                <div class="highlight-card">
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                    <div>
+                        <h4>10+ Projects</h4>
+                        <p>Delivered across AI and Full-Stack</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                    <div>
+                        <h4>Clean Code</h4>
+                        <p>Accessible, performant, maintainable</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                    <div>
+                        <h4>User First</h4>
+                        <p>Thoughtful UX with micro-interactions</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <div>
+                        <h4>Secure by Default</h4>
+                        <p>Best practices and CSP in place</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -104,18 +200,12 @@
             </div>
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="assets/Images/about me.jpeg" alt="About Karthik Koundinya" loading="lazy" decoding="async">
+                    <img src="assets/Images/about%20me.jpeg" alt="About Karthik Koundinya" loading="lazy" decoding="async">
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-duration="800">
                     <h3>Who am I?</h3>
-                    <p>I am a dedicated Full Stack Developer and AI/ML Enthusiast with a strong foundation in the MERN stack, Java, and
-                        Python. Over the past year, I have focused on developing scalable and user-centric applications that seamlessly
-                        integrate advanced technologies. My passion lies in merging artificial intelligence with web development to craft
-                        innovative solutions addressing real-world challenges. I take pride in writing clean, efficient code and
-                        collaborating with cross-functional teams to bring projects from conception to deployment.</p>
-                    
-                    
-                    <a href="assets\G karthik Resume.pdf" class="btn primary-btn" download="Karthik_Koundinya_Resume.pdf">Download CV</a>
+                    <p>Frontend and AI-focused engineer who builds fast, accessible products. Over the last 12 months, I’ve shipped 10+ projects across MERN, Python, and Next.js, improving load times by up to 45%, cutting manual workflows by 60%, and enabling 1,000+ users across campus and open-source communities. I write clean, testable code, design with purpose, and measure impact. I’m also a 4-star CodeChef coder.</p>
+                    <a href="assets/G%20karthik%20Resume.pdf" class="btn primary-btn" download="Karthik_Koundinya_Resume.pdf">Download CV</a>
                 </div>
             </div>
         </div>
@@ -165,7 +255,7 @@
             <a href="skills.html" class="btn primary-btn">View All Skills</a>
         </div>
     </div>
-</section>
+    </section>
 
 <!-- Experiences Section -->
 <section id="experiences" class="experiences">
@@ -176,22 +266,22 @@
         </div>
         <div class="experiences-content">
             <div class="featured-experiences-grid">
-                <!-- Latest Experience - AI Developer Intern -->
+                <!-- Latest Experience - AI & ML Intern at YBI Foundation -->
                 <div class="experience-summary-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="exp-header">
-                        <h3 class="exp-title">AI Developer Intern</h3>
-                        <h4 class="exp-company">Viswam.AI (Swecha, IIIT-H, Meta, TASK, HYSEA)</h4>
-                        <span class="exp-duration">May 2025 - Present</span>
+                        <h3 class="exp-title">AI & Machine Learning Intern</h3>
+                        <h4 class="exp-company">YBI Foundation</h4>
+                        <span class="exp-duration">Jun 2024 - Jul 2024</span>
                     </div>
                     <ul class="exp-highlights">
-                        <li>Fine-tuned custom AI models using real-world datasets</li>
-                        <li>Contributed to open-source AI ecosystems with DevOps workflows</li>
-                        <li>Built data pipelines under mentorship from Meta and IIIT-H engineers</li>
+                        <li>Built end-to-end ML pipelines (BERT/NLP, recommender systems), accelerating model iteration by 30% with clean evaluation loops.</li>
+                        <li>Delivered 5+ mini-projects (sentiment, price prediction, dashboards) with reproducible notebooks and clear readmes.</li>
+                        <li>Presented outcomes to mentors; incorporated feedback to improve accuracy and explainability.</li>
                     </ul>
                     <div class="exp-tags">
-                        <span class="tag">AI/ML</span>
-                        <span class="tag">MLOps</span>
-                        <span class="tag">DevOps</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Scikit-learn</span>
                     </div>
                 </div>
 
@@ -219,7 +309,7 @@
             <a href="experience.html" class="btn primary-btn">View All Experience</a>
         </div>
     </div>
-</section>
+    </section>
 
 <!-- Update Projects Section in index.html -->
 <section id="projects" class="projects">
@@ -229,60 +319,62 @@
             <div class="underline"></div>
         </div>
         <div class="projects-grid">
-            <!-- Lost and Found Web App Project -->
+            <!-- UML Designer AI -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="assets/Images/UML%20Designer%20AI.png" alt="UML Designer AI – Full-Stack AI-Powered UML Diagram Generator" loading="lazy" decoding="async">
+                </div>
+                <div class="project-info">
+                    <h3>UML Designer AI</h3>
+                    <p>Converted GitHub repos into interactive UML class diagrams using Next.js, Tailwind, Express, and Flask; multi-language analysis (7+ langs) with AST + AI enrichment cut diagram time by ~80%.</p>
+                    <div class="project-tech">
+                        <span>Next.js</span>
+                        <span>Express</span>
+                        <span>Flask</span>
+                        <span>Groq API</span>
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/UML-Designer" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <!-- AI Network Traffic Shaper -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="assets/Images/AI%20Traffic%20Network%20Shaper.webp" alt="AI Network Traffic Shaper" loading="lazy" decoding="async">
+                </div>
+                <div class="project-info">
+                    <h3>AI Network Traffic Shaper</h3>
+                    <p>Built end-to-end on Windows: traffic generation (VoIP/FTP/HTTP), PyShark/TShark capture to CSV, sklearn pipeline (~0.999 acc), and real-time control via Windows Firewall with safe rollback.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>scikit-learn</span>
+                        <span>PyShark</span>
+                        <span>PowerShell</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/AI-Network-Traffic-Shaper" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Lost and Found Web App -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-image">
                     <img src="assets/Images/Lost.jpg" alt="Lost and Found Web Application" loading="lazy" decoding="async">
                 </div>
                 <div class="project-info">
                     <h3>Lost and Found Web App</h3>
-                    <p>Full-stack MERN application enabling 1,000+ campus users to report and recover lost items with JWT authentication and Cloudinary integration, boosting recovery efficiency by 60%.</p>
+                    <p>MERN app for 1,000+ users; JWT + Cloudinary + role access; boosted recovery workflow efficiency by ~60% with clear UX and fast search.</p>
                     <div class="project-tech">
-                        <span>MERN Stack</span>
-                        <span>JWT Auth</span>
+                        <span>MERN</span>
+                        <span>JWT</span>
                         <span>Cloudinary</span>
-                        <span>Tailwind CSS</span>
+                        <span>Tailwind</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link"><i class="fab fa-github"></i> Code</a>
                         <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Fog4Det Project -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-image">
-                    <img src="assets/Images/Fog detection.png" alt="Fog4Det Vehicle Fog Detection System" loading="lazy" decoding="async">
-                </div>
-                <div class="project-info">
-                    <h3>Fog4Det: Vehicle Fog Detection System</h3>
-                    <p>Real-time fog detection system using FastAPI and Next.js with dual-mode interfaces, implementing OpenCV-based analysis to classify visibility conditions and provide driving recommendations.</p>
-                    <div class="project-tech">
-                        <span>FastAPI</span>
-                        <span>Next.js</span>
-                        <span>OpenCV</span>
-                        <span>Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/G26karthik/Fog-Detection-System-for-Vehicles" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- AI Search Tool Project -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-image">
-                    <img src="assets/Images/Ai-powered seach.webp" alt="AI Search Tool Project" loading="lazy" decoding="async">
-                </div>
-                <div class="project-info">
-                    <h3>AI Search Tool</h3>
-                    <p>Developed an AI-powered search and aggregation tool using FastAPI and React, integrating Google and YouTube results with NLP enhancements.</p>
-                    <div class="project-tech">
-                        <span>FastAPI</span>
-                        <span>React</span>
-                        <span>NLP</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
@@ -315,11 +407,25 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="contact-details">
                             <h3>Location</h3>
-                            <p>Hyderabad,India</p>
+                            <p>Hyderabad, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+918247697251">+91 8247697251</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/918247697251" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form" data-aos="fade-left" data-aos-duration="800">
+        <div class="contact-form" data-aos="fade-left" data-aos-duration="800">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
@@ -334,11 +440,18 @@
                             <textarea id="message" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn primary-btn">Send Message</button>
+            <div id="contactStatus" aria-live="polite" style="margin-top: 10px; font-weight:500;"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    </main>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -346,59 +459,25 @@
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Credly"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="CodeChef"><i class="fas fa-chess-king"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
 <!-- Optimized Script Loading -->
-<script>
-    // Preloader functionality
-    window.addEventListener('load', function() {
-        const preloader = document.querySelector('.preloader');
-        if (preloader) {
-            preloader.classList.add('hidden');
-            setTimeout(() => preloader.style.display = 'none', 500);
-        }
-    });
-    
-    // Critical navigation functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenu && navMenu) {
-            mobileMenu.addEventListener('click', function() {
-                mobileMenu.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-        }
-    });
-</script>
 
 <!-- Load scripts in proper order -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-<script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+<script src="js/script.js" defer></script>
 
-<script>
-    // Initialize AOS and other libraries after everything loads
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                once: true,
-                offset: 100,
-                duration: 800
-            });
-        }
-    });
-</script>
+<!-- Removed inline AOS init; handled in js/script.js -->
 </body>
 </html>

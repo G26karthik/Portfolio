@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Skills - Portfolio</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/skills.html">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="description" content="Karthik Koundinya - AI Engineer, Full Stack Developer and Software Engineer specializing in AI/ML solutions and web development">
     <meta name="keywords" content="AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
     <meta name="author" content="Karthik Koundinya">
+    <meta name="theme-color" content="#6c63ff">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta property="og:title" content="Skills | Karthik Koundinya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://g26karthik.github.io/Portfolio/skills.html">
+    <meta property="og:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
     <style>
         /* Skill cards styling */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
             margin-top: 30px;
+            justify-content: center; /* center the last row */
         }
         
         .skill-card {
@@ -28,6 +40,11 @@
             padding: 16px 20px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 300px; /* min width, grows to fill */
+            max-width: 420px; /* prevent over-stretching on very wide screens */
         }
         
         .skill-card:hover {
@@ -62,9 +79,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
-            <div class="logo">Portfolio</div>
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch" class="theme-switch">
                 <label for="theme-switch" class="toggle-label">
@@ -73,15 +90,15 @@
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="skills.html" class="nav-link active" aria-current="page">Skills</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
                 <li><a href="certifications.html" class="nav-link">Certifications</a></li>
@@ -265,17 +282,20 @@
     </section>
 
     <!-- Footer -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
                 </div>
             </div>
         </div>

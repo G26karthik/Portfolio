@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Experience - Portfolio</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/experience.html">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="description" content="Karthik Koundinya - Experience, AI Engineer, Full Stack Developer, Software Engineer">
     <meta name="keywords" content="Experience, AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
     <meta name="author" content="Karthik Koundinya">
+    <meta name="theme-color" content="#6c63ff">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta property="og:title" content="Experience | Karthik Koundinya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://g26karthik.github.io/Portfolio/experience.html">
+    <meta property="og:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
-            <div class="logo">Portfolio</div>
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch" class="theme-switch">
                 <label for="theme-switch" class="toggle-label">
@@ -27,17 +38,17 @@
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="experience.html" class="nav-link active">Experience</a></li>
+                <li><a href="experience.html" class="nav-link active" aria-current="page">Experience</a></li>
                 <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -57,26 +68,27 @@
         <div class="container">
             <div class="experience-timeline">
                 
-                <!-- AI Developer Intern at Viswam.AI -->
+                <!-- Frontend Engineering Intern at Edunet -->
                 <div class="experience-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="timeline-dot"></div>
-                    <div class="exp-date">May 2025 - Present</div>
+                    <div class="exp-date">Summer 2025 · 6 weeks</div>
                     <div class="exp-content">
-                        <h3 class="exp-role">AI Developer Intern</h3>
-                        <h4 class="exp-company"><i class="fas fa-building"></i>Viswam.AI (Swecha, IIIT-H, Meta, TASK, HYSEA)</h4>
+                        <h3 class="exp-role">Frontend Engineering Intern</h3>
+                        <h4 class="exp-company"><i class="fas fa-building"></i>Edunet</h4>
                         <ul class="exp-achievements">
-                            <li>Fine-tuned <strong>custom AI models</strong> using real-world datasets, transforming them into deployable applications with measurable user impact.</li>
-                            <li>Contributed to <strong>open-source AI ecosystems</strong> using DevOps workflows, collaborative Git version control, and MLOps best practices.</li>
-                            <li>Built <strong>data pipelines and model evaluation loops</strong> under mentorship from engineers at Meta and IIIT-H, improving model accuracy and robustness.</li>
-                            <li>Delivered <strong>production-ready solutions</strong> with a focus on ethical AI, transparency, and continuous delivery across cloud-based environments.</li>
+                            <li>Completed a <strong>6-week, project-based</strong> internship leveraging IBM SkillsBuild; delivered a production-quality front-end prototype with weekly mentor reviews.</li>
+                            <li><strong>Built an independent project end-to-end</strong>: framed the problem, designed UI flows, and implemented features; unblocked via structured Q&A and tech check-ins.</li>
+                            <li><strong>Practiced iterative development</strong>: scoped weekly milestones, tracked risks, and shipped a final demo and presentation deck on schedule.</li>
+                            <li><strong>Strengthened HTML/CSS/JS</strong> and professional skills; applied learnings directly to the project to improve performance and accessibility.</li>
+                            <li>Followed a <strong>structured plan</strong>: Week 1 onboarding; Weeks 2–4 technical sessions + mentor-led query resolution; Week 5 project wrap + deck; Week 6 submission.</li>
                         </ul>
                         <div class="exp-skills">
-                            <span class="skill-tag">AI/ML</span>
-                            <span class="skill-tag">MLOps</span>
-                            <span class="skill-tag">DevOps</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Cloud Computing</span>
-                            <span class="skill-tag">Data Pipelines</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Frontend</span>
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">Presentation</span>
                         </div>
                     </div>
                 </div>
@@ -188,17 +200,20 @@
     </section>
 
     <!-- Footer -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
                 </div>
             </div>
         </div>

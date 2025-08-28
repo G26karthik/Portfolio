@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Certifications & Achievements - Portfolio</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/certifications.html">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="description" content="Karthik Koundinya - Professional Certifications and Achievements in AI, Machine Learning, Web Development, and Software Engineering">
     <meta name="keywords" content="Certifications, Achievements, AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
     <meta name="author" content="Karthik Koundinya">
+    <meta name="theme-color" content="#6c63ff">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <style>
         /* Certification section styling */
         .certifications-grid {
@@ -154,9 +163,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
-            <div class="logo">Portfolio</div>
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch" class="theme-switch">
                 <label for="theme-switch" class="toggle-label">
@@ -165,12 +174,12 @@
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
@@ -206,12 +215,78 @@
                             <h3>Finetuning Large Language Models</h3>
                             <p class="certificate-issuer">Lamini & DeepLearning.AI</p>
                             <p class="certificate-date">2025</p>
-                            <a href="https://learn.deeplearning.ai/accomplishments/17236631-fc4c-4220-a5ae-e3e336ee1dcb" class="certificate-link" target="_blank">
+                            <a href="https://learn.deeplearning.ai/accomplishments/17236631-fc4c-4220-a5ae-e3e336ee1dcb" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
                     </div>
 
+                    <!-- New Certifications -->
+                    <div class="certificate-card" data-aos="fade-up">
+                        <div class="certificate-logo">
+                            <img src="assets/Images/ibm.jpg" alt="IBM Logo" loading="lazy">
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Web Development</h3>
+                            <p class="certificate-issuer">IBM</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="certificate-logo">
+                            <img src="assets/Images/Deeplearning.webp" alt="DeepLearning.AI & Stanford" loading="lazy">
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Machine Learning</h3>
+                            <p class="certificate-issuer">DeepLearning.AI & Stanford</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="certificate-logo">
+                            <i class="fas fa-network-wired" style="font-size: 36px; color:#1ba0d7;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>CCNA: Introduction to Networks</h3>
+                            <p class="certificate-issuer">Cisco</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="certificate-logo">
+                            <i class="fas fa-robot" style="font-size: 36px; color:#f39c12;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>OCI Certified AI Foundations Associate</h3>
+                            <p class="certificate-issuer">Oracle</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="certificate-logo">
+                            <i class="fas fa-database" style="font-size: 36px; color:#e74c3c;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>OCI Certified Data Science Professional</h3>
+                            <p class="certificate-issuer">Oracle</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="certificate-logo">
+                            <i class="fas fa-leaf" style="font-size: 36px; color:#13aa52;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>MongoDB Certified Associate Developer</h3>
+                            <p class="certificate-issuer">MongoDB</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </div>
                     <!-- Certificate 2 -->
                     <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="certificate-logo">
@@ -221,7 +296,7 @@
                             <h3>DevOps and Software Engineering Specialization</h3>
                             <p class="certificate-issuer">IBM</p>
                             <p class="certificate-date">2024</p>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/SRKQ4B85PSEU" class="certificate-link" target="_blank">
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/SRKQ4B85PSEU" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -236,7 +311,7 @@
                             <h3>Problem Solving Certification</h3>
                             <p class="certificate-issuer">HackerRank</p>
                             <p class="certificate-date">2024</p>
-                            <a href="https://www.hackerrank.com/certificates/6f3a42d54907" class="certificate-link" target="_blank">
+                            <a href="https://www.hackerrank.com/certificates/6f3a42d54907" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -251,7 +326,7 @@
                             <h3>Career Essentials in Generative AI</h3>
                             <p class="certificate-issuer">Microsoft and LinkedIn</p>
                             <p class="certificate-date">2024</p>
-                            <a href="https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe" class="certificate-link" target="_blank">
+                            <a href="https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -266,7 +341,7 @@
                             <h3>Generative AI: Art of the Possible</h3>
                             <p class="certificate-issuer">AWS</p>
                             <p class="certificate-date">2023</p>
-                            <a href="assets/images/1741505572697.jpeg" class="certificate-link" target="_blank">
+                            <a href="assets/Images/1741505572697.jpeg" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -281,7 +356,7 @@
                             <h3>Reinforcement Learning & Deep Learning Essentials</h3>
                             <p class="certificate-issuer">IBM</p>
                             <p class="certificate-date">2023</p>
-                            <a href="https://courses.cognitiveclass.ai/certificates/dcd99f780cdd43589a2ae0568cc681a9" class="certificate-link" target="_blank">
+                            <a href="https://courses.cognitiveclass.ai/certificates/dcd99f780cdd43589a2ae0568cc681a9" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -311,7 +386,7 @@
                             <h3>Google IT Support Specialization</h3>
                             <p class="certificate-issuer">Google</p>
                             <p class="certificate-date">2024</p>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/KNU3Q7HUBTLJ" class="certificate-link" target="_blank">
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/KNU3Q7HUBTLJ" class="certificate-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> View Credential
                             </a>
                         </div>
@@ -329,9 +404,7 @@
                             <a href="https://www.credly.com/users/g26karthik" class="badge-profile-link" target="_blank">
                                 <i class="fas fa-certificate"></i> Credly Profile
                             </a>
-                            <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453" class="badge-profile-link" target="_blank">
-                                <i class="fab fa-microsoft"></i> Microsoft Learn Profile
-                            </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -340,17 +413,20 @@
     </section>
 
     <!-- Footer -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
                 </div>
             </div>
         </div>

@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Portfolio</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/projects.html">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#6c63ff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="description" content="Karthik Koundinya - AI Engineer, Full Stack Developer and Software Engineer specializing in AI/ML solutions and web development">
     <meta name="keywords" content="AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
     <meta name="author" content="Karthik Koundinya">
+    <meta property="og:title" content="Projects | Karthik Koundinya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://g26karthik.github.io/Portfolio/projects.html">
+    <meta property="og:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
-            <div class="logo">Portfolio</div>
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch" class="theme-switch">
                 <label for="theme-switch" class="toggle-label">
@@ -27,16 +42,16 @@
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="projects.html" class="nav-link active" aria-current="page">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
                 <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
@@ -64,8 +79,54 @@
 
         <div class="projects-grid" id="projects-grid" role="tabpanel" aria-live="polite">
 
+            <!-- UML Designer AI -->
+            <article class="project-card" data-category="software" data-aos="fade-up" aria-labelledby="project-uml-title">
+                <div class="project-image">
+                    <img src="assets/Images/UML%20Designer%20AI.png" alt="UML Designer AI – AI-powered UML diagram generator" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-uml-title">UML Designer AI</h3>
+                    <p>Converted GitHub repos into interactive UML class diagrams across 7+ languages using AST parsing + AI enrichment; reduced manual diagramming effort by ~80% with one-click export.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Next.js</span>
+                        <span>Tailwind</span>
+                        <span>Express</span>
+                        <span>Flask</span>
+                        <span>Groq API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/UML-Designer" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AI Network Traffic Shaper -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100" aria-labelledby="project-traffic-title">
+                <div class="project-image">
+                    <img src="assets/Images/AI%20Traffic%20Network%20Shaper.webp" alt="AI Network Traffic Shaper – ML-powered shaping on Windows" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-traffic-title">AI Network Traffic Shaper</h3>
+                    <p>Built an end-to-end pipeline on Windows: traffic generation (VoIP/FTP/HTTP), PyShark/TShark capture to CSV, sklearn model (~0.999 acc), and real-time shaping via Windows Firewall with safe rollback.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Python</span>
+                        <span>scikit-learn</span>
+                        <span>PyShark</span>
+                        <span>PowerShell</span>
+                        <span>Windows Firewall</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/AI-Network-Traffic-Shaper" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             <!-- Psychometric Test -->
-            <article class="project-card" data-category="software" data-aos="fade-up" aria-labelledby="project-1-title">
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="200" aria-labelledby="project-1-title">
                 <div class="project-image">
                     <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test System Interface showing cognitive assessment dashboard" loading="lazy">
                 </div>
@@ -78,7 +139,7 @@
                         <span>JDBC</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql" class="project-link" target="_blank" rel="noopener" aria-label="View Psychometric Test source code on GitHub">
+                        <a href="https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Psychometric Test source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -86,7 +147,7 @@
             </article>
 
             <!-- Travel Planner -->
-            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="100" aria-labelledby="project-2-title">
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="300" aria-labelledby="project-2-title">
                 <div class="project-image">
                     <img src="assets/Images/travel-planner.webp" alt="Travel Planner application showing route optimization interface" loading="lazy">
                 </div>
@@ -99,7 +160,7 @@
                         <span>Dijkstra's Algorithm</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Travel-Planner-Data-Structures-C-" class="project-link" target="_blank" rel="noopener" aria-label="View Travel Planner source code on GitHub">
+                        <a href="https://github.com/G26karthik/Travel-Planner-Data-Structures-C-" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Travel Planner source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -107,9 +168,9 @@
             </article>
 
             <!-- Object Detection System -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200" aria-labelledby="project-3-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="400" aria-labelledby="project-3-title">
                 <div class="project-image">
-                    <img src="assets/Images/object detection.jpeg" alt="YOLOv5 Real-Time Object Detection System" loading="lazy">
+                    <img src="assets/Images/object%20detection.jpeg" alt="YOLOv5 Real-Time Object Detection System" loading="lazy">
                 </div>
                 <div class="project-info">
                     <h3 id="project-3-title">YOLOv5 Real-Time Object Detection</h3>
@@ -122,7 +183,7 @@
                         <span>Google Colab</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link" target="_blank" rel="noopener" aria-label="View Object Detection source code on GitHub">
+                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Object Detection source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -130,7 +191,7 @@
             </article>
 
             <!-- Lost and Found Web App -->
-            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="300" aria-labelledby="project-4-title">
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="500" aria-labelledby="project-4-title">
                 <div class="project-image">
                     <img src="assets/Images/Lost.jpg" alt="Lost and Found Web Application" loading="lazy">
                 </div>
@@ -145,10 +206,10 @@
                         <span>Render</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link" target="_blank" rel="noopener" aria-label="View Lost and Found source code on GitHub">
+                        <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lost and Found source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
-                        <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link" target="_blank" rel="noopener" aria-label="View Lost and Found live demo">
+                        <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lost and Found live demo">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
                         </a>
                     </div>
@@ -156,7 +217,7 @@
             </article>
 
             <!-- AgriSure -->
-            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="400" aria-labelledby="project-5-title">
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="600" aria-labelledby="project-5-title">
                 <div class="project-image">
                     <img src="assets/Images/AgriSure.jpg" alt="AgriSure Agricultural Insurance Platform" loading="lazy">
                 </div>
@@ -171,10 +232,10 @@
                         <span>Render</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/AgriSure" class="project-link" target="_blank" rel="noopener" aria-label="View AgriSure source code on GitHub">
+                        <a href="https://github.com/G26karthik/AgriSure" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View AgriSure source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
-                        <a href="https://agrisure.onrender.com/" class="project-link" target="_blank" rel="noopener" aria-label="View AgriSure live demo">
+                        <a href="https://agrisure.onrender.com/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View AgriSure live demo">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
                         </a>
                     </div>
@@ -182,9 +243,9 @@
             </article>
 
             <!-- Intelligent Search Platform -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="500" aria-labelledby="project-6-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="700" aria-labelledby="project-6-title">
                 <div class="project-image">
-                    <img src="assets/Images/Ai-powered seach.webp" alt="Intelligent Search Platform with AI" loading="lazy">
+                    <img src="assets/Images/Ai-powered%20seach.webp" alt="Intelligent Search Platform with AI" loading="lazy">
                 </div>
                 <div class="project-info">
                     <h3 id="project-6-title">Intelligent Search Platform</h3>
@@ -197,7 +258,7 @@
                         <span>SerpAPI</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link" target="_blank" rel="noopener" aria-label="View Intelligent Search Platform source code on GitHub">
+                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Intelligent Search Platform source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -205,9 +266,9 @@
             </article>
 
             <!-- Fog4Det -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="600" aria-labelledby="project-7-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="800" aria-labelledby="project-7-title">
                 <div class="project-image">
-                    <img src="assets/Images/Fog detection.png" alt="Fog4Det Vehicle Fog Detection System" loading="lazy">
+                    <img src="assets/Images/Fog%20detection.png" alt="Fog4Det Vehicle Fog Detection System" loading="lazy">
                 </div>
                 <div class="project-info">
                     <h3 id="project-7-title">Fog4Det: Vehicle Fog Detection System</h3>
@@ -220,7 +281,7 @@
                         <span>Framer Motion</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Fog-Detection-System-for-Vehicles" class="project-link" target="_blank" rel="noopener" aria-label="View Fog4Det source code on GitHub">
+                        <a href="https://github.com/G26karthik/Fog-Detection-System-for-Vehicles" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Fog4Det source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -228,7 +289,7 @@
             </article>
 
             <!-- Reddit Stock Sentiment Analyzer -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="700" aria-labelledby="project-8-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-8-title">
                 <div class="project-image">
                     <img src="assets/Images/Stock.webp" alt="Reddit Stock Sentiment Analyzer Dashboard" loading="lazy">
                 </div>
@@ -243,7 +304,7 @@
                         <span>VADER</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Stock-Sentement-Analyzer" class="project-link" target="_blank" rel="noopener" aria-label="View Stock Sentiment Analyzer source code on GitHub">
+                        <a href="https://github.com/G26karthik/Stock-Sentement-Analyzer" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Stock Sentiment Analyzer source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -251,9 +312,9 @@
             </article>
 
             <!-- Fake News Detection Model -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-10-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-10-title">
                 <div class="project-image">
-                    <img src="assets/Images/fake news.png" alt="Fake News Detection Model Interface" loading="lazy">
+                    <img src="assets/Images/fake%20news.png" alt="Fake News Detection Model Interface" loading="lazy">
                 </div>
                 <div class="project-info">
                     <h3 id="project-10-title">Fake News Detection Model</h3>
@@ -265,7 +326,7 @@
                         <span>NLP</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/FakeNewsDetectionModel" class="project-link" target="_blank" rel="noopener" aria-label="View Fake News Detection source code on GitHub">
+                        <a href="https://github.com/G26karthik/FakeNewsDetectionModel" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Fake News Detection source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -273,9 +334,9 @@
             </article>
 
             <!-- Dining Philosopher & Word Ladder -->
-            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-10-title">
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-10-title">
                 <div class="project-image">
-                    <img src="assets/Images/word ladder.jpg" alt="Dining Philosopher and Word Ladder Problem Solutions" loading="lazy">
+                    <img src="assets/Images/word%20ladder.jpg" alt="Dining Philosopher and Word Ladder Problem Solutions" loading="lazy">
                 </div>
                 <div class="project-info">
                     <h3 id="project-10-title">Dining Philosopher & Word Ladder</h3>
@@ -288,7 +349,7 @@
                         <span>BFS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa" class="project-link" target="_blank" rel="noopener" aria-label="View Dining Philosopher and Word Ladder source code on GitHub">
+                        <a href="https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Dining Philosopher and Word Ladder source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -300,17 +361,20 @@
 </section>
 
     <!-- Footer -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
                 <div class="social-icons">
-                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/karthik26092005/" class="social-icon" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank"><i class="fas fa-certificate"></i></a>
-                    <a href="https://learn.microsoft.com/en-us/users/gkarthik-5453/" class="social-icon" target="_blank"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
                 </div>
             </div>
         </div>
@@ -322,25 +386,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
     
-    <!-- Optimize loading for better performance -->
-    <script>
-        // Lazy load images when they come into viewport
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-            
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    </script>
+    <!-- Inline lazy-loading script removed; handled in js/script.js -->
 </body>
 </html>

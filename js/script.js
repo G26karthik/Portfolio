@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dynamicText: document.querySelector('.dynamic-text'),
         navbar: document.querySelector('.navbar'),
         mobileMenu: document.getElementById('mobile-menu'),
-        navMenu: document.querySelector('.nav-menu'),
+    navMenu: document.querySelector('.nav-menu'),
         themeSwitch: document.getElementById('theme-switch'),
         contactForm: document.getElementById('contactForm')
     };
@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle - already handled in inline critical script
     if (optimizedElements.mobileMenu && optimizedElements.navMenu) {
         optimizedElements.mobileMenu.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
             optimizedElements.mobileMenu.classList.toggle('active');
             optimizedElements.navMenu.classList.toggle('active');
         });
@@ -96,8 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
-            if (href && href.substring(1) === currentSection) {
+            if (!href) return;
+            if (href.startsWith('#') && href.substring(1) === currentSection) {
                 link.classList.add('active');
+            } else if (href.includes('#')) {
+                // handle absolute links like index.html#about
+                const id = href.split('#')[1];
+                if (id === currentSection) link.classList.add('active');
             }
         });
         activeNavTicking = false;
@@ -113,6 +120,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navLinks.length > 0) {
         window.addEventListener('scroll', requestActiveNavTick, { passive: true });
     }
+
+    // Smooth anchor scrolling that respects reduced motion and fixed header
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function smoothScrollTo(targetY) {
+        if (prefersReduced) {
+            window.scrollTo(0, targetY);
+            return;
+        }
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+    const headerOffset = 90; // approximate navbar height
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#' || href.length <= 1) return;
+            const id = href.slice(1);
+            const el = document.getElementById(id);
+            if (el) {
+                e.preventDefault();
+                const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                smoothScrollTo(y);
+            }
+        });
+    });
     
     // Project filtering with optimizations
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -143,20 +174,66 @@ document.addEventListener('DOMContentLoaded', function() {
     if (optimizedElements.contactForm) {
         optimizedElements.contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // For now, send to your email using mailto link
-            window.location.href = `mailto:karthikofficialmain@gmail.com?subject=${subject}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-            
-            // Reset form
+            const statusEl = document.getElementById('contactStatus');
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Simple validation
+            const emailValid = /.+@.+\..+/.test(email);
+            if (!name || !emailValid || !subject || !message) {
+                if (statusEl) statusEl.textContent = 'Please fill all fields with a valid email.';
+                return;
+            }
+
+            const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+            const mailto = `mailto:karthikofficialmain@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (statusEl) statusEl.textContent = 'Opening your email client…';
+            // Attempt to open mail client
+            window.location.href = mailto;
+            setTimeout(() => {
+                if (statusEl) statusEl.textContent = 'If your mail app didn\'t open, copy this address: karthikofficialmain@gmail.com';
+            }, 1200);
+
             optimizedElements.contactForm.reset();
         });
     }
+
+    // Inject structured data for featured projects (enhances SEO)
+    (function addProjectLD() {
+        const data = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "UML Designer AI",
+                    "programmingLanguage": ["TypeScript", "Python"],
+                    "codeRepository": "https://github.com/G26karthik/UML-Designer",
+                    "url": "https://github.com/G26karthik/UML-Designer"
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "AI Network Traffic Shaper",
+                    "programmingLanguage": ["Python"],
+                    "codeRepository": "https://github.com/G26karthik/AI-Network-Traffic-Shaper",
+                    "url": "https://github.com/G26karthik/AI-Network-Traffic-Shaper"
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Lost and Found Web App",
+                    "programmingLanguage": ["JavaScript", "Node.js", "React"],
+                    "codeRepository": "https://github.com/G26karthik/Lost-and-Found",
+                    "url": "https://lost-and-found-rdjb.onrender.com/"
+                }
+            ]
+        };
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
+    })();
     
     // Optimized theme toggling functionality
     const body = document.body;
@@ -231,6 +308,43 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    // Lazy load images globally using IntersectionObserver
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset?.src || img.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // Back to Top button behavior
+    const backToTop = document.querySelector('.back-to-top');
+    const showAt = 300;
+    function toggleBackToTop() {
+        if (!backToTop) return;
+        if (window.scrollY > showAt) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
+    }
+    if (backToTop) {
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        backToTop.addEventListener('click', function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) window.scrollTo(0, 0);
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        // Initial state
+        toggleBackToTop();
+    }
 });
 
 // Preloader
@@ -259,5 +373,11 @@ function loadScript(src, async = true, defer = true) {
 window.addEventListener('load', function() {
     // Example: load analytics or other non-critical scripts
     // loadScript('js/analytics.js');
+
+        // Security: ensure external links have rel=noopener
+        document.querySelectorAll('a[target="_blank"]').forEach(a => {
+            const rel = a.getAttribute('rel') || '';
+            if (!rel.includes('noopener')) a.setAttribute('rel', (rel + ' noopener noreferrer').trim());
+        });
 });
 

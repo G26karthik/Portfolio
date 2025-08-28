@@ -20,14 +20,28 @@ My personal portfolio website showcasing my skills, projects, and experience as 
 
 ## Deployment
 
-This website is deployed using GitHub Pages and can be accessed at [your-github-username.github.io/portfolio-website](https://G26karthik.github.io/portfolio-website)
+This website is deployed using GitHub Pages (Project Pages) and is available at:
+
+- https://g26karthik.github.io/Portfolio/
+
+Note: Because this is a Project Page, all absolute links use the /Portfolio/ base path.
 
 ## Running Locally
 
 1. Clone the repository
 2. Open the project in your code editor
-3. Run a local server (e.g., using Live Server extension in VS Code)
-4. Open `http://localhost:5500` in your browser
+3. Install deps and build optimized assets (optional)
+	- npm install
+	- npm run build
+4. Run a local server (e.g., Live Server) and open the index.html
+
+SEO & PWA
+- robots.txt and sitemap.xml are included at the repo root for Pages.
+- manifest.webmanifest enables add-to-home-screen on mobile.
+
+Quality checklist (target):
+- Lighthouse: Performance 90+, Accessibility 95+, Best Practices 95+, SEO 100
+- Valid HTML (W3C), aria labels, visible focus states
 
 ## License
 

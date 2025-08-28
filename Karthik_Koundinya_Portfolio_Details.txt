@@ -1,0 +1,246 @@
+KARTHIK KOUNDINYA - PORTFOLIO DETAILS
+=====================================
+
+PERSONAL INFORMATION
+-------------------
+Name: Karthik Koundinya
+Professional Title: AI Engineer & Full Stack Developer
+Tagline: Transforming Complex Problems into Elegant AI Solutions
+Email: karthikofficialmain@gmail.com
+Location: Hyderabad, India
+
+SOCIAL MEDIA & PROFESSIONAL PROFILES
+-----------------------------------
+GitHub: https://github.com/G26karthik
+LinkedIn: https://www.linkedin.com/in/g-karthik26/
+LeetCode: https://leetcode.com/u/G26Karthik/
+HackerRank: https://www.hackerrank.com/profile/G26karthik
+Credly: https://www.credly.com/users/g26karthik
+CodeChef: https://www.codechef.com/users/g26karthik
+
+ABOUT ME
+--------
+I am a dedicated Full Stack Developer and AI/ML Enthusiast with a strong foundation in the MERN stack, Java, and Python. Over the past year, I have focused on developing scalable and user-centric applications that seamlessly integrate advanced technologies. My passion lies in merging artificial intelligence with web development to craft innovative solutions addressing real-world challenges. I take pride in writing clean, efficient code and collaborating with cross-functional teams to bring projects from conception to deployment.
+
+RESUME/CV
+--------
+Available at: assets/G karthik Resume.pdf
+
+CORE SKILLS & EXPERTISE
+-----------------------
+
+1. ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+   • Deep Learning & Neural Networks
+   • Large Language Models (LLMs) (GPT, Transformers)
+   • Natural Language Processing (NLP)
+   • AI-Powered Automation & Agentic AI
+   • Fine-Tuning & Model Optimization
+   • Sentiment Analysis & Recommendation Systems
+
+2. FULL-STACK WEB DEVELOPMENT
+   • MERN Stack (MongoDB, Express.js, React.js, Node.js)
+   • RESTful APIs & Backend Development
+   • Flask Framework
+   • HTML5, CSS3, JavaScript
+   • Tailwind CSS, Bootstrap
+   • Responsive Design
+   • JWT Authentication
+   • Cloudinary Integration
+
+3. DATA SCIENCE & PROBLEM-SOLVING
+   • Data Analysis & Visualization
+   • Statistical Modeling
+   • Algorithm Design & Optimization
+   • Data Structures & Algorithms
+
+4. SOFTWARE ENGINEERING & VERSION CONTROL
+   • Git & GitHub
+   • CI/CD Pipelines
+   • Jenkins
+   • Spring MVC
+   • Java Programming
+   • Python Programming
+   • C Programming
+   • Software Architecture
+
+5. SEO & DIGITAL MARKETING
+   • On-Page SEO Optimization
+   • Schema Markup Implementation
+   • WCAG 2.1 Accessibility Standards
+   • Performance Optimization
+   • Google Analytics & Search Console
+
+WORK EXPERIENCE
+--------------
+
+1. FRONTEND ENGINEERING INTERN
+   Company: Edunet Foundation (AICTE, SAP, STEM.org)
+   Duration: May 2025 - Present
+   Key Achievements (XYZ format):
+   • Delivered responsive, accessible frontends for internal dashboards, improving Lighthouse performance scores from 68 to 92 (X: performance, Y: accessibility, Z: quantified impact)
+   • Built reusable components (cards, tables, modals) in vanilla JS + Tailwind, cutting UI duplication by ~40% and dev time by ~25%
+   • Implemented SEO and semantic markup, increasing discoverability and CTR on internal portals by 2.1x
+   • Partnered with mentors and peer cohorts to review PRs and enforce coding standards; reduced visual regressions with focused UI tests
+   Technologies: HTML5, CSS3/Tailwind, JavaScript, A11y, SEO
+
+2. WEB DEVELOPMENT & SEO INTERN
+   Company: Badakarobar
+   Duration: Mar 2025 - June 2025
+   Key Achievements:
+   • Engineered and deployed dynamic landing pages using HTML5, Tailwind CSS, JavaScript, and Jinja templates, achieving a 45% boost in loading speed (LCP)
+   • Implemented responsive design principles and accessibility standards (WCAG 2.1), ensuring seamless cross-device user experience
+   • Integrated schema markup and optimized content structure, driving a 2.5x increase in organic reach and top-10 SERP positions
+   • Automated sitemap generation and SEO audit workflows using Python, reducing SEO maintenance time by 60%
+   • Collaborated with the SEO team to align technical improvements with keyword strategy and traffic analytics (GSC, GA4)
+   Technologies: HTML5, Tailwind CSS, JavaScript, Jinja, SEO, Python, WCAG 2.1
+
+3. SOFTWARE ENGINEERING VIRTUAL EXPERIENCE
+   Company: Accenture
+   Duration: Aug 2024 - Sep 2024
+   Key Achievements:
+   • Developed scalable Java classes within Spring MVC to implement core search functionality, aligning with SOLID principles
+   • Refactored legacy modules into DRY-compliant utilities, streamlining codebase maintenance and enhancing readability
+   • Built a Jenkins-based CI pipeline to trigger unit tests and builds on every PR, reducing production defects by 60%
+   • Created Agile user stories and acceptance criteria to simulate real-world sprint cycles and collaborative development planning
+   Technologies: Java, Spring MVC, Jenkins, CI/CD
+
+4. AI & MACHINE LEARNING INTERN
+   Company: YBI Foundation
+   Duration: June 2024 - July 2024
+   Description: Designed and implemented advanced ML pipelines using Scikit-learn, TensorFlow, and HuggingFace transformers
+
+5. WEB DEVELOPMENT INTERN
+   Company: InternPedia
+   Duration: April 2024 - May 2024
+   Description: Web development internship focused on frontend and backend technologies
+
+FEATURED PROJECTS
+----------------
+
+1. LOST AND FOUND WEB APP
+   Description: Full-stack MERN application enabling 1,000+ campus users to report and recover lost items with JWT authentication and Cloudinary integration, boosting recovery efficiency by 60%
+   Technologies: MERN Stack, JWT Auth, Cloudinary, Tailwind CSS, Render
+   GitHub: https://github.com/G26karthik/Lost-and-Found
+   Live Demo: https://lost-and-found-rdjb.onrender.com/
+
+2. AGRISURE: AGRICULTURAL INSURANCE PLATFORM
+   Description: Full-stack agricultural fintech platform using Flask, enabling 500+ farmers to manage crop insurance and loans with role-based access control, reducing manual errors by 70%
+   Technologies: Flask, Bootstrap, Jinja2, WTForms, Render
+   GitHub: https://github.com/G26karthik/AgriSure
+   Live Demo: https://agrisure.onrender.com/
+
+3. FOG4DET: VEHICLE FOG DETECTION SYSTEM
+   Description: Real-time fog detection system using FastAPI and Next.js with dual-mode interfaces, implementing OpenCV-based analysis to classify visibility conditions and provide driving recommendations
+   Technologies: FastAPI, Next.js, OpenCV, Tailwind CSS, Framer Motion
+   GitHub: https://github.com/G26karthik/Fog-Detection-System-for-Vehicles
+
+4. INTELLIGENT SEARCH PLATFORM
+   Description: Full-stack AI-powered search tool using FastAPI and React, expanding queries with NLP (T5/BART) and integrating Google/YouTube APIs with multithreaded backend for enhanced performance
+   Technologies: FastAPI, React, HuggingFace, T5/BART, SerpAPI
+   GitHub: https://github.com/G26karthik/Ai-search-tool
+
+5. REDDIT STOCK SENTIMENT ANALYZER
+   Description: Flask-based NLP dashboard analyzing Reddit posts from financial subreddits using VADER sentiment analysis, with interactive dark-mode UI and Matplotlib visualizations
+   Technologies: Flask, NLTK, PRAW, Matplotlib, VADER
+   GitHub: https://github.com/G26karthik/Stock-Sentement-Analyzer
+
+6. YOLOV5 REAL-TIME OBJECT DETECTION
+   Description: Colab-based object detection pipeline using YOLOv5 pretrained models, enabling real-time image capture from laptop cameras with on-the-fly object recognition
+   Technologies: YOLOv5, Python, PyTorch, OpenCV, Google Colab
+   GitHub: https://github.com/G26karthik/Object-Detector-ml-yolov5
+
+7. PSYCHOMETRIC TEST SYSTEM
+   Description: An intelligent system to assess cognitive abilities and personality traits using structured psychometric evaluations with data-driven insights
+   Technologies: Java, MySQL, JDBC
+   GitHub: https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql
+
+8. TRAVEL PLANNER
+   Description: Efficient route planning using shortest path algorithms to minimize travel costs and time with intelligent pathfinding
+   Technologies: C, Graphs, Dijkstra's Algorithm
+   GitHub: https://github.com/G26karthik/Travel-Planner-Data-Structures-C-
+
+9. FAKE NEWS DETECTION MODEL
+   Description: A deep learning model trained to classify news articles as fake or real based on linguistic and contextual cues using advanced NLP techniques
+   Technologies: Python, Scikit-Learn, TensorFlow, NLP
+   GitHub: https://github.com/G26karthik/FakeNewsDetectionModel
+
+10. DINING PHILOSOPHER & WORD LADDER
+    Description: Implementation of classic computer science problems: Dining Philosopher problem for OS synchronization using semaphores, and Word Ladder problem using graph traversal algorithms with optimized pathfinding strategies
+    Technologies: Java, C, Semaphores, Graphs, BFS
+    GitHub: https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa
+
+PROFESSIONAL CERTIFICATIONS
+---------------------------
+
+1. FINETUNING LARGE LANGUAGE MODELS
+   Issuer: Lamini & DeepLearning.AI
+   Year: 2025
+   Credential: https://learn.deeplearning.ai/accomplishments/17236631-fc4c-4220-a5ae-e3e336ee1dcb
+
+2. DEVOPS AND SOFTWARE ENGINEERING SPECIALIZATION
+   Issuer: IBM
+   Year: 2024
+   Credential: https://www.coursera.org/account/accomplishments/specialization/SRKQ4B85PSEU
+
+3. PROBLEM SOLVING CERTIFICATION
+   Issuer: HackerRank
+   Year: 2024
+   Credential: https://www.hackerrank.com/certificates/6f3a42d54907
+
+4. CAREER ESSENTIALS IN GENERATIVE AI
+   Issuer: Microsoft and LinkedIn
+   Year: 2024
+   Credential: https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe
+
+5. GENERATIVE AI: ART OF THE POSSIBLE
+   Issuer: AWS
+   Year: 2023
+   Credential: assets/images/1741505572697.jpeg
+
+6. REINFORCEMENT LEARNING & DEEP LEARNING ESSENTIALS
+   Issuer: IBM
+   Year: 2023
+   Credential: https://courses.cognitiveclass.ai/certificates/dcd99f780cdd43589a2ae0568cc681a9
+
+7. ORACLE CERTIFIED JAVA & SQL
+   Issuer: Oracle
+   Year: 2024
+   Status: Certified (No credential link available)
+
+8. GOOGLE IT SUPPORT SPECIALIZATION
+   Issuer: Google
+   Year: 2024
+   Credential: https://www.coursera.org/account/accomplishments/specialization/KNU3Q7HUBTLJ
+
+ADDITIONAL PROFILE LINKS
+-----------------------
+Credly Profile: https://www.credly.com/users/g26karthik
+CodeChef Profile: https://www.codechef.com/users/g26karthik
+
+PORTFOLIO WEBSITE FEATURES
+--------------------------
+• Responsive design that works on all devices
+• Dark/light theme toggle
+• Animated UI elements using AOS and GSAP
+• Separate pages for skills, projects, experience, and certifications
+• Contact form with email integration
+• SEO optimized with meta tags
+• Performance optimized with lazy loading
+• Accessibility compliant (WCAG standards)
+
+TECHNICAL STACK USED IN PORTFOLIO
+---------------------------------
+• HTML5, CSS3, JavaScript
+• Animation: AOS (Animate on Scroll)
+• Animation: GSAP (GreenSock Animation Platform)
+• Font Awesome for icons
+• Google Fonts (Poppins)
+• Responsive CSS Grid and Flexbox
+
+COPYRIGHT
+---------
+© 2025 Karthik Koundinya. All Rights Reserved.
+
+DEPLOYMENT
+----------
+Portfolio can be deployed on GitHub Pages at: https://G26karthik.github.io/portfolio-website

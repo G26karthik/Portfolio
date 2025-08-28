@@ -1,0 +1,17 @@
+{
+  "name": "Karthik Koundinya Portfolio",
+  "short_name": "Karthik",
+  "start_url": "/Portfolio/index.html",
+  "scope": "/Portfolio/",
+  "display": "standalone",
+  "theme_color": "#6c63ff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
