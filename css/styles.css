@@ -235,6 +235,11 @@ img {
     color: #fff;
     box-shadow: 0 6px 16px rgba(108, 99, 255, 0.25);
 }
+.badge-chip .icon-codechef {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
 .badge-chip .star { font-size: 1.05em; }
 
 @media (max-width: 768px) {
@@ -384,6 +389,18 @@ img {
     transition: var(--transition);
 }
 
+.social-icon .icon-codechef {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.social-icon .icon-codeforces {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
 .social-icon:hover {
     background-color: var(--primary-color);
     color: var(--light-color);
@@ -434,6 +451,24 @@ img {
 .about-text p {
     margin-bottom: 20px;
     color: var(--gray-color);
+}
+
+.about-text .btn {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+}
+
+.about-text .about-highlights {
+    margin: 15px 0 25px 20px;
+    padding: 0;
+    color: var(--gray-color);
+    list-style: disc;
+}
+
+.about-text .about-highlights li {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .personal-info {

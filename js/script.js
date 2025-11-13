@@ -215,14 +215,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 {
                     "@type": "SoftwareSourceCode",
-                    "name": "AI Network Traffic Shaper",
-                    "programmingLanguage": ["Python"],
-                    "codeRepository": "https://github.com/G26karthik/AI-Network-Traffic-Shaper",
-                    "url": "https://github.com/G26karthik/AI-Network-Traffic-Shaper"
+                    "name": "AI Interview Assistant",
+                    "programmingLanguage": ["JavaScript", "TypeScript"],
+                    "codeRepository": "https://github.com/G26karthik/AI-Interview-Assistant",
+                    "url": "https://ai-interview-assistant-rho.vercel.app/"
                 },
                 {
                     "@type": "SoftwareSourceCode",
-                    "name": "Lost and Found Web App",
+                    "name": "College Lost & Found Application",
                     "programmingLanguage": ["JavaScript", "Node.js", "React"],
                     "codeRepository": "https://github.com/G26karthik/Lost-and-Found",
                     "url": "https://lost-and-found-rdjb.onrender.com/"

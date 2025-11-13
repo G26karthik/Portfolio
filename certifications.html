@@ -4,12 +4,12 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Certifications & Achievements - Portfolio</title>
+    <title>My Certifications - Portfolio</title>
     <link rel="canonical" href="https://g26karthik.github.io/Portfolio/certifications.html">
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="description" content="Karthik Koundinya - Professional Certifications and Achievements in AI, Machine Learning, Web Development, and Software Engineering">
-    <meta name="keywords" content="Certifications, Achievements, AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
+    <meta name="description" content="Karthik Koundinya - Professional Certifications in AI, Machine Learning, Web Development, and Software Engineering">
+    <meta name="keywords" content="Certifications, AI, Machine Learning, Web Development, Full Stack, Developer, Portfolio">
     <meta name="author" content="Karthik Koundinya">
     <meta name="theme-color" content="#6c63ff">
     <link rel="stylesheet" href="css/styles.css">
@@ -30,7 +30,6 @@
             gap: 25px;
             margin-top: 30px;
         }
-
         .certificate-card {
             display: flex;
             background-color: var(--surface-color);
@@ -43,7 +42,7 @@
 
         .certificate-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .certificate-logo {
@@ -102,11 +101,11 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .certificate-card {
                 flex-direction: column;
             }
-            
+
             .certificate-logo {
                 margin-right: 0;
                 margin-bottom: 15px;
@@ -151,7 +150,7 @@
 
         .badge-profile-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             color: var(--primary-color);
         }
 
@@ -184,8 +183,9 @@
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="oss.html" class="nav-link">OSS</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="certifications.html" class="nav-link active">Certifications</a></li>
+                <li><a href="certifications.html" class="nav-link active" aria-current="page">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -194,7 +194,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Certifications & Achievements</h1>
+            <h1>Certifications</h1>
             <div class="underline"></div>
         </div>
     </section>
@@ -204,9 +204,8 @@
         <div class="container">
             <!-- Certifications Section -->
             <div class="skills-category" data-aos="fade-up">
-                <h2><i class="fas fa-certificate category-icon"></i> Professional Certifications</h2>
+                <h2><i class="fas fa-certificate category-icon"></i> Certifications</h2>
                 <div class="certifications-grid">
-                    <!-- Certificate 1 -->
                     <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="certificate-logo">
                             <img src="assets/Images/Deeplearning.webp" alt="DeepLearning.AI" loading="lazy">
@@ -221,26 +220,47 @@
                         </div>
                     </div>
 
-                    <!-- New Certifications -->
-                    <div class="certificate-card" data-aos="fade-up">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="120">
                         <div class="certificate-logo">
-                            <img src="assets/Images/ibm.jpg" alt="IBM Logo" loading="lazy">
+                            <i class="fas fa-cloud" style="font-size: 36px; color:#f76c6c;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Oracle OCI Developer Professional</h3>
+                            <p class="certificate-issuer">Oracle</p>
+                            <p class="certificate-date">2025</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="140">
+                        <div class="certificate-logo">
+                            <i class="fas fa-user-tie" style="font-size: 36px; color:#6c63ff;"></i>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Aspire Leadership</h3>
+                            <p class="certificate-issuer">Aspire</p>
+                            <p class="certificate-date">2025</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="160">
+                        <div class="certificate-logo">
+                            <img src="assets/Images/ibm.jpg" alt="IBM" loading="lazy">
                         </div>
                         <div class="certificate-info">
                             <h3>Web Development</h3>
                             <p class="certificate-issuer">IBM</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="180">
                         <div class="certificate-logo">
                             <img src="assets/Images/Deeplearning.webp" alt="DeepLearning.AI & Stanford" loading="lazy">
                         </div>
                         <div class="certificate-info">
                             <h3>Machine Learning</h3>
                             <p class="certificate-issuer">DeepLearning.AI & Stanford</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
 
@@ -251,44 +271,44 @@
                         <div class="certificate-info">
                             <h3>CCNA: Introduction to Networks</h3>
                             <p class="certificate-issuer">Cisco</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="220">
                         <div class="certificate-logo">
                             <i class="fas fa-robot" style="font-size: 36px; color:#f39c12;"></i>
                         </div>
                         <div class="certificate-info">
                             <h3>OCI Certified AI Foundations Associate</h3>
                             <p class="certificate-issuer">Oracle</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="240">
                         <div class="certificate-logo">
                             <i class="fas fa-database" style="font-size: 36px; color:#e74c3c;"></i>
                         </div>
                         <div class="certificate-info">
-                            <h3>OCI Certified Data Science Professional</h3>
+                            <h3>OCI Generative AI Professional</h3>
                             <p class="certificate-issuer">Oracle</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="260">
                         <div class="certificate-logo">
                             <i class="fas fa-leaf" style="font-size: 36px; color:#13aa52;"></i>
                         </div>
                         <div class="certificate-info">
                             <h3>MongoDB Certified Associate Developer</h3>
                             <p class="certificate-issuer">MongoDB</p>
-                            <p class="certificate-date">2024</p>
+                            <p class="certificate-date">2025</p>
                         </div>
                     </div>
-                    <!-- Certificate 2 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="280">
                         <div class="certificate-logo">
                             <img src="assets/Images/ibm.jpg" alt="IBM" loading="lazy">
                         </div>
@@ -302,7 +322,6 @@
                         </div>
                     </div>
 
-                    <!-- Certificate 3 -->
                     <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="certificate-logo">
                             <img src="assets/Images/Hackerrank.webp" alt="HackerRank" loading="lazy">
@@ -317,8 +336,7 @@
                         </div>
                     </div>
 
-                    <!-- Certificate 4 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="320">
                         <div class="certificate-logo">
                             <img src="assets/Images/Microsoftlearn.webp" alt="Microsoft and LinkedIn" loading="lazy">
                         </div>
@@ -331,9 +349,8 @@
                             </a>
                         </div>
                     </div>
-    
-                    <!-- Certificate 5 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="340">
                         <div class="certificate-logo">
                             <img src="assets/Images/aws.png" alt="AWS" loading="lazy">
                         </div>
@@ -346,9 +363,8 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- Certificate 6 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="360">
                         <div class="certificate-logo">
                             <img src="assets/Images/ibm.jpg" alt="IBM" loading="lazy">
                         </div>
@@ -362,8 +378,7 @@
                         </div>
                     </div>
 
-                    <!-- Certificate 7 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="380">
                         <div class="certificate-logo">
                             <i class="fab fa-java" style="font-size: 40px; color: #f89820;"></i>
                         </div>
@@ -377,8 +392,7 @@
                         </div>
                     </div>
 
-                    <!-- Certificate 8 -->
-                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="certificate-logo">
                             <i class="fab fa-google" style="font-size: 40px; color: #4285f4;"></i>
                         </div>
@@ -394,12 +408,12 @@
                 </div>
             </div>
 
-            <!-- Badges and Achievements Section -->
+            <!-- Badges Section -->
             <div class="badges-section" data-aos="fade-up">
                 <div class="skills-category">
-                    <h3 class="text-center mt-40">Additional Badges & Achievements</h3>
+                    <h3 class="text-center mt-40">Additional Badges & Certifications</h3>
                     <div class="text-center mt-20">
-                        <p>View my complete collection of badges and achievements:</p>
+                        <p>View my complete collection of badges and certifications:</p>
                         <div class="profile-links">
                             <a href="https://www.credly.com/users/g26karthik" class="badge-profile-link" target="_blank">
                                 <i class="fas fa-certificate"></i> Credly Profile
@@ -424,9 +438,17 @@
                     <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://codeforces.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codeforces" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codeforces.svg#icon-codeforces"></use>
+                        </svg>
+                    </a>
                     <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
-                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthikk" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codechef" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codechef.svg#icon-codechef"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>

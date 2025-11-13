@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Contributions - Portfolio</title>
+    <link rel="canonical" href="https://g26karthik.github.io/Portfolio/oss.html">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="description" content="Karthik Koundinya's open source initiatives, contributions, and community impact across AI and full-stack projects.">
+    <meta name="keywords" content="Open Source, Contributions, GitHub, AI, Full Stack, Portfolio">
+    <meta name="author" content="Karthik Koundinya">
+    <meta name="theme-color" content="#6c63ff">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta property="og:title" content="Open Source Contributions | Karthik Koundinya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://g26karthik.github.io/Portfolio/oss.html">
+    <meta property="og:image" content="https://g26karthik.github.io/Portfolio/assets/Images/portfolio%20first%20image.png">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <style>
+        .oss-meta {
+            color: var(--gray-color);
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        .oss-meta a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .oss-summary {
+            max-width: 820px;
+            margin: 18px auto 0;
+            color: var(--dark-color);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .oss-pr-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            margin-top: 24px;
+        }
+
+        .oss-pr-card {
+            background-color: var(--surface-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .oss-pr-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .oss-pr-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .oss-pr-link {
+            color: var(--dark-color);
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .oss-pr-link span {
+            display: block;
+        }
+
+        .oss-repo {
+            font-size: 0.75rem;
+            color: var(--gray-color);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .oss-title {
+            font-size: 1.05rem;
+        }
+
+        .oss-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .status-merged {
+            background-color: rgba(46, 204, 113, 0.18);
+            color: #1e874b;
+        }
+
+        .status-review {
+            background-color: rgba(243, 156, 18, 0.18);
+            color: #b26b00;
+        }
+
+        .oss-pr-card p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .oss-table-wrapper {
+            overflow-x: auto;
+            margin-top: 24px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            background-color: var(--surface-color);
+        }
+
+        .oss-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 640px;
+            background-color: var(--surface-color);
+        }
+
+        .oss-table th,
+        .oss-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .oss-table th {
+            background-color: rgba(108, 99, 255, 0.08);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .oss-table td {
+            color: var(--gray-color);
+        }
+
+        .oss-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media screen and (max-width: 720px) {
+            .oss-pr-card__header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .oss-status {
+                margin-top: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Primary">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Go to home">Portfolio</a>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="toggle-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+            <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="oss.html" class="nav-link active" aria-current="page">OSS</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Open Source Contributions</h1>
+            <div class="underline"></div>
+            <p class="oss-meta" data-aos="fade-up" data-aos-delay="50">
+                Contributor: <a href="https://github.com/G26karthik" target="_blank" rel="noopener noreferrer">G26karthik</a>
+                &middot; Last updated: <strong>Nov 10, 2025</strong>
+            </p>
+            <p class="oss-summary" data-aos="fade-up" data-aos-delay="120">
+                I collaborate on production-grade fixes and features across AI, data engineering, and developer infrastructure.
+                Contributions range from parser upgrades and SDK integrations to reliability hardening that supports the millions of
+                engineers who depend on these projects every day.
+            </p>
+        </div>
+    </section>
+
+    <!-- OSS Metrics -->
+    <section class="highlights" aria-label="Open source impact metrics">
+        <div class="container">
+            <div class="highlights-grid" data-aos="fade-up">
+                <div class="highlight-card">
+                    <i class="fas fa-code-branch" aria-hidden="true"></i>
+                    <div>
+                        <h4>12 Contributions</h4>
+                        <p>Across 9 major repositories</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <div>
+                        <h4>8 PRs merged</h4>
+                        <p>4 more under active review</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <div>
+                        <h4>Focus areas</h4>
+                        <p>AI/ML infra · Parsers · Data tooling</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                    <div>
+                        <h4>300K+ repo stars</h4>
+                        <p>Combined project reach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured OSS Projects -->
+    <section class="skills-page" aria-label="Featured open source projects">
+        <div class="container">
+            <div class="skills-category" data-aos="fade-up">
+                <h2><i class="fab fa-github category-icon"></i> Highlighted Contributions</h2>
+                <div class="oss-pr-grid">
+                    <article class="oss-pr-card" aria-labelledby="oss-google">
+                        <header class="oss-pr-card__header">
+                            <a id="oss-google" class="oss-pr-link" href="https://github.com/google/adk-python/pull/3503" target="_blank" rel="noopener noreferrer">
+                                <span class="oss-repo">google/adk-python</span>
+                                <span class="oss-title">LLM evaluation i18n support</span>
+                            </a>
+                            <span class="oss-status status-review">Under review</span>
+                        </header>
+                        <p>
+                            Added multilingual scoring to <code>FinalResponseMatchV2Evaluator</code>, fixing incorrect grading for Thai,
+                            Japanese, Arabic, and other non-Latin scripts so LLM-as-judge workflows stay accurate worldwide.
+                        </p>
+                    </article>
+
+                    <article class="oss-pr-card" aria-labelledby="oss-pandas">
+                        <header class="oss-pr-card__header">
+                            <a id="oss-pandas" class="oss-pr-link" href="https://github.com/pandas-dev/pandas/pull/62591" target="_blank" rel="noopener noreferrer">
+                                <span class="oss-repo">pandas-dev/pandas</span>
+                                <span class="oss-title">Zip safety enforcement (Ruff B905)</span>
+                            </a>
+                            <span class="oss-status status-merged">Merged</span>
+                        </header>
+                        <p>
+                            Enforced strict zip mode across the pandas codebase to eliminate silent truncation bugs and guarantee
+                            consistent behaviour for developers shipping data pipelines.
+                        </p>
+                    </article>
+
+                    <article class="oss-pr-card" aria-labelledby="oss-hackerrank">
+                        <header class="oss-pr-card__header">
+                            <a id="oss-hackerrank" class="oss-pr-link" href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/133" target="_blank" rel="noopener noreferrer">
+                                <span class="oss-repo">interviewstreet/hiring-agent</span>
+                                <span class="oss-title">Production memory leak mitigation</span>
+                            </a>
+                            <span class="oss-status status-merged">Merged</span>
+                        </header>
+                        <p>
+                            Diagnosed and resolved a PDF processing leak that exhausted worker memory in production, restoring
+                            stability and throughput for hiring partner integrations.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="120">
+                <h2><i class="fas fa-table category-icon"></i> Full Contribution Index</h2>
+                <p style="color: var(--gray-color); margin-top: 10px;">A complete log of shipped fixes, features, and documentation improvements across the open source projects I support.</p>
+                <div class="oss-table-wrapper">
+                    <table class="oss-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Repository</th>
+                                <th>Contribution</th>
+                                <th>Status</th>
+                                <th>Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="https://github.com/google/adk-python" target="_blank" rel="noopener noreferrer">google/adk-python</a></td>
+                                <td><a href="https://github.com/google/adk-python/pull/3503" target="_blank" rel="noopener noreferrer">Non-English eval support</a></td>
+                                <td>🔄 Review</td>
+                                <td>LLM evaluation correctness</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><a href="https://github.com/matplotlib/matplotlib" target="_blank" rel="noopener noreferrer">matplotlib</a></td>
+                                <td><a href="https://github.com/matplotlib/matplotlib/pull/30639" target="_blank" rel="noopener noreferrer">TwoSlopeNorm docs</a></td>
+                                <td>✅ Merged</td>
+                                <td>Visualization docs</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><a href="https://github.com/sqlfluff/sqlfluff" target="_blank" rel="noopener noreferrer">sqlfluff</a></td>
+                                <td><a href="https://github.com/sqlfluff/sqlfluff/pull/7163" target="_blank" rel="noopener noreferrer">PostgreSQL OPERATOR()</a></td>
+                                <td>✅ Merged</td>
+                                <td>Parser feature</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><a href="https://github.com/pypa/pipx" target="_blank" rel="noopener noreferrer">pypa/pipx</a></td>
+                                <td><a href="https://github.com/pypa/pipx/pull/1682" target="_blank" rel="noopener noreferrer">Disable shared lib auto-upgrade</a></td>
+                                <td>🔄 Review</td>
+                                <td>Infra &amp; env control</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><a href="https://github.com/TheAlgorithms/Python" target="_blank" rel="noopener noreferrer">TheAlgorithms/Python</a></td>
+                                <td><a href="https://github.com/TheAlgorithms/Python/pull/13233" target="_blank" rel="noopener noreferrer">Hopcroft-Karp implementation</a></td>
+                                <td>🔄 Review</td>
+                                <td>Graph algorithms</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><a href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener noreferrer">pandas-dev/pandas</a></td>
+                                <td><a href="https://github.com/pandas-dev/pandas/pull/62591" target="_blank" rel="noopener noreferrer">Zip strict mode</a></td>
+                                <td>✅ Merged</td>
+                                <td>Code safety</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><a href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener noreferrer">pandas-dev/pandas</a></td>
+                                <td><a href="https://github.com/pandas-dev/pandas/pull/62592" target="_blank" rel="noopener noreferrer">PyArrow datetime test</a></td>
+                                <td>✅ Merged</td>
+                                <td>Regression prevention</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><a href="https://github.com/sktime/sktime" target="_blank" rel="noopener noreferrer">sktime</a></td>
+                                <td><a href="https://github.com/sktime/sktime/pull/8923" target="_blank" rel="noopener noreferrer">Doc link fixes</a></td>
+                                <td>🔄 Review</td>
+                                <td>Documentation integrity</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><a href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener noreferrer">pandas-dev/pandas</a></td>
+                                <td><a href="https://github.com/pandas-dev/pandas/pull/62600" target="_blank" rel="noopener noreferrer">items() doc modernization</a></td>
+                                <td>✅ Merged</td>
+                                <td>Documentation quality</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener noreferrer">mem0ai/mem0</a></td>
+                                <td><a href="https://github.com/mem0ai/mem0/pull/3549" target="_blank" rel="noopener noreferrer">Azure AI Search vector store</a></td>
+                                <td>✅ Merged</td>
+                                <td>SDK feature</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent" target="_blank" rel="noopener noreferrer">interviewstreet/hiring-agent</a></td>
+                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/133" target="_blank" rel="noopener noreferrer">Memory leak fix</a></td>
+                                <td>✅ Merged</td>
+                                <td>Production stability</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent" target="_blank" rel="noopener noreferrer">interviewstreet/hiring-agent</a></td>
+                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/129" target="_blank" rel="noopener noreferrer">UTF-8 fix</a></td>
+                                <td>✅ Merged</td>
+                                <td>Cross-platform reliability</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="180">
+                <h2><i class="fas fa-handshake category-icon"></i> Community Impact</h2>
+                <ul class="exp-achievements">
+                    <li>Ran weekly pairing sessions to help newcomers craft their first pull request and understand Git workflows.</li>
+                    <li>Filed actionable GitHub issues with reproduction steps, screenshots, and failing tests to accelerate fixes.</li>
+                    <li>Drafted contributor docs covering coding standards, triage labels, and security reporting guidelines.</li>
+                    <li>Spoke at local meetups about building AI-powered assistants with open source tooling and responsible AI practices.</li>
+                </ul>
+            </div>
+
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                <h2><i class="fas fa-route category-icon"></i> How I Collaborate</h2>
+                <div class="certificate-card" style="max-width: 680px; margin: 0 auto;">
+                    <div class="certificate-logo">
+                        <i class="fas fa-comments" style="font-size: 36px; color:#6c63ff;"></i>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Contributor Workflow</h3>
+                        <p class="certificate-issuer">Transparent, async-first collaboration</p>
+                        <p class="certificate-date">Updated 2025</p>
+                        <ul class="exp-achievements" style="margin-top: 10px;">
+                            <li>Prioritize issues with community-requested labels and keep milestones up to date.</li>
+                            <li>Automate formatting, tests, and accessibility checks so contributors focus on features.</li>
+                            <li>Review PRs within 48 hours with actionable feedback and suggested patches.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+                <h2><i class="fas fa-rocket category-icon"></i> Join the Journey</h2>
+                <p>Have an issue to report, an idea to discuss, or a bug to squash together? I’m always looking for collaborators who care about delightful developer experiences.</p>
+                <a href="https://github.com/G26karthik" class="btn primary-btn" target="_blank" rel="noopener noreferrer">Explore My GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Karthik Koundinya. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://codeforces.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codeforces" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codeforces.svg#icon-codeforces"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthikk" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codechef" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codechef.svg#icon-codechef"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load scripts optimally -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -52,6 +52,7 @@
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="projects.html" class="nav-link active" aria-current="page">Projects</a></li>
+                <li><a href="oss.html" class="nav-link">OSS</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
                 <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
@@ -78,6 +79,85 @@
         </div>
 
         <div class="projects-grid" id="projects-grid" role="tabpanel" aria-live="polite">
+
+            <!-- Lecture Voice-to-Notes Generator -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" aria-labelledby="project-voice-notes-title">
+                <div class="project-image">
+                    <img src="assets/Images/Voice.webp" alt="Lecture Voice-to-Notes Generator AI-powered platform" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-voice-notes-title">Lecture Voice-to-Notes Generator</h3>
+                    <p>AI-powered Streamlit platform that converts long-form lecture audio into structured notes, quizzes, and flashcards using Whisper + transformer summarization models with GPU-tuned ASR/VAD.</p>
+                    <p>Modular NLP components with caching and parallel chunking deliver 5× faster runs on 30+ minute inputs, while the interface adds progress tracking, Fast Mode, and PDF/DOCX/JSON exports.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>PyTorch</span>
+                        <span>Whisper</span>
+                        <span>T5/BART</span>
+                        <span>spaCy</span>
+                        <span>KeyBERT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/voice" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AI-Assisted Dermatological Decision Support System -->
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100" aria-labelledby="project-derm-support-title">
+                <div class="project-image">
+                    <img src="assets/Images/Skin.webp" alt="AI-Assisted Dermatological Decision Support System interface" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-derm-support-title">AI-Assisted Dermatological DSS</h3>
+                    <p>EfficientNet-B0 classifier covering 7 skin lesion classes with 81% validation accuracy and 0.67 macro-F1 on HAM10000, accelerated via AMP and optimized Albumentations pipelines.</p>
+                    <p>Integrates Grad-CAM explainability, macro-F1 driven evaluation, and a &lt;50 ms Streamlit inference UI for clinician-focused prototyping.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>PyTorch</span>
+                        <span>EfficientNet</span>
+                        <span>Albumentations</span>
+                        <span>AMP</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Skin-Disease" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AI Interview Assistant -->
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="200" aria-labelledby="project-interview-assistant-title">
+                <div class="project-image">
+                    <img src="assets/Images/AI-Interview-Assistant.webp" alt="AI Interview Assistant recruiter dashboard" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-interview-assistant-title">AI Interview Assistant</h3>
+                    <p>End-to-end automated interview workflow that parses resumes, extracts candidate insights, and generates timed AI-driven questions powered by Groq Llama 3.1.</p>
+                    <p>Recruiter dashboard ships with sortable tables, transcript modals, PDF export, and Redux-backed scoring persistence—no backend required.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>React</span>
+                        <span>Vite</span>
+                        <span>Redux Toolkit</span>
+                        <span>Ant Design</span>
+                        <span>Groq Llama 3.1</span>
+                        <span>pdf.js</span>
+                        <span>Mammoth</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ai-interview-assistant-rho.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/G26karthik/AI-Interview-Assistant" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
 
             <!-- UML Designer AI -->
             <article class="project-card" data-category="software" data-aos="fade-up" aria-labelledby="project-uml-title">
@@ -190,26 +270,29 @@
                 </div>
             </article>
 
-            <!-- Lost and Found Web App -->
+            <!-- College Lost & Found | Full-Stack MERN + Cloudinary Application -->
             <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="500" aria-labelledby="project-4-title">
                 <div class="project-image">
-                    <img src="assets/Images/Lost.jpg" alt="Lost and Found Web Application" loading="lazy">
+                    <img src="assets/Images/Lost.jpg" alt="College Lost &amp; Found full-stack MERN platform" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-4-title">Lost and Found Web App</h3>
-                    <p>Full-stack MERN application enabling 1,000+ campus users to report and recover lost items with JWT authentication and Cloudinary integration, boosting recovery efficiency by 60%.</p>
+                    <h3 id="project-4-title">College Lost &amp; Found Application</h3>
+                    <p><strong>Developed and deployed</strong> a full-stack MERN + Cloudinary platform supporting 200+ campus users, cutting lost-item recovery time by 60% with streamlined reporting and secure JWT flows.</p>
+                    <p><strong>Enhanced backend efficiency by 35%</strong> through modular Express controllers, indexed MongoDB queries, and Cloudinary-driven media storage designed with RESTful best practices.</p>
+                    <p><strong>Increased user engagement by 45%</strong> via a responsive Tailwind UI, reusable components, and real-time status updates that raised report completion and item return confirmations.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>MERN Stack</span>
-                        <span>JWT Auth</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
                         <span>Cloudinary</span>
                         <span>Tailwind CSS</span>
                         <span>Render</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lost and Found source code on GitHub">
+                        <a href="https://github.com/G26karthik/Lost-and-Found" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View College Lost &amp; Found source code on GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
-                        <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Lost and Found live demo">
+                        <a href="https://lost-and-found-rdjb.onrender.com/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View College Lost &amp; Found live demo">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
                         </a>
                     </div>
@@ -372,9 +455,17 @@
                     <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://leetcode.com/u/G26Karthik/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://codeforces.com/profile/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codeforces" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codeforces.svg#icon-codeforces"></use>
+                        </svg>
+                    </a>
                     <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
-                    <a href="https://www.codechef.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chess-king"></i></a>
+                    <a href="https://www.codechef.com/users/g26karthikk" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon-codechef" aria-hidden="true" focusable="false">
+                            <use href="assets/icons/codechef.svg#icon-codechef"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>

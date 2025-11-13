@@ -43,3 +43,5 @@ CV.*
 # Temporary files
 .tmp/
 .temp/
+
+.Summary/

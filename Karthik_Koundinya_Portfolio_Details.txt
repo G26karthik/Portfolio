@@ -14,9 +14,9 @@ SOCIAL MEDIA & PROFESSIONAL PROFILES
 GitHub: https://github.com/G26karthik
 LinkedIn: https://www.linkedin.com/in/g-karthik26/
 LeetCode: https://leetcode.com/u/G26Karthik/
-HackerRank: https://www.hackerrank.com/profile/G26karthik
+Codeforces: https://codeforces.com/profile/G26karthik
 Credly: https://www.credly.com/users/g26karthik
-CodeChef: https://www.codechef.com/users/g26karthik
+CodeChef: https://www.codechef.com/users/g26karthikk
 
 ABOUT ME
 --------
@@ -117,9 +117,12 @@ WORK EXPERIENCE
 FEATURED PROJECTS
 ----------------
 
-1. LOST AND FOUND WEB APP
-   Description: Full-stack MERN application enabling 1,000+ campus users to report and recover lost items with JWT authentication and Cloudinary integration, boosting recovery efficiency by 60%
-   Technologies: MERN Stack, JWT Auth, Cloudinary, Tailwind CSS, Render
+1. COLLEGE LOST & FOUND  APPLICATION
+   Description:
+   • Developed and deployed a full-stack MERN + Cloudinary platform serving 200+ campus users, reducing lost-item recovery time by 60% with streamlined reporting and secure JWT authentication
+   • Enhanced backend efficiency by 35% by modularizing Express controllers, integrating Cloudinary media workflows, and tuning MongoDB queries with indexed filtering and RESTful design
+   • Increased user engagement by 45% through responsive Tailwind components, reusable UI patterns, and real-time status updates that boosted report completion and item return confirmations
+   Technologies: MERN Stack, Express, MongoDB, Cloudinary, Tailwind CSS, Render
    GitHub: https://github.com/G26karthik/Lost-and-Found
    Live Demo: https://lost-and-found-rdjb.onrender.com/
 
@@ -177,37 +180,77 @@ PROFESSIONAL CERTIFICATIONS
    Year: 2025
    Credential: https://learn.deeplearning.ai/accomplishments/17236631-fc4c-4220-a5ae-e3e336ee1dcb
 
-2. DEVOPS AND SOFTWARE ENGINEERING SPECIALIZATION
+2. ORACLE OCI DEVELOPER PROFESSIONAL
+   Issuer: Oracle
+   Year: 2025
+   Credential: N/A (pending)
+
+3. ASPIRE LEADERSHIP
+   Issuer: Aspire
+   Year: 2025
+   Credential: N/A (pending)
+
+4. WEB DEVELOPMENT
+   Issuer: IBM
+   Year: 2025
+   Credential: N/A (pending)
+
+5. MACHINE LEARNING
+   Issuer: DeepLearning.AI & Stanford
+   Year: 2025
+   Credential: N/A (pending)
+
+6. CCNA: INTRODUCTION TO NETWORKS
+   Issuer: Cisco
+   Year: 2025
+   Credential: N/A (pending)
+
+7. OCI CERTIFIED AI FOUNDATIONS ASSOCIATE
+   Issuer: Oracle
+   Year: 2025
+   Credential: N/A (pending)
+
+8. OCI GENERATIVE AI PROFESSIONAL
+   Issuer: Oracle
+   Year: 2025
+   Credential: N/A (pending)
+
+9. MONGODB CERTIFIED ASSOCIATE DEVELOPER
+   Issuer: MongoDB
+   Year: 2025
+   Credential: N/A (pending)
+
+10. DEVOPS AND SOFTWARE ENGINEERING SPECIALIZATION
    Issuer: IBM
    Year: 2024
    Credential: https://www.coursera.org/account/accomplishments/specialization/SRKQ4B85PSEU
 
-3. PROBLEM SOLVING CERTIFICATION
+11. PROBLEM SOLVING CERTIFICATION
    Issuer: HackerRank
    Year: 2024
    Credential: https://www.hackerrank.com/certificates/6f3a42d54907
 
-4. CAREER ESSENTIALS IN GENERATIVE AI
+12. CAREER ESSENTIALS IN GENERATIVE AI
    Issuer: Microsoft and LinkedIn
    Year: 2024
    Credential: https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe
 
-5. GENERATIVE AI: ART OF THE POSSIBLE
+13. GENERATIVE AI: ART OF THE POSSIBLE
    Issuer: AWS
    Year: 2023
    Credential: assets/images/1741505572697.jpeg
 
-6. REINFORCEMENT LEARNING & DEEP LEARNING ESSENTIALS
+14. REINFORCEMENT LEARNING & DEEP LEARNING ESSENTIALS
    Issuer: IBM
    Year: 2023
    Credential: https://courses.cognitiveclass.ai/certificates/dcd99f780cdd43589a2ae0568cc681a9
 
-7. ORACLE CERTIFIED JAVA & SQL
+15. ORACLE CERTIFIED JAVA & SQL
    Issuer: Oracle
    Year: 2024
    Status: Certified (No credential link available)
 
-8. GOOGLE IT SUPPORT SPECIALIZATION
+16. GOOGLE IT SUPPORT SPECIALIZATION
    Issuer: Google
    Year: 2024
    Credential: https://www.coursera.org/account/accomplishments/specialization/KNU3Q7HUBTLJ
@@ -215,7 +258,7 @@ PROFESSIONAL CERTIFICATIONS
 ADDITIONAL PROFILE LINKS
 -----------------------
 Credly Profile: https://www.credly.com/users/g26karthik
-CodeChef Profile: https://www.codechef.com/users/g26karthik
+CodeChef Profile: https://www.codechef.com/users/g26karthikk
 
 PORTFOLIO WEBSITE FEATURES
 --------------------------
