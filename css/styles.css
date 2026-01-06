@@ -212,7 +212,7 @@ img {
     color: var(--primary-color);
 }
 
-/* Badge chips (e.g., CodeChef 4★) */
+/* Badge chips (e.g., CodeChef 6★) */
 .badge-chip {
     display: inline-flex;
     align-items: center;
@@ -390,12 +390,6 @@ img {
 }
 
 .social-icon .icon-codechef {
-    width: 22px;
-    height: 22px;
-    display: block;
-}
-
-.social-icon .icon-codeforces {
     width: 22px;
     height: 22px;
     display: block;

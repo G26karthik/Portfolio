@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <symbol id="icon-codeforces" viewBox="0 0 64 64">
-    <path fill="currentColor" d="M12 50.5c0 1.9 1.6 3.5 3.5 3.5H48c1.9 0 3.5-1.6 3.5-3.5V42H12v8.5Zm39.5-34H45V11c0-1.9-1.6-3.5-3.5-3.5h-19C20.6 7.5 19 9.1 19 11v5.5h-6.5C10.6 16.5 9 18 9 20v15c0 1.9 1.6 3.5 3.5 3.5h39c1.9 0 3.5-1.6 3.5-3.5V20c0-2-1.6-3.5-3.5-3.5ZM25 11h14v5.5H25V11Zm21.5 25h-29v-18h29v18Z"/>
-    <rect x="24" y="25" width="6" height="8" fill="currentColor"/>
-    <rect x="34" y="25" width="6" height="8" fill="currentColor"/>
-  </symbol>
-</svg>
