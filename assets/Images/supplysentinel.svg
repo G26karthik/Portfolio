@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">SupplySentinel Project Cover</title>
+  <desc id="desc">Blue-black geometric gradient with network nodes and a title label.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1222"/>
+      <stop offset="60%" stop-color="#122b52"/>
+      <stop offset="100%" stop-color="#1f4f96"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7AB6FF"/>
+      <stop offset="100%" stop-color="#d9ecff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="url(#stroke)" stroke-width="2">
+    <path d="M100 570 L320 410 L560 500 L820 310 L1080 390" fill="none"/>
+    <path d="M80 300 L280 220 L530 300 L760 150 L1060 250" fill="none"/>
+  </g>
+  <g fill="#b9dcff">
+    <circle cx="320" cy="410" r="9"/>
+    <circle cx="560" cy="500" r="9"/>
+    <circle cx="820" cy="310" r="9"/>
+    <circle cx="280" cy="220" r="9"/>
+    <circle cx="760" cy="150" r="9"/>
+  </g>
+  <rect x="80" y="520" width="1040" height="140" rx="24" fill="rgba(0,0,0,0.35)"/>
+  <text x="120" y="592" fill="#ffffff" font-size="62" font-family="Poppins,Segoe UI,sans-serif" font-weight="700">SupplySentinel</text>
+  <text x="120" y="635" fill="#cde6ff" font-size="30" font-family="Poppins,Segoe UI,sans-serif">Autonomous Multi-Agent Supply Chain Risk System</text>
+</svg>

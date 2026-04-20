@@ -69,14 +69,37 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', requestTick, { passive: true });
     }
     
-    // Mobile menu toggle - already handled in inline critical script
+    // Mobile menu toggle
     if (optimizedElements.mobileMenu && optimizedElements.navMenu) {
+        const closeMobileMenu = () => {
+            optimizedElements.mobileMenu.setAttribute('aria-expanded', 'false');
+            optimizedElements.mobileMenu.classList.remove('active');
+            optimizedElements.navMenu.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        };
+
         optimizedElements.mobileMenu.addEventListener('click', function() {
             const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', String(!expanded));
-            optimizedElements.mobileMenu.classList.toggle('active');
-            optimizedElements.navMenu.classList.toggle('active');
+            if (expanded) {
+                closeMobileMenu();
+                return;
+            }
+
+            this.setAttribute('aria-expanded', 'true');
+            optimizedElements.mobileMenu.classList.add('active');
+            optimizedElements.navMenu.classList.add('active');
+            document.body.classList.add('nav-open');
         });
+
+        optimizedElements.navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        }, { passive: true });
     }
     
     // Optimized nav links active state
@@ -263,14 +286,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // GSAP animations for hero section - load conditionally
     if (typeof gsap !== 'undefined') {
-        // Hero section animation
-        const heroTl = gsap.timeline();
-        heroTl.from('.navbar', {y: -100, opacity: 0, duration: 0.8})
-              .from('.hero-content h1', {y: 50, opacity: 0, duration: 0.6})
-              .from('.hero-content h2', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
-              .from('.hero-content p', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
-              .from('.cta-buttons', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
-              .from('.social-icons', {y: 50, opacity: 0, duration: 0.6}, '-=0.3');
+        const hasHeroContent = document.querySelector('.hero-content h1');
+
+        if (hasHeroContent) {
+            // Hero section animation
+            const heroTl = gsap.timeline();
+            heroTl.from('.navbar', {y: -100, opacity: 0, duration: 0.8})
+                  .from('.hero-content h1', {y: 50, opacity: 0, duration: 0.6})
+                  .from('.hero-content h2', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
+                  .from('.hero-content p', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
+                  .from('.cta-buttons', {y: 50, opacity: 0, duration: 0.6}, '-=0.3')
+                  .from('.social-icons', {y: 50, opacity: 0, duration: 0.6}, '-=0.3');
+        }
         
         // Animate skill bars when scrolled into view
         gsap.utils.toArray('.skill-level').forEach(skill => {

@@ -18,7 +18,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "cssnano": "^6.1.2",
-    "live-server": "^1.2.2",
+    "live-server": "^1.2.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^10.1.0",
     "terser": "^5.39.0"

@@ -11,7 +11,7 @@
     <meta name="description" content="Karthik Koundinya's open source initiatives, contributions, and community impact across AI and full-stack projects.">
     <meta name="keywords" content="Open Source, Contributions, GitHub, AI, Full Stack, Portfolio">
     <meta name="author" content="Karthik Koundinya">
-    <meta name="theme-color" content="#6c63ff">
+    <meta name="theme-color" content="#F6F8FC">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,7 +145,7 @@
         }
 
         .oss-table th {
-            background-color: rgba(108, 99, 255, 0.08);
+            background-color: rgba(var(--primary-rgb), 0.08);
             font-weight: 600;
             color: var(--dark-color);
         }
@@ -208,12 +208,11 @@
             <div class="underline"></div>
             <p class="oss-meta" data-aos="fade-up" data-aos-delay="50">
                 Contributor: <a href="https://github.com/G26karthik" target="_blank" rel="noopener noreferrer">G26karthik</a>
-                &middot; Last updated: <strong>Nov 10, 2025</strong>
+                &middot; Last updated: <strong>Apr 05, 2026</strong>
             </p>
             <p class="oss-summary" data-aos="fade-up" data-aos-delay="120">
-                I collaborate on production-grade fixes and features across AI, data engineering, and developer infrastructure.
-                Contributions range from parser upgrades and SDK integrations to reliability hardening that supports the millions of
-                engineers who depend on these projects every day.
+                Generated from authored GitHub pull requests and issues for G26karthik. Contribution profile is centered on correctness,
+                regression prevention, parser improvements, SDK integrations, and production reliability across high-impact repositories.
             </p>
         </div>
     </section>
@@ -225,22 +224,22 @@
                 <div class="highlight-card">
                     <i class="fas fa-code-branch" aria-hidden="true"></i>
                     <div>
-                        <h4>12 Contributions</h4>
-                        <p>Across 9 major repositories</p>
+                        <h4>21 PRs Counted</h4>
+                        <p>15 merged + 6 open across 16 repositories</p>
                     </div>
                 </div>
                 <div class="highlight-card">
                     <i class="fas fa-users" aria-hidden="true"></i>
                     <div>
-                        <h4>8 PRs merged</h4>
-                        <p>4 more under active review</p>
+                        <h4>30 Authored Issues</h4>
+                        <p>24 closed · 6 open (non-PR issues)</p>
                     </div>
                 </div>
                 <div class="highlight-card">
                     <i class="fas fa-star" aria-hidden="true"></i>
                     <div>
                         <h4>Focus areas</h4>
-                        <p>AI/ML infra · Parsers · Data tooling</p>
+                        <p>Testing · Parsers · SDKs · Reliability</p>
                     </div>
                 </div>
                 <div class="highlight-card">
@@ -276,29 +275,27 @@
 
                     <article class="oss-pr-card" aria-labelledby="oss-pandas">
                         <header class="oss-pr-card__header">
-                            <a id="oss-pandas" class="oss-pr-link" href="https://github.com/pandas-dev/pandas/pull/62591" target="_blank" rel="noopener noreferrer">
-                                <span class="oss-repo">pandas-dev/pandas</span>
-                                <span class="oss-title">Zip safety enforcement (Ruff B905)</span>
+                            <a id="oss-pandas" class="oss-pr-link" href="https://github.com/sympy/sympy/pull/29605" target="_blank" rel="noopener noreferrer">
+                                <span class="oss-repo">sympy/sympy</span>
+                                <span class="oss-title">refine_sign assumptions fix</span>
                             </a>
-                            <span class="oss-status status-merged">Merged</span>
+                            <span class="oss-status status-review">Under review</span>
                         </header>
                         <p>
-                            Enforced strict zip mode across the pandas codebase to eliminate silent truncation bugs and guarantee
-                            consistent behaviour for developers shipping data pipelines.
+                            Proposed correctness fix for <code>refine_sign()</code> on plain Symbol assumptions, improving symbolic simplification behavior in core algebra flows.
                         </p>
                     </article>
 
                     <article class="oss-pr-card" aria-labelledby="oss-hackerrank">
                         <header class="oss-pr-card__header">
-                            <a id="oss-hackerrank" class="oss-pr-link" href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/133" target="_blank" rel="noopener noreferrer">
-                                <span class="oss-repo">interviewstreet/hiring-agent</span>
-                                <span class="oss-title">Production memory leak mitigation</span>
+                            <a id="oss-hackerrank" class="oss-pr-link" href="https://github.com/kubeflow/sdk/pull/436" target="_blank" rel="noopener noreferrer">
+                                <span class="oss-repo">kubeflow/sdk</span>
+                                <span class="oss-title">Real-time local log streaming fix</span>
                             </a>
-                            <span class="oss-status status-merged">Merged</span>
+                            <span class="oss-status status-review">Under review</span>
                         </header>
                         <p>
-                            Diagnosed and resolved a PDF processing leak that exhausted worker memory in production, restoring
-                            stability and throughput for hiring partner integrations.
+                            Fixed <code>LocalJob.logs(follow=True)</code> behavior by removing direct stdout side-effects and enabling true stream-to-caller control for SDK consumers.
                         </p>
                     </article>
                 </div>
@@ -391,17 +388,38 @@
                             </tr>
                             <tr>
                                 <td>11</td>
-                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent" target="_blank" rel="noopener noreferrer">interviewstreet/hiring-agent</a></td>
-                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/133" target="_blank" rel="noopener noreferrer">Memory leak fix</a></td>
-                                <td>✅ Merged</td>
-                                <td>Production stability</td>
+                                <td><a href="https://github.com/sympy/sympy" target="_blank" rel="noopener noreferrer">sympy/sympy</a></td>
+                                <td><a href="https://github.com/sympy/sympy/pull/29605" target="_blank" rel="noopener noreferrer">refine_sign assumptions fix</a></td>
+                                <td>🔄 Review</td>
+                                <td>Symbolic math correctness</td>
                             </tr>
                             <tr>
                                 <td>12</td>
-                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent" target="_blank" rel="noopener noreferrer">interviewstreet/hiring-agent</a></td>
-                                <td><a href="https://github.com/interviewstreet/hackerrank-hiring-agent/pull/129" target="_blank" rel="noopener noreferrer">UTF-8 fix</a></td>
-                                <td>✅ Merged</td>
-                                <td>Cross-platform reliability</td>
+                                <td><a href="https://github.com/kubeflow/sdk" target="_blank" rel="noopener noreferrer">kubeflow/sdk</a></td>
+                                <td><a href="https://github.com/kubeflow/sdk/pull/436" target="_blank" rel="noopener noreferrer">LocalJob logs follow fix</a></td>
+                                <td>🔄 Review</td>
+                                <td>SDK runtime behavior</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener noreferrer">ComposioHQ/awesome-claude-skills</a></td>
+                                <td><a href="https://github.com/ComposioHQ/awesome-claude-skills/pull/566" target="_blank" rel="noopener noreferrer">productionize skill</a></td>
+                                <td>🔄 Open</td>
+                                <td>Community tooling</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer">google-gemini/gemini-cli</a></td>
+                                <td><a href="https://github.com/google-gemini/gemini-cli/issues/24088" target="_blank" rel="noopener noreferrer">OAuth server close guard issue</a></td>
+                                <td>📝 Issue</td>
+                                <td>Auth stability</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td><a href="https://github.com/mattermost/mattermost" target="_blank" rel="noopener noreferrer">mattermost/mattermost</a></td>
+                                <td><a href="https://github.com/mattermost/mattermost/pulls?q=author%3AG26karthik" target="_blank" rel="noopener noreferrer">Authored contribution set</a></td>
+                                <td>ℹ️ Activity</td>
+                                <td>Large-scale OSS exposure</td>
                             </tr>
                         </tbody>
                     </table>
@@ -411,10 +429,10 @@
             <div class="skills-category" data-aos="fade-up" data-aos-delay="180">
                 <h2><i class="fas fa-handshake category-icon"></i> Community Impact</h2>
                 <ul class="exp-achievements">
-                    <li>Ran weekly pairing sessions to help newcomers craft their first pull request and understand Git workflows.</li>
-                    <li>Filed actionable GitHub issues with reproduction steps, screenshots, and failing tests to accelerate fixes.</li>
-                    <li>Drafted contributor docs covering coding standards, triage labels, and security reporting guidelines.</li>
-                    <li>Spoke at local meetups about building AI-powered assistants with open source tooling and responsible AI practices.</li>
+                    <li>Contributed 21 counted PRs (15 merged, 6 open) across 16 repositories with 300K+ combined stars.</li>
+                    <li>Authored 30 standalone non-PR issues (24 closed), reinforcing debugging depth and triage quality.</li>
+                    <li>Delivered reliability and correctness fixes spanning parser support, SDK behavior, memory safety, and encoding resilience.</li>
+                    <li>Maintained high-signal contribution style focused on production impact rather than low-value edits.</li>
                 </ul>
             </div>
 
@@ -422,12 +440,12 @@
                 <h2><i class="fas fa-route category-icon"></i> How I Collaborate</h2>
                 <div class="certificate-card" style="max-width: 680px; margin: 0 auto;">
                     <div class="certificate-logo">
-                        <i class="fas fa-comments" style="font-size: 36px; color:#6c63ff;"></i>
+                        <i class="fas fa-comments" style="font-size: 36px; color:#2D6CDF;"></i>
                     </div>
                     <div class="certificate-info">
                         <h3>Contributor Workflow</h3>
                         <p class="certificate-issuer">Transparent, async-first collaboration</p>
-                        <p class="certificate-date">Updated 2025</p>
+                        <p class="certificate-date">Updated 2026</p>
                         <ul class="exp-achievements" style="margin-top: 10px;">
                             <li>Prioritize issues with community-requested labels and keep milestones up to date.</li>
                             <li>Automate formatting, tests, and accessibility checks so contributors focus on features.</li>
@@ -457,6 +475,7 @@
                     <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://leetcode.com/u/g26karthikk/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://codeforces.com/profile/GKarthik26" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-medal"></i></a>
                     <a href="https://codolio.com/profile/G26karthik/card" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-line"></i></a>
                     <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
                     <a href="https://www.codechef.com/users/g26karthikk" class="social-icon" target="_blank" rel="noopener noreferrer">

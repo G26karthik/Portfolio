@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Productionize Project Cover</title>
+  <desc id="desc">Pipeline-style visual for production engineering skill project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0e172a"/>
+      <stop offset="100%" stop-color="#1b3058"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(110,170)">
+    <rect x="0" y="0" width="220" height="110" rx="16" fill="#1f3e73" stroke="#8bc2ff"/>
+    <rect x="250" y="0" width="220" height="110" rx="16" fill="#1f3e73" stroke="#8bc2ff"/>
+    <rect x="500" y="0" width="220" height="110" rx="16" fill="#1f3e73" stroke="#8bc2ff"/>
+    <rect x="750" y="0" width="220" height="110" rx="16" fill="#1f3e73" stroke="#8bc2ff"/>
+    <path d="M220 55 H250 M470 55 H500 M720 55 H750" stroke="#cfe8ff" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#cfe8ff"/>
+    </marker>
+  </defs>
+  <text x="140" y="250" fill="#d7ebff" font-size="24" font-family="Poppins,Segoe UI,sans-serif">Audit</text>
+  <text x="390" y="250" fill="#d7ebff" font-size="24" font-family="Poppins,Segoe UI,sans-serif">Refactor</text>
+  <text x="640" y="250" fill="#d7ebff" font-size="24" font-family="Poppins,Segoe UI,sans-serif">Validate</text>
+  <text x="890" y="250" fill="#d7ebff" font-size="24" font-family="Poppins,Segoe UI,sans-serif">Ship</text>
+  <rect x="90" y="520" width="1020" height="140" rx="24" fill="rgba(0,0,0,0.35)"/>
+  <text x="130" y="592" fill="#ffffff" font-size="64" font-family="Poppins,Segoe UI,sans-serif" font-weight="700">productionize</text>
+  <text x="130" y="635" fill="#d9ecff" font-size="30" font-family="Poppins,Segoe UI,sans-serif">Claude Code Skill for Production-Grade Engineering</text>
+</svg>

@@ -10,7 +10,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="theme-color" content="#6c63ff">
+    <meta name="theme-color" content="#F6F8FC">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -74,7 +74,7 @@
         <div class="project-filters" role="tablist" aria-label="Project category filters">
             <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="projects-grid">All Projects</button>
             <button class="filter-btn" data-filter="software" role="tab" aria-selected="false" aria-controls="projects-grid">Software Development</button>
-            <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false" aria-controls="projects-grid">Machine Learning</button>
+            <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false" aria-controls="projects-grid">AI / ML</button>
             <button class="filter-btn" data-filter="daa" role="tab" aria-selected="false" aria-controls="projects-grid">Algorithms & DSA</button>
         </div>
 
@@ -87,8 +87,8 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-voice-notes-title">Lecture Voice-to-Notes Generator</h3>
-                    <p>AI-powered Streamlit platform that converts long-form lecture audio into structured notes, quizzes, and flashcards using Whisper + transformer summarization models with GPU-tuned ASR/VAD.</p>
-                    <p>Modular NLP components with caching and parallel chunking deliver 5× faster runs on 30+ minute inputs, while the interface adds progress tracking, Fast Mode, and PDF/DOCX/JSON exports.</p>
+                    <p>Built a Streamlit-based AI pipeline that converts long lecture audio into structured notes, quizzes, and flashcards using Whisper ASR and transformer summarization.</p>
+                    <p>Engineered modular NLP stages with caching and parallel chunking to achieve 5x faster processing on 30+ minute inputs, with progress tracking and PDF/DOCX/JSON export.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Python</span>
                         <span>Streamlit</span>
@@ -113,8 +113,8 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-derm-support-title">AI-Assisted Dermatological DSS</h3>
-                    <p>EfficientNet-B0 classifier covering 7 skin lesion classes with 81% validation accuracy and 0.67 macro-F1 on HAM10000, accelerated via AMP and optimized Albumentations pipelines.</p>
-                    <p>Integrates Grad-CAM explainability, macro-F1 driven evaluation, and a &lt;50 ms Streamlit inference UI for clinician-focused prototyping.</p>
+                    <p>Developed an EfficientNet-B0 dermatology classifier for 7 lesion classes, reaching 81% validation accuracy and 0.67 macro-F1 on HAM10000.</p>
+                    <p>Integrated AMP training, Albumentations augmentation, and Grad-CAM explainability with a &lt;50 ms Streamlit inference workflow for clinician-focused prototyping.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>PyTorch</span>
                         <span>EfficientNet</span>
@@ -137,8 +137,8 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-interview-assistant-title">AI Interview Assistant</h3>
-                    <p>End-to-end automated interview workflow that parses resumes, extracts candidate insights, and generates timed AI-driven questions powered by Groq Llama 3.1.</p>
-                    <p>Recruiter dashboard ships with sortable tables, transcript modals, PDF export, and Redux-backed scoring persistence—no backend required.</p>
+                    <p>Built an end-to-end interview automation workflow that parses resumes, extracts candidate signals, and generates timed question sets with Groq Llama 3.1.</p>
+                    <p>Designed a recruiter dashboard with sortable views, transcript modals, PDF export, and Redux-based scoring persistence in a backend-free architecture.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>React</span>
                         <span>Vite</span>
@@ -166,7 +166,7 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-uml-title">UML Designer AI</h3>
-                    <p>Converted GitHub repos into interactive UML class diagrams across 7+ languages using AST parsing + AI enrichment; reduced manual diagramming effort by ~80% with one-click export.</p>
+                    <p>Built a repository-to-UML pipeline that generates interactive class diagrams across 7+ languages using AST parsing and AI enrichment, reducing manual diagramming effort by ~80%.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Next.js</span>
                         <span>Tailwind</span>
@@ -182,14 +182,15 @@
                 </div>
             </article>
 
-            <!-- AI Network Traffic Shaper -->
+            <!-- AI Network Traffic Classification & QoS Shaping -->
             <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100" aria-labelledby="project-traffic-title">
                 <div class="project-image">
-                    <img src="assets/Images/AI%20Traffic%20Network%20Shaper.webp" alt="AI Network Traffic Shaper – ML-powered shaping on Windows" loading="lazy">
+                    <img src="assets/Images/AI%20Traffic%20Network%20Shaper.webp" alt="AI Network Traffic Classification and QoS shaping system" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-traffic-title">AI Network Traffic Shaper</h3>
-                    <p>Built an end-to-end pipeline on Windows: traffic generation (VoIP/FTP/HTTP), PyShark/TShark capture to CSV, sklearn model (~0.999 acc), and real-time shaping via Windows Firewall with safe rollback.</p>
+                    <h3 id="project-traffic-title">AI Network Traffic Classification &amp; QoS Shaping</h3>
+                    <p>Built a real-time ML pipeline that classifies encrypted traffic across five application classes with 80&ndash;90% accuracy and sub-1ms packet inference.</p>
+                    <p>Automated policy-driven QoS shaping to convert model output into actionable traffic-prioritization rules.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Python</span>
                         <span>scikit-learn</span>
@@ -205,65 +206,22 @@
                 </div>
             </article>
 
-            <!-- Psychometric Test -->
-            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="200" aria-labelledby="project-1-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="300" aria-labelledby="project-supplysentinel-title">
                 <div class="project-image">
-                    <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test System Interface showing cognitive assessment dashboard" loading="lazy">
+                    <img src="assets/Images/supplysentinel.svg" alt="SupplySentinel autonomous supply chain risk monitoring interface" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-1-title">Psychometric Test System</h3>
-                    <p>An intelligent system to assess cognitive abilities and personality traits using structured psychometric evaluations with data-driven insights.</p>
+                    <h3 id="project-supplysentinel-title">SupplySentinel</h3>
+                    <p>Built an autonomous multi-agent platform for supply-chain risk monitoring, with Watchman, Analyst, and Dispatcher agents operating continuously.</p>
+                    <p>Implemented confidence-aware retrieval expansion and persistent deduplication to reduce noisy alerts and improve evidence quality across monitoring cycles.</p>
                     <div class="project-tech" aria-label="Technologies used">
-                        <span>Java</span>
-                        <span>MySQL</span>
-                        <span>JDBC</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Psychometric Test source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Travel Planner -->
-            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="300" aria-labelledby="project-2-title">
-                <div class="project-image">
-                    <img src="assets/Images/travel-planner.webp" alt="Travel Planner application showing route optimization interface" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <h3 id="project-2-title">Travel Planner</h3>
-                    <p>Efficient route planning using shortest path algorithms to minimize travel costs and time with intelligent pathfinding.</p>
-                    <div class="project-tech" aria-label="Technologies used">
-                        <span>C</span>
-                        <span>Graphs</span>
-                        <span>Dijkstra's Algorithm</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/G26karthik/Travel-Planner-Data-Structures-C-" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Travel Planner source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Object Detection System -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="400" aria-labelledby="project-3-title">
-                <div class="project-image">
-                    <img src="assets/Images/object%20detection.jpeg" alt="YOLOv5 Real-Time Object Detection System" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <h3 id="project-3-title">YOLOv5 Real-Time Object Detection</h3>
-                    <p>Colab-based object detection pipeline using YOLOv5 pretrained models, enabling real-time image capture from laptop cameras with on-the-fly object recognition.</p>
-                    <div class="project-tech" aria-label="Technologies used">
-                        <span>YOLOv5</span>
                         <span>Python</span>
-                        <span>PyTorch</span>
-                        <span>OpenCV</span>
-                        <span>Google Colab</span>
+                        <span>Gemini 2.5 Flash</span>
+                        <span>Google Cloud Run</span>
+                        <span>Streamlit</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Object Detection source code on GitHub">
+                        <a href="https://github.com/G26karthik/SupplySentinel" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -277,9 +235,9 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-4-title">College Lost &amp; Found Application</h3>
-                    <p><strong>Developed and deployed</strong> a full-stack MERN + Cloudinary platform supporting 200+ campus users, cutting lost-item recovery time by 60% with streamlined reporting and secure JWT flows.</p>
-                    <p><strong>Enhanced backend efficiency by 35%</strong> through modular Express controllers, indexed MongoDB queries, and Cloudinary-driven media storage designed with RESTful best practices.</p>
-                    <p><strong>Increased user engagement by 45%</strong> via a responsive Tailwind UI, reusable components, and real-time status updates that raised report completion and item return confirmations.</p>
+                    <p>Built and deployed a full-stack MERN + Cloudinary platform used by 200+ campus users, reducing lost-item recovery time by ~60%.</p>
+                    <p>Improved backend efficiency by ~35% through modular Express services, indexed MongoDB queries, and optimized Cloudinary media handling.</p>
+                    <p>Increased engagement by ~45% with a responsive Tailwind UI, reusable components, and real-time status workflows.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>MERN Stack</span>
                         <span>Express</span>
@@ -306,7 +264,7 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-5-title">AgriSure: Agricultural Insurance Platform</h3>
-                    <p>Full-stack agricultural fintech platform using Flask, enabling 500+ farmers to manage crop insurance and loans with role-based access control, reducing manual errors by 70%.</p>
+                    <p>Developed a Flask-based agricultural fintech platform enabling 500+ farmers to manage crop insurance and loans with role-based workflows, reducing manual errors by ~70%.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Flask</span>
                         <span>Bootstrap</span>
@@ -325,23 +283,27 @@
                 </div>
             </article>
 
-            <!-- Intelligent Search Platform -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="700" aria-labelledby="project-6-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="700" aria-labelledby="project-lumina-title">
                 <div class="project-image">
-                    <img src="assets/Images/Ai-powered%20seach.webp" alt="Intelligent Search Platform with AI" loading="lazy">
+                    <img src="assets/Images/lumina.svg" alt="Lumina hybrid RAG search system" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-6-title">Intelligent Search Platform</h3>
-                    <p>Full-stack AI-powered search tool using FastAPI and React, expanding queries with NLP (T5/BART) and integrating Google/YouTube APIs with multithreaded backend for enhanced performance.</p>
+                    <h3 id="project-lumina-title">Lumina</h3>
+                    <p>Built a hybrid RAG search engine that combines FAISS vector retrieval with BM25 keyword ranking for high-precision technical search.</p>
+                    <p>Delivered an Async FastAPI backend with caching and score transparency, reducing repeat indexing latency by ~90% and improving explainability.</p>
                     <div class="project-tech" aria-label="Technologies used">
+                        <span>Python</span>
                         <span>FastAPI</span>
-                        <span>React</span>
-                        <span>HuggingFace</span>
-                        <span>T5/BART</span>
-                        <span>SerpAPI</span>
+                        <span>FAISS</span>
+                        <span>SQLite</span>
+                        <span>BM25</span>
+                        <span>AsyncIO</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Ai-search-tool" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Intelligent Search Platform source code on GitHub">
+                        <a href="https://lumina-search.streamlit.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/G26karthik/Lumina-Search" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -355,7 +317,7 @@
                 </div>
                 <div class="project-info">
                     <h3 id="project-7-title">Fog4Det: Vehicle Fog Detection System</h3>
-                    <p>Real-time fog detection system using FastAPI and Next.js with dual-mode interfaces, implementing OpenCV-based analysis to classify visibility conditions and provide driving recommendations.</p>
+                    <p>Built a real-time fog detection system with FastAPI and Next.js that uses OpenCV analysis to classify visibility conditions and recommend driving actions.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>FastAPI</span>
                         <span>Next.js</span>
@@ -371,37 +333,160 @@
                 </div>
             </article>
 
-            <!-- Reddit Stock Sentiment Analyzer -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-8-title">
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="900" aria-labelledby="project-turboquant-title">
                 <div class="project-image">
-                    <img src="assets/Images/Stock.webp" alt="Reddit Stock Sentiment Analyzer Dashboard" loading="lazy">
+                    <img src="assets/Images/turboquant.svg" alt="TurboQuant KV cache compression benchmark" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-8-title">Reddit Stock Sentiment Analyzer</h3>
-                    <p>Flask-based NLP dashboard analyzing Reddit posts from financial subreddits using VADER sentiment analysis, with interactive dark-mode UI and Matplotlib visualizations.</p>
+                    <h3 id="project-turboquant-title">TurboQuant KV Cache Demo</h3>
+                    <p>Implemented TurboQuant-style KV cache compression for GPT-2 Medium using Lloyd-Max quantization and QJL residual sketching.</p>
+                    <p>Benchmarked on RTX 4060 with 3.3x KV compression (5664 KB to 1740 KB) and +6.1% perplexity shift, documented through reproducible reports and dashboards.</p>
                     <div class="project-tech" aria-label="Technologies used">
-                        <span>Flask</span>
-                        <span>NLTK</span>
-                        <span>PRAW</span>
-                        <span>Matplotlib</span>
-                        <span>VADER</span>
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>Transformers</span>
+                        <span>NumPy</span>
+                        <span>Quantization</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Stock-Sentement-Analyzer" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Stock Sentiment Analyzer source code on GitHub">
+                        <a href="https://github.com/G26karthik/turboquant-kvcache" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
                 </div>
             </article>
 
-            <!-- Fake News Detection Model -->
-            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-10-title">
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-antim-title">
                 <div class="project-image">
-                    <img src="assets/Images/fake%20news.png" alt="Fake News Detection Model Interface" loading="lazy">
+                    <img src="assets/Images/antim.svg" alt="Antim AI bereavement assistance agent interface" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-10-title">Fake News Detection Model</h3>
-                    <p>A deep learning model trained to classify news articles as fake or real based on linguistic and contextual cues using advanced NLP techniques.</p>
+                    <h3 id="project-antim-title">Antim</h3>
+                    <p>Built an empathy-first AI bereavement assistant that captures succession details and generates India-specific action plans with streaming workflows.</p>
+                    <p>Used browser-local token handling and session-scoped state to enable secure backend-free deployment.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Supervity Workflow API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Antim---AI-Bereavement-Assistance-Agent" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-productionize-title">
+                <div class="project-image">
+                    <img src="assets/Images/productionize.svg" alt="productionize Claude code skill workflow card" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-productionize-title">productionize</h3>
+                    <p>Designed a reusable Claude Code skill that applies a 4-phase productionization workflow across documentation, validation, typing, logging, security, and maintainability.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Markdown Specs</span>
+                        <span>Engineering Standards</span>
+                        <span>Multi-language Patterns</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/skill-productionize" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="1100" aria-labelledby="project-psychometric-title">
+                <div class="project-image">
+                    <img src="assets/Images/Physchometric.jpeg" alt="Psychometric Test System dashboard" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-psychometric-title">Psychometric Test System</h3>
+                    <p>Built a Java/MySQL psychometric assessment system with structured testing flows, automated scoring, and interpretable result summaries.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Java</span>
+                        <span>MySQL</span>
+                        <span>JDBC</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Psychometric-Test-using-Java-and-MySql" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="1200" aria-labelledby="project-travel-title">
+                <div class="project-image">
+                    <img src="assets/Images/travel-planner.webp" alt="Travel Planner route optimization interface" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-travel-title">Travel Planner</h3>
+                    <p>Built a graph-based travel optimization system using shortest-path algorithms to minimize route time and cost.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>C</span>
+                        <span>Graphs</span>
+                        <span>Dijkstra</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Travel-Planner-Data-Structures-C-" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="1300" aria-labelledby="project-yolo-title">
+                <div class="project-image">
+                    <img src="assets/Images/object%20detection.jpeg" alt="YOLOv5 real-time object detection" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-yolo-title">YOLOv5 Real-Time Object Detection</h3>
+                    <p>Built a YOLOv5 + OpenCV real-time detection pipeline for on-device inference experiments and live camera tracking.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>YOLOv5</span>
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Object-Detector-ml-yolov5" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="1400" aria-labelledby="project-reddit-title">
+                <div class="project-image">
+                    <img src="assets/Images/Stock.webp" alt="Reddit stock sentiment analyzer" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-reddit-title">Reddit Stock Sentiment Analyzer</h3>
+                    <p>Built an NLP sentiment analysis dashboard for finance-focused subreddit streams with data ingestion pipelines and interpretable visual summaries.</p>
+                    <div class="project-tech" aria-label="Technologies used">
+                        <span>Flask</span>
+                        <span>NLTK</span>
+                        <span>PRAW</span>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/G26karthik/Stock-Sentement-Analyzer" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="1500" aria-labelledby="project-fakenews-title">
+                <div class="project-image">
+                    <img src="assets/Images/fake%20news.png" alt="Fake news detection model" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3 id="project-fakenews-title">Fake News Detection Model</h3>
+                    <p>Built a fake-vs-real news classification pipeline using feature engineering and supervised machine learning baselines.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Python</span>
                         <span>Scikit-Learn</span>
@@ -409,30 +494,28 @@
                         <span>NLP</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/FakeNewsDetectionModel" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Fake News Detection source code on GitHub">
+                        <a href="https://github.com/G26karthik/FakeNewsDetectionModel" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
                 </div>
             </article>
 
-            <!-- Dining Philosopher & Word Ladder -->
-            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="1000" aria-labelledby="project-10-title">
+            <article class="project-card" data-category="daa" data-aos="fade-up" data-aos-delay="1600" aria-labelledby="project-dining-title">
                 <div class="project-image">
-                    <img src="assets/Images/word%20ladder.jpg" alt="Dining Philosopher and Word Ladder Problem Solutions" loading="lazy">
+                    <img src="assets/Images/word%20ladder.jpg" alt="Dining philosopher and word ladder implementations" loading="lazy">
                 </div>
                 <div class="project-info">
-                    <h3 id="project-10-title">Dining Philosopher & Word Ladder</h3>
-                    <p>Implementation of classic computer science problems: Dining Philosopher problem for OS synchronization using semaphores, and Word Ladder problem using graph traversal algorithms with optimized pathfinding strategies.</p>
+                    <h3 id="project-dining-title">Dining Philosopher &amp; Word Ladder</h3>
+                    <p>Implemented classic concurrency and graph problems, including semaphore-based Dining Philosophers synchronization and BFS-driven Word Ladder transformations.</p>
                     <div class="project-tech" aria-label="Technologies used">
                         <span>Java</span>
                         <span>C</span>
                         <span>Semaphores</span>
-                        <span>Graphs</span>
                         <span>BFS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Dining Philosopher and Word Ladder source code on GitHub">
+                        <a href="https://github.com/G26karthik/Dining-Philospher-for-OS-and-Word-Ladder-for-Daa" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github" aria-hidden="true"></i> Code
                         </a>
                     </div>
@@ -455,6 +538,7 @@
                     <a href="https://github.com/G26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/g-karthik26/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://leetcode.com/u/g26karthikk/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                    <a href="https://codeforces.com/profile/GKarthik26" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-medal"></i></a>
                     <a href="https://codolio.com/profile/G26karthik/card" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-line"></i></a>
                     <a href="https://www.credly.com/users/g26karthik" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i></a>
                     <a href="https://www.codechef.com/users/g26karthikk" class="social-icon" target="_blank" rel="noopener noreferrer">
