@@ -50,10 +50,10 @@
 
 [data-theme="dark"] {
     /* Dark theme (premium black + gold) */
-    --primary-color: #B08D57;
-    --secondary-color: #CEA972;
-    --primary-rgb: 176, 141, 87;
-    --secondary-rgb: 206, 169, 114;
+    --primary-color: var(--gold-mid);
+    --secondary-color: var(--gold-soft);
+    --primary-rgb: 194, 165, 117;
+    --secondary-rgb: 226, 204, 170;
     --background-color: #000000;
     --surface-color: #0B0B0C;
     --text-color: #F5F1E8;
@@ -66,14 +66,14 @@
 
     --on-primary-color: #120F0A;
     --focus-ring-on-accent: #120F0A;
-    --theme-icon-moon: #B08D57;
-    --theme-icon-sun: #CEA972;
+    --theme-icon-moon: var(--gold-mid);
+    --theme-icon-sun: var(--gold-soft);
 
     --footer-bg: #060606;
     --footer-text: #F5F1E8;
     --footer-border-color: #2A2218;
     --footer-icon-bg: rgba(var(--primary-rgb), 0.16);
-    --footer-icon-text: #E6D2A7;
+    --footer-icon-text: #EEDBB9;
     --footer-icon-border: rgba(var(--primary-rgb), 0.34);
     --footer-icon-hover-bg: var(--primary-color);
     --footer-icon-hover-text: #120F0A;
@@ -87,15 +87,15 @@
     --highlight-card-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
     --back-to-top-shadow: 0 12px 26px rgba(0, 0, 0, 0.58);
 
-    --gold-deep: #6F532C;
-    --gold-mid: #B08D57;
-    --gold-soft: #CEA972;
-    --gold-foil: #F2E3C3;
+    --gold-deep: #6A5537;
+    --gold-mid: #C2A575;
+    --gold-soft: #E2CCAA;
+    --gold-foil: #FFF2DD;
 
-    --accent-metal-gradient: linear-gradient(135deg, var(--gold-deep) 0%, #8C6A3A 18%, var(--gold-mid) 40%, var(--gold-soft) 57%, var(--gold-foil) 68%, #C39A61 82%, #7B5C31 100%);
-    --accent-metal-border: rgba(242, 227, 195, 0.35);
-    --accent-metal-glow: 0 14px 32px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(242, 227, 195, 0.2);
-    --accent-metal-specular: rgba(255, 246, 224, 0.56);
+    --accent-metal-gradient: linear-gradient(135deg, var(--gold-deep) 0%, #87704E 18%, var(--gold-mid) 40%, var(--gold-soft) 58%, var(--gold-foil) 70%, #CFB388 84%, #6E5939 100%);
+    --accent-metal-border: rgba(255, 242, 221, 0.34);
+    --accent-metal-glow: 0 14px 32px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 242, 221, 0.2);
+    --accent-metal-specular: rgba(255, 248, 232, 0.56);
 }
 
 * {
