@@ -3,48 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Performance optimizations
     const optimizedElements = {
-        dynamicText: document.querySelector('.dynamic-text'),
         navbar: document.querySelector('.navbar'),
         mobileMenu: document.getElementById('mobile-menu'),
     navMenu: document.querySelector('.nav-menu'),
         themeSwitch: document.getElementById('theme-switch'),
         contactForm: document.getElementById('contactForm')
     };
-    
-    // Dynamic text typing effect with performance improvements
-    const texts = ["AI Engineer", "Full Stack Developer", "Software Engineer", "SEO Specialist"];
-    const typingDelay = 100;
-    const erasingDelay = 50;
-    const newTextDelay = 2000;
-    
-    let textIndex = 0;
-    let charIndex = 0;
-    let typingTimer;
-    
-    function type() {
-        if (charIndex < texts[textIndex].length) {
-            optimizedElements.dynamicText.textContent += texts[textIndex].charAt(charIndex);
-            charIndex++;
-            typingTimer = setTimeout(type, typingDelay);
-        } else {
-            typingTimer = setTimeout(erase, newTextDelay);
-        }
-    }
-    
-    function erase() {
-        if (charIndex > 0) {
-            optimizedElements.dynamicText.textContent = texts[textIndex].substring(0, charIndex-1);
-            charIndex--;
-            typingTimer = setTimeout(erase, erasingDelay);
-        } else {
-            textIndex = (textIndex + 1) % texts.length;
-            typingTimer = setTimeout(type, typingDelay);
-        }
-    }
-    
-    if (optimizedElements.dynamicText) {
-        setTimeout(type, newTextDelay);
-    }
     
     // Optimized navbar scroll effect with throttling
     let ticking = false;
