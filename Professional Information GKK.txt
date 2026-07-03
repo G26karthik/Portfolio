@@ -1,0 +1,399 @@
+# G. Karthik Koundinya
+📧 Karthikofficialmain@gmail.com · [GitHub](https://github.com/G26karthik) · [LinkedIn](https://www.linkedin.com/in/g-karthik26)
+[CodeChef](https://www.codechef.com/users/g26karthikk) · [LeetCode](https://leetcode.com/u/G26KarthikK/)
+
+---
+
+## 🎓 Education
+
+**B.Tech Computer Science Engineering** · 2023–2027
+Geethanjali College of Engineering and Technology, Hyderabad · CGPA: 7.1
+
+**Relevant Coursework:**
+Data Structures & Algorithms · Operating Systems · Database Management Systems · Computer Networks · Object-Oriented Programming · Discrete Mathematics · Software Engineering · Theory of Computation · Computer Architecture · Linear Algebra & Probability
+
+---
+
+**Aspire Leaders Program** — Aspire Institute (founded at Harvard University) · *2025*
+*Curriculum: Self-Awareness & Leadership Identity · Trust-Building & Stakeholder Communication · Digital Transformation & AI in Leadership · Driving Organizational Change · Strengths-Based Leadership · Professional Development (co-developed with Harvard Business School faculty)*
+
+---
+
+## 💼 Experience
+
+### Full Stack Engineering Intern — Stealth Startup
+*Jan 2026 – Apr 2026 · Hyderabad, Telangana, India (Hybrid)*
+
+Acted as the sole full-stack engineer in a zero-structure startup environment, architecting and delivering a scalable social platform (Next.js, Supabase, Node.js) from initial concept to deployment-ready system.
+
+- Achieved **~50% reduction in database calls** and **~30% latency improvement** by restructuring backend request pipelines, optimizing query execution, and minimizing payload overhead.
+- Engineered real-time systems using Supabase Realtime for authentication and live updates, deployed via AWS EC2 (PM2) with automated CI/CD pipelines ensuring consistent release stability.
+- Drove cross-platform expansion by leading responsive UI development and executing a full Flutter-based mobile migration (0→1), resolving architectural mismatches between web and mobile paradigms.
+- Accelerated delivery using Claude Code and GitHub Copilot for code generation, debugging, and architecture iteration — maintaining full ownership of system design and engineering decisions throughout.
+
+*Stack: Next.js, Node.js, TypeScript, Supabase, PostgreSQL, AWS EC2, PM2, Flutter*
+
+---
+
+### Open Source Contributor — pandas, matplotlib, SQLFluff, sktime, mem0, interviewstreet, and others
+*Oct 2025 – Present*
+
+13 merged PRs and 2 open PRs across 11 repositories including pandas-dev/pandas, matplotlib/matplotlib, sqlfluff/sqlfluff, mem0ai/mem0, sktime/sktime, and interviewstreet/hiring-agent.
+
+- **pandas (3 merged):** PyArrow datetime merge regression test (GH#61926), Ruff B905 strict-zip enforcement in `pandas/_config`, and `@Appender` → inline docstring migration for `DataFrame.items()`.
+- **sqlfluff:** Implemented PostgreSQL `OPERATOR(schema.operator)` parser via a new `QualifiedOperatorSegment` class using `RegexParser`, expanding the core SQL linter's dialect capabilities.
+- **mem0:** Azure AI Search vector store integration for the TypeScript SDK (~646 LOC) — hybrid search, scalar/binary quantization, OData filters, and factory-pattern wiring.
+- **interviewstreet/hiring-agent:** Resolved a PyMuPDF memory leak via context-manager refactor (validated across 50+ PDF batch runs) and fixed cross-platform UTF-8 cache-write failures on Windows.
+- **matplotlib / sktime:** Documented TwoSlopeNorm linear colorbar workaround; fixed 8 broken pytorch-forecasting doc URLs across 4 adapter classes.
+- **mlsanigeria/naija-nutri-hub:** Implemented secure OTP email verification on user signup with database rollback-on-failure error handling.
+- **Open PRs:** Go variable-scoping test fix in modelpack/model-spec; invalid Kubernetes memory quantity fix (`192Miq` → `192Mi`) in openMF/mifos-gazelle.
+
+---
+
+### AI & Frontend Development Intern — Edunet Foundation
+*Aug 2025 – Oct 2025*
+
+- Built an AI-powered lecture audio-to-notes generator (Whisper + T5 + DistilBART) automating transcription, summarization, keyword extraction, and PDF/DOCX report generation for lectures up to 60+ minutes.
+- Improved AI inference efficiency by **~80%** through GPU-accelerated Whisper with caching — measured by comparing average processing time before and after caching implementation.
+- Shipped a responsive React portfolio with optimized rendering pipelines and lazy loading for fast initial load.
+
+*Stack: Python, PyTorch, Whisper, T5, DistilBART, React, ReportLab*
+
+---
+
+### Web Development & SEO Intern — Badakarobar
+*Mar 2025 – Jun 2025*
+
+- Built and optimized responsive landing pages, improving Lighthouse performance scores by **~45%** and driving measurable growth in organic reach through structured SEO and metadata improvements.
+- Automated sitemap generation using Python scripts, eliminating a recurring manual workflow entirely.
+
+---
+
+## 🚀 Projects
+
+---
+
+### 🤖 AI / ML / Gen AI / Agentic
+
+**AlgoSentinel — Autonomous PR Complexity Regression Detection Agent**
+[GitHub](https://github.com/G26karthik/AlgoSentinel)
+*Stack: Python, FastAPI, Gemini API, Docker, Pydantic, structlog, tenacity*
+
+- Architected a Gemini-orchestrated parent-child agent system with **55 composable tools across 4 namespaces** (github/sandbox/complexity/optimizer) that audits GitHub PRs for algorithmic complexity regressions (O(n)→O(n²)) using actual runtime measurements, not static analysis.
+- Built a `FunctionAnalysisSubagent` with scoped tool access and typed `ComplexityReport` output, paired with a `ContextManager` that compresses older tool history to sustain **20+ tool calls per audit** without context overflow.
+- Implemented Docker sandbox profiling that runs both old and new function versions across growing input sizes, fits timings to candidate complexity curves, and posts PR reviews backed by growth-curve evidence.
+- Engineered production scaffolding: flat tool registry (dictionary dispatch, not conditional routing), structlog JSON logging, and tenacity retries with exponential backoff.
+
+---
+
+**Grounded Support Triage — Multi-Agent Corpus-Grounded Support System**
+[GitHub](https://github.com/G26karthik/grounded-support-triage)
+*Stack: Python, LangGraph, Claude, Gemini, BM25, SentenceTransformers*
+
+- Architected a multi-agent support triage pipeline using **LangGraph** to autonomously classify, retrieve, verify, and compose grounded responses across multiple product domains with traceable execution flows.
+- Engineered a hybrid retrieval system combining **BM25, dense embeddings (`bge-small-en-v1.5`), and cross-encoder reranking**, alongside a deterministic critic layer that validates citations and hard facts to reduce unsupported LLM responses.
+- Optimized latency and inference cost through regex-based fast paths and structured routing, keeping typical execution to **0–2 LLM calls per ticket** while adding evaluation, tracing, and observability tooling.
+
+---
+
+**EdgeSentinel — Edge-Native Bot Detection & Request Intelligence System**
+[GitHub](https://github.com/G26karthik/EdgeSentinel)
+*Stack: TypeScript, Cloudflare Workers, Workers AI, Vectorize, Durable Objects, React*
+
+- Engineered an edge-native bot detection system on **Cloudflare Workers** that classifies HTTP requests as Legitimate, Suspicious, or Bot using a 5-stage ML pipeline with **sub-10ms request overhead** — runs entirely on the Cloudflare free tier with zero external infrastructure.
+- Built a layered detection architecture combining **behavioral vector similarity search (bge-small-en-v1.5), heuristic scoring, and LLM inference** (Llama 4 Scout 17B + GPT-4o fallback) to detect sophisticated bot traffic beyond traditional User-Agent filtering.
+- Implemented atomic per-IP rate limiting with **Durable Objects** and a non-blocking persistence pipeline using `ctx.waitUntil()` to asynchronously update KV cache, D1 analytics, and Vectorize embeddings without impacting response latency.
+
+---
+
+**MindSafe — Privacy-First Mental Health Screening dApp**
+[GitHub](https://github.com/G26karthik/MindSafe)
+*Stack: React 19, TypeScript, Vite, Gemini API, Midnight Network, Compact (ZK contract language), 1AM Wallet*
+
+- Built a browser-based dApp for AI-powered clinical mental health screening with absolute privacy guarantees — conversations never leave the browser session (React `useState` only, wiped on session end).
+- Designed a ZK proof circuit in Compact that takes score as a private witness and mints only a `persistentHash(score)` on-chain via Midnight Network, ensuring zero PII touches any blockchain state.
+- Implemented adaptive Gemini-powered screening (~12 questions max) with no account or login required — fully pseudonymous, wallet-optional flow.
+
+---
+
+**Avia — AI-Powered Insurance Fraud Detection SaaS**
+[Live](https://avia-tau.vercel.app) · [GitHub](https://github.com/G26karthik/Avia)
+*Stack: Python, FastAPI, React 19, XGBoost, Isolation Forest, SHAP, Gemini 2.5 Flash, SQLite, Vercel*
+
+- Built a production-grade fraud investigation platform scoring claims across **3 risk dimensions (Claim / Customer / Pattern Risk, 0–100 each)** using an XGBoost + Isolation Forest ensemble with SHAP interpretability.
+- Integrated multimodal Gemini document extraction that reads PDFs and images directly, generating human-readable decision traces and flagging data inconsistencies at intake.
+- Implemented one-click SIU escalation package generation and a full decision audit trail, deployed as a live SaaS on Vercel.
+
+---
+
+**ParkSentinel — AI-Powered Parking Enforcement Intelligence Dashboard**
+[GitHub](https://github.com/G26karthik/ParkSentinel)
+*Stack: Python, TypeScript, FastAPI, DuckDB, Next.js, Deck.gl, HDBSCAN, Prophet*
+
+- Built for the Gridlock Hackathon (Flipkart x Bengaluru Traffic Police) to analyze over 115,400 parking violation records to detect illegal parking hotspots, quantify congestion impact, and enable targeted enforcement deployment.
+- Deployed a Next.js frontend with Deck.gl/MapLibre GL mapping and a FastAPI + DuckDB backend.
+- Extracted and clustered spatial traffic hotspots using HDBSCAN and trained Prophet forecasts for top 20 enforcement zones with real-time anomaly detection.
+
+---
+
+**Dual AI Assistant Benchmark Platform**
+[GitHub](https://github.com/G26karthik/Dual-AI-Assistant-s-Benchmark) · [HF Space](https://huggingface.co/spaces/LuciferMrng/dual-ai-assistant-benchmark-oss)
+*Stack: Python, Gradio, Hugging Face Spaces, OpenRouter, Tavily, ReportLab*
+
+- Built and shipped a dual-assistant evaluation platform comparing an OSS assistant against a frontier-model assistant across **1,000 benchmark runs** over 5 public safety and reliability suites covering hallucination, bias, toxicity, and jailbreak resistance.
+- Engineered the OSS assistant with multi-turn memory, web search/tool use, two-stage guardrails (Llama Guard 3 + toxicity classifier), and live observability; deployed publicly on Hugging Face Spaces.
+- Developed an automated benchmarking pipeline with a **3-judge LLM panel**, SelfCheck-style NLI consistency scoring, latency/cost analysis, and one-page report generation, turning model quality trade-offs into reproducible metrics.
+
+---
+
+**SupplySentinel — Autonomous Multi-Agent Supply Chain Risk System**
+[GitHub](https://github.com/G26karthik/SupplySentinel)
+*Stack: Python, Gemini 2.5 Flash, Google Cloud Run, Streamlit*
+
+- Architected a 3-agent autonomous system (Watchman → Analyst → Dispatcher) for **24/7 supply chain risk monitoring** with no manual intervention required.
+- Engineered a self-correcting confidence loop — the Analyst Agent dynamically expands search scope when evidence falls below a set threshold, significantly reducing false alerts vs. single-pass retrieval.
+- Built a persistent JSON-state deduplication layer preventing duplicate alerts across monitoring cycles; containerized and deployed to Google Cloud Run with sub-3s cold start.
+
+---
+
+**FounderOS — Voice-First AI Chief of Staff**
+[GitHub](https://github.com/G26karthik/FounderOS)
+*Stack: JavaScript, FastAPI, Qdrant, Lyzr, Omi*
+
+- Built a voice-first AI Chief of Staff that converts spoken founder thoughts into structured decisions, tasks, and insights using Omi voice capture and a Lyzr parallel agent pipeline.
+- Implemented Qdrant semantic memory with privacy controls, enabling persistent context retrieval across sessions without exposing raw conversation data.
+
+---
+
+**Supply-Chain-Auditor-Env — AI Agent Security Evaluation Environment**
+[GitHub](https://github.com/G26karthik/Supply-Chain-Auditor-Env)
+*Stack: Python, Docker, Hugging Face Spaces*
+
+- Built a deterministic evaluation environment for AI security agents with **reproducible grading across 3 difficulty tiers**, implementing CVE lookup, SBOM generation, typosquat detection, and transitive dependency tracing as scorable tasks.
+- Deployed on HF Spaces enabling stateless, containerized agent evaluation with no environment drift between runs.
+
+---
+
+**Sandbox Warm Pool Controller — Kubernetes CRD Controller for Pre-Warmed Sandbox Pods**
+[GitHub](https://github.com/G26karthik/sandbox-warm-pool-controller)
+*Stack: Go, controller-runtime, CRDs, RuntimeClass, Prometheus*
+
+- Built a standalone Kubernetes controller implementing the pre-warming mechanism for hardware-isolated runtimes (gVisor, Kata Containers), eliminating **1–5 second cold starts** — directly modelled on Koordinator's sandbox scheduling proposal.
+- Designed a full 6-state pod lifecycle state machine (Pending → Idle → Assigned → Recycling/Terminating) with configurable `Delete` and `Reuse` recycle policies, enabling zero-downtime pool replenishment after each assignment.
+- Exposed production-grade Prometheus metrics (`swpc_pool_pods`, `swpc_assignment_duration_seconds`, `swpc_pod_warmup_duration_seconds`) for real-time observability of pool health and assignment latency.
+- Implemented an HTTP Assignment Server (`/assign`, `/unassign`) enabling callers to atomically claim pre-warmed pods without race conditions, with automatic scale-up triggering replacement pod creation.
+
+---
+
+**KVQuant Lab — LLM KV-Cache Compression & RNN Memory Caching Research**
+*Python, PyTorch, Transformers, NumPy, SciPy*
+*Built upon Google Research papers: TurboQuant (ICLR 2026) & Memory Caching: RNNs with Growing Memory (2026)*
+*GitHub: github.com/G26karthik/kvquant-lab*
+
+* Achieved **4.65× KV-cache compression** (5664 KB → 957 KB) with near-baseline perplexity (**4.68 vs 4.26**) by extending TurboQuant using an **outlier-aware 2.5-bit quantization** scheme.
+* Improved nearest-neighbor retrieval by **73%** (**Recall@1: 38.8% → 67.4%**) through **Adaptive QJL**, identifying a previously undocumented low-dimensional failure mode in QJL residual estimation.
+* Reproduced and validated **9 theoretical claims** from TurboQuant and Memory Caching, benchmarking **8 quantization schemes** across **12 evaluation suites** and introducing **MC-TurboQuant**, achieving **100% Needle-in-a-Haystack recall** at **3.2× KV-cache compression**.
+
+---
+
+**Lumina — Hybrid RAG Search Engine & Caching Layer**
+[Live](https://lumina-search.streamlit.app/) · [GitHub](https://github.com/G26karthik/Lumina-Search)
+*Stack: Python, FastAPI, FAISS, SQLite, BM25, AsyncIO*
+
+- Built a hybrid retrieval engine combining FAISS (vector) and Rank-BM25 (keyword), improving retrieval precision on technical queries over single-method approaches.
+- Reduced indexing latency by **~90%** on repeated runs via a SQLite caching layer that hashes document content and skips redundant embedding computation.
+- Implemented a non-blocking AsyncIO FastAPI backend with ThreadPoolExecutor for high-throughput concurrent search; exposed per-result Vector vs. Keyword score breakdowns in the UI.
+
+---
+
+**BTIFIT — Full-Stack NLU Platform**
+[GitHub](https://github.com/G26karthik/BTIFIT)
+*Stack: Python, FastAPI, React, Docker*
+
+- Built a full-stack NLU platform supporting **~150 intent classes (CLINC150)** using a TF-IDF retrieval → Gemini LLM ranking pipeline with a 500-entry LRU cache and batch processing.
+- Shipped a pytest evaluation suite and Dockerized deployment, enabling reproducible benchmarking across intent classification and entity extraction tasks.
+
+---
+
+**VectorCart — RAG-Powered Shopping Assistant**
+[GitHub](https://github.com/G26karthik/VectorCart)
+*Stack: Python, FastAPI, React, PgVector, Gemini*
+
+- Built a RAG shopping assistant mapping vague user intent to concrete product matches using a hybrid PgVector cosine similarity search + Gemini embedding pipeline with automated product scraping.
+- Deployed live on Vercel/Render with a full React storefront and FastAPI backend.
+
+---
+
+**AI-Assisted Dermatological Decision Support System**
+[GitHub](https://github.com/G26karthik/Skin-Disease)
+*Stack: PyTorch, EfficientNet-B0, Streamlit, Albumentations, Grad-CAM*
+
+- Trained EfficientNet-B0 on HAM10000 for 7-class skin lesion classification — achieving **81% validation accuracy** and **0.67 macro-F1** with lesion-level stratification across an imbalanced dataset.
+- Reduced GPU training time by **~2.8×** and memory usage by **~40%** using automatic mixed precision (AMP) and Albumentations augmentation pipelines.
+- Implemented Grad-CAM visualizations and deployed a real-time inference pipeline at **<50ms/image** via Streamlit.
+
+---
+
+**Lecture Voice-to-Notes Generator**
+[GitHub](https://github.com/G26karthik/voice)
+*Stack: Python, Whisper, T5/BART, spaCy, KeyBERT, Streamlit*
+
+- Built an end-to-end pipeline converting lecture audio into structured notes, flashcards, and MCQs for 60+ minute lectures.
+- Reduced processing time by **~80%** on long-form audio via GPU-accelerated Whisper with Voice Activity Detection, measured against CPU baseline.
+- Shipped Streamlit UI with real-time progress tracking and PDF/DOCX/JSON export.
+
+---
+
+**AI Network Traffic Classification & QoS Shaping**
+[GitHub](https://github.com/G26karthik/AI-Network-Traffic-Shaper)
+*Stack: Python, scikit-learn, PyShark*
+
+- Built a real-time ML pipeline classifying network traffic across 5 application types — achieving **80–90% accuracy** using statistical features with a RandomForest classifier, with deliberate label-leakage prevention.
+- Automated QoS enforcement via Windows Firewall; achieved **<1ms per-packet inference latency**, enabling real-time classification of 1000+ packets/second on standard hardware.
+
+---
+
+**Call-Quality-Auto-Flagger — Healthcare Call Quality ML Pipeline**
+[GitHub](https://github.com/G26karthik/Call-Quality-Auto-Flagger)
+*Stack: Python, scikit-learn*
+
+- Built an ML pipeline flagging risky healthcare calls using a gradient boosting + random forest ensemble with heuristic overrides for critical safety patterns, prioritizing recall on high-risk cases.
+
+---
+
+### 🌐 Full Stack / Frontend / Backend
+
+**PinPoint AI — Next-Gen Last-Mile Delivery Platform**
+[GitHub](https://github.com/G26karthik/Pin-Point-New-Gen-Logistics-App)
+*Stack: Flutter, Riverpod, GoRouter, Firebase Auth, Firebase Messaging, Supabase, Google Maps, Gemini API*
+
+- Built a production-grade last-mile delivery app (v3.0.0, installable APK) with dual-role flows for customers and agents — combining precise pin-drop delivery creation, landmark-first address structuring, confidence scoring, and race-safe agent claiming.
+- Engineered an AI navigation assistant ("I'm Confused") that synthesizes delivery pin, agent location, distance, and scoped area notes via Gemini Flash with strict no-invention rules and deterministic local fallback — reducing unnecessary customer calls on failed handoffs.
+- Implemented a real-time voice clarification system allowing customers to record up to 30-second direction notes, pushed to agents via Supabase Edge Functions and Firebase Cloud Messaging with no backend polling.
+
+---
+
+**Nexus Feed — AI-Powered Personalized Daily Digest Platform**
+[GitHub](https://github.com/G26karthik/Nexus-Feed)
+*Stack: Next.js, TypeScript, Drizzle ORM, Turso (SQLite), OpenAI GPT, Tavily, Vercel*
+
+- Built an AI-curated daily news digest using Chain-of-Thought JSON prompt engineering to force GPT to reason step-by-step before summarizing, ensuring zero hallucination across real source articles.
+- Implemented AI-powered lateral topic expansion that recalculates correlated interest recommendations in real time as users select topics during onboarding, generating a uniquely personalized interest graph per user.
+- Deployed serverless on Vercel with a cron job for 6 AM UTC daily regeneration and Turso cloud SQLite for low-latency edge reads.
+
+---
+
+**StreamCore — OTT Adaptive Bitrate Session Manager**
+[GitHub](https://github.com/G26karthik/StreamCore---Adaptive-Bitrate-Session-Manager)
+*Stack: Java 21, Spring Boot, Redis, STOMP WebSockets*
+
+- Built an OTT ABR session manager handling concurrent traffic streams using STOMP WebSocket sessions and Redis-backed state with TTL-based hysteresis for quality-level persistence.
+- Leveraged Java 21 virtual threads for high-throughput concurrent session handling with minimal thread-pool overhead.
+
+---
+
+**Fog4Det — Real-Time Vehicle Fog Detection System**
+[GitHub](https://github.com/G26karthik/Fog-Detection-System-for-Vehicles)
+*Stack: Python, FastAPI, Next.js (TypeScript), Tailwind CSS, OpenCV, NumPy, Recharts*
+
+- Classified road fog conditions (Clear / Light / Heavy) in real time at **~100ms per frame** using Laplacian Variance and Histogram SD on live camera feeds.
+- Sustained **20+ FPS** continuous processing via optimized NumPy + OpenCV pipeline with async FastAPI backend.
+
+---
+
+**College Lost & Found — Full-Stack MERN Platform**
+[Live](https://lost-and-found-rdjb.onrender.com) · [GitHub](https://github.com/G26karthik/Lost-and-Found)
+*Stack: MongoDB, Express, React, Node.js, Cloudinary, Tailwind CSS, JWT*
+
+- Built and deployed a campus-wide platform used by **200+ students**, reducing lost-item recovery time through streamlined digital reporting and JWT-secured authentication.
+- Improved backend efficiency by **~35%** by modularizing Express controllers, integrating Cloudinary CDN for media, and adding indexed filtering on MongoDB queries.
+
+---
+
+**UML Designer AI — Multi-Stack AI-Powered Diagram Platform**
+[GitHub](https://github.com/G26karthik/UML-Designer)
+*Stack: Node.js, Next.js, Flask, Python, Mermaid.js*
+
+- Automated the majority of manual UML modeling workflows by converting code or natural language directly into professional diagrams across Python, Java, C#, and C++ via a Flask analysis engine.
+- Achieved **~40% faster diagram generation** vs. manual authoring; deployed a modular 3-service architecture (Flask, Node.js, Next.js) with Mermaid.js rendering and clean RESTful separation.
+
+---
+
+**AI Interview Assistant**
+[Live](https://ai-interview-assistant-rho.vercel.app/) · [GitHub](https://github.com/G26karthik/AI-Interview-Assistant)
+*Stack: React, Vite, Redux Toolkit, Ant Design, Groq (Llama 3.1), pdfjs*
+
+- Built a fully automated AI interview workflow — parses uploaded resumes client-side and delivers 6 timed, role-specific questions per candidate via streaming LLM response.
+- Integrated Groq Llama 3.1 for structured JSON answer scoring with consistent weighted final scores; eliminated backend infrastructure entirely via redux-persist.
+
+---
+
+**AgriSure — Agricultural Insurance Platform**
+[Live](https://agrisure.onrender.com/) · [GitHub](https://github.com/G26karthik/AgriSure)
+*Stack: Python, Flask, Flask-Login, Jinja2, Bootstrap 5, JavaScript*
+
+- Built a full-stack agricultural insurance platform with 2 distinct user roles (farmer + agent), complete insurance workflows, document uploads, and real-time claim tracking.
+- Implemented role-based access control via custom Flask decorators and cross-device usability via Bootstrap 5 responsive layout.
+
+---
+
+## 🏆 Hackathons & Competitions
+
+- **VoiceHack 2026** — Built MindSafe, a ZK proof mental health screening dApp on Midnight Network, winning the privacy-focused AI track.
+- **HiDevs · TRINIT · CodeCircuit · SmartBridge** — Won or placed in 5+ hackathons, delivering production-quality submissions in 24–48 hour windows across AI, web, and systems tracks.
+
+---
+
+## 🛠 Technical Skills
+
+**Languages:** Python, TypeScript, JavaScript, Java, Go, C++, SQL, Dart
+**AI/ML:** PyTorch, TensorFlow, Scikit-learn, Hugging Face Transformers, LangChain, LangGraph, Whisper, FAISS, Grad-CAM, Semantic Kernel
+**LLM SDKs & Inference:** OpenAI SDK, Anthropic Claude SDK, Gemini API, Groq SDK, Ollama
+**Full Stack:** Next.js, React, Node.js, FastAPI, Flask, Spring Boot, Flutter, Express, Supabase, PostgreSQL, MongoDB
+**Cloud & DevOps:** AWS EC2, Google Cloud Run, Cloudflare Workers, Docker, Kubernetes, GitHub Actions, PM2, Azure AI Foundry, Vertex AI
+**Tools:** Git, Linux, Redis, Cloudinary, PlantUML, OpenCV, Prometheus
+**AI-Assisted Development:** Proficient with Claude Code and GitHub Copilot for agentic coding, multi-file refactors, and test generation; experiments with open-source LLMs locally via Ollama (Llama, Mistral, Phi) for evaluation and prototyping
+
+---
+
+## 📜 Certifications
+
+### Core Certifications
+- MongoDB Certified Associate Developer
+- Oracle Associate Java Developer · Oracle OCI Developer Professional
+- OCI Generative AI Professional · OCI AI Foundation Associate
+- Machine Learning Specialization — Stanford + DeepLearning.AI
+- Fine-Tuning LLMs — DeepLearning.AI + Lamini
+- Software Engineering & DevOps — IBM
+- GitHub Foundations — GitHub
+- CCNA: Introduction to Networks — Cisco
+
+### AI / GenAI Certifications
+- HuggingFace NLP Course
+- Generative AI Fundamentals — Databricks
+- Generative AI: Art of the Possible — AWS
+- Career Essentials in Generative AI — Microsoft + LinkedIn
+
+### Platform Certifications
+
+**Microsoft / Azure stack:**
+- Orchestrating Multi-Agent Systems (Semantic Kernel) — Microsoft Learn
+- Developing RAG Pipelines with Azure AI Foundry — Microsoft Learn
+- Custom Tool Integration for AI Agents — Microsoft Learn
+- Azure OpenAI Service (Prompt Engineering, Document Intelligence, Vision & Speech) — Microsoft Learn
+
+**Google / GCP stack:**
+- Building Real-World AI Applications with Gemini + Imagen — Google Cloud Skills Boost
+- Prompt Design in Vertex AI — Google Cloud Skills Boost
+- Full-Stack Application Development with Gemini APIs — Google Cloud Skills Boost
+
+---
+
+## 🏆 Competitive Programming
+
+> **Note:** Only include this Competitive Programming section when the rest of the profile isn't sufficient to bring up the probability of being selected (i.e., resume shortlisting), as CP is not my main motive.
+
+| Platform | Rating | Standing |
+|---|---|---|
+| CodeChef | 2483 ⭐⭐⭐⭐⭐⭐ | **#6 in India · #76 Global** |
+| LeetCode | 2665 (Guardian) | **Top ~0.1% globally** |
