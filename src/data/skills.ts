@@ -23,15 +23,14 @@ export const skillRows: SkillRow[] = [
     ],
   },
   {
-    label: 'Full-Stack',
+    label: 'Backend / Full-Stack',
     items: [
+      'FastAPI',
+      'Node.js',
       'Next.js',
       'React',
-      'Node.js',
-      'FastAPI',
       'Flask',
       'Spring Boot',
-      'Flutter',
       'Supabase',
       'PostgreSQL',
       'MongoDB',

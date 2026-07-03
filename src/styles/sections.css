@@ -903,3 +903,8 @@
   position: relative;
   z-index: 1;
 }
+
+/* Space Mono's full-width space makes "G. KARTHIK" gap too wide at display size */
+.hero-name {
+  word-spacing: -0.5ch;
+}

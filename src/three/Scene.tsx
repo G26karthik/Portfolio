@@ -73,7 +73,7 @@ export function Scene({ perf }: { perf: PerfProfile }) {
           <Gates />
           {/* on small screens the core shifts up-right so hero copy stays clear */}
           <EnergyCore
-            position={perf.tier === 'high' ? [0, 0.4, -7] : [1.5, 1.6, -8]}
+            position={perf.tier === 'high' ? [1.1, 0.5, -7] : [1.5, 1.6, -8]}
             scale={perf.tier === 'high' ? 1 : 0.7}
           />
           <EnergyCore position={[0, 0.4, -PATH_LENGTH - 9]} scale={1.4} />

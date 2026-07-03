@@ -82,9 +82,9 @@ export const archive: ArchiveItem[] = [
   },
   {
     name: 'PinPoint AI',
-    desc: 'Last-mile delivery app: pin-drop addressing, race-safe agent claiming, Gemini navigation',
+    desc: 'Last-mile delivery platform: pin-drop addressing, race-safe agent claiming, Gemini navigation',
     cat: 'fullstack',
-    lang: 'Flutter',
+    lang: 'Cross-platform',
     url: 'https://github.com/G26karthik/Pin-Point-New-Gen-Logistics-App',
   },
   {

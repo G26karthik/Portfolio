@@ -62,7 +62,6 @@ export function Contact() {
         <div className="footer-meta kicker">
           <span>© 2026 G. KARTHIK KOUNDINYA</span>
           <span>HYD · {time} IST</span>
-          <span>DESIGNED &amp; BUILT WITH GSAP + THREE.JS</span>
           <button className="footer-top" onClick={() => scrollToTarget('#top')} aria-label="Back to top">
             BACK TO TOP ↑
           </button>

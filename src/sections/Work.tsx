@@ -48,7 +48,7 @@ export function Work() {
 
   return (
     <section id="work" ref={root}>
-      <SectionHeading index="02" kicker="PERFORMANCE MODULES" title="Selected Work" />
+      <SectionHeading index="02" kicker="FLAGSHIP WORK" title="Projects" />
       <div className="modules">
         {projects.map((p, i) => (
           <article className="module" key={p.id}>

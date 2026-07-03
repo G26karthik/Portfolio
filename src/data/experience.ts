@@ -8,15 +8,26 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    role: 'Tech Intern · AI & Backend',
+    org: 'Hecta',
+    period: 'Jun 2026 - Present',
+    points: [
+      'Engineering high-throughput RAG retrieval systems and backend data-scaling infrastructure.',
+      'Architected and co-developed a production agent end to end; now driving ML pipelining and prediction workstreams.',
+      'Designed a DAG pipeline architecture adopted by the team for parallel build-out.',
+    ],
+    stack: 'Python · RAG · ML Pipelines · Backend Infra',
+  },
+  {
     role: 'Full Stack Engineering Intern',
     org: 'Stealth Startup',
     period: 'Jan-Apr 2026',
     points: [
       'Sole full-stack engineer. Architected a scalable social platform from concept to deployment-ready.',
       '~50% fewer database calls and ~30% latency improvement from restructured request pipelines.',
-      'Led a full 0 to 1 Flutter mobile migration and real-time systems on Supabase + AWS EC2.',
+      'Led a 0 to 1 platform migration and real-time systems on Supabase + AWS EC2.',
     ],
-    stack: 'Next.js · Node.js · TypeScript · Supabase · PostgreSQL · AWS · Flutter',
+    stack: 'Next.js · Node.js · TypeScript · Supabase · PostgreSQL · AWS',
   },
   {
     role: 'Open Source Contributor',
