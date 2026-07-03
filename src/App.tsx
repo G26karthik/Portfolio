@@ -1,49 +1,79 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ThemeProvider } from './theme';
 import { useLenis } from './hooks/useLenis';
+import { usePerfTier } from './hooks/usePerfTier';
+import { Scene } from './three/Scene';
+import { Preloader } from './components/Preloader';
+import { Cursor } from './components/Cursor';
 import { Nav } from './components/Nav';
+import { CommandPalette } from './components/CommandPalette';
 import { Hero } from './sections/Hero';
-import { Manifesto } from './sections/Manifesto';
-import { Metrics } from './sections/Metrics';
+import { Specs } from './sections/Specs';
 import { Work } from './sections/Work';
-import { Capabilities } from './sections/Capabilities';
 import { OpenSource } from './sections/OpenSource';
+import { Archive } from './sections/Archive';
 import { Experience } from './sections/Experience';
-import { IndexList } from './sections/IndexList';
+import { Skills } from './sections/Skills';
 import { OffClock } from './sections/OffClock';
-import { Footer } from './sections/Footer';
+import { Contact } from './sections/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function App() {
-  const [entered, setEntered] = useState(false);
-  const reduced =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function Site() {
+  const perf = usePerfTier();
+  const [ready, setReady] = useState(false);
+  const [paletteOpen, setPaletteOpen] = useState(false);
 
-  useLenis(!reduced);
+  useLenis(!perf.reduced);
 
   useEffect(() => {
-    const t = setTimeout(() => setEntered(true), 800);
-    return () => clearTimeout(t);
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setPaletteOpen((o) => !o);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  useEffect(() => {
+    if (ready) ScrollTrigger.refresh();
+  }, [ready]);
+
+  const onPreloaded = useCallback(() => {
+    document.fonts.ready.then(() => setReady(true));
   }, []);
 
   return (
     <>
-      <Nav entered={entered} />
-      <main>
-        <Hero entered={entered} />
-        <Manifesto />
-        <Metrics />
+      <Preloader reduced={perf.reduced} onDone={onPreloaded} />
+      <Scene perf={perf} />
+      <Cursor />
+      <Nav onPalette={() => setPaletteOpen(true)} />
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+      <main className="site">
+        <Hero ready={ready} />
+        <Specs />
         <Work />
-        <Capabilities />
         <OpenSource />
+        <Archive />
         <Experience />
-        <IndexList />
+        <Skills />
         <OffClock />
-        <Footer />
+        <Contact />
       </main>
+      <div className="grain" aria-hidden="true" />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Site />
+    </ThemeProvider>
   );
 }

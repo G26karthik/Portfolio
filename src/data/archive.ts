@@ -1,5 +1,13 @@
 export type ArchiveCat = 'agents' | 'fullstack' | 'systems' | 'research';
 
+export const archiveCats: { id: ArchiveCat | 'all'; label: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'agents', label: 'Agents / AI' },
+  { id: 'fullstack', label: 'Full-Stack' },
+  { id: 'systems', label: 'Systems' },
+  { id: 'research', label: 'Research' },
+];
+
 export interface ArchiveItem {
   name: string;
   desc: string;

@@ -1,18 +1,39 @@
-/* Signal Black design tokens. One theme: pure black, white opacity hierarchy. */
+/* Signal Black tokens: pure black, neon crimson, mono type. Single dark theme. */
+:root,
+[data-theme='dark'] {
+  --bg: #000000;
+  --bg-2: #0a0a0c;
+  --bg-3: #101014;
+  --ink: #ffffff;
+  --ink-dim: rgba(255, 255, 255, 0.55);
+  --ink-faint: rgba(255, 255, 255, 0.32);
+  --accent: #ff2d55;
+  --accent-ink: #ff5c7a;
+  --accent-soft: rgba(255, 45, 85, 0.13);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --glass: rgba(8, 8, 10, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --card: #0c0c10;
+  --accent-contrast: #14030a;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  --pill-merged: #38e08b;
+  --pill-open: #ffb02e;
+}
+
 :root {
-  --bg: #000;
-  --bg-fade: #010103;
-  --ink: #fff;
-  --w85: rgba(255, 255, 255, 0.85);
-  --w60: rgba(255, 255, 255, 0.6);
-  --w50: rgba(255, 255, 255, 0.5);
-  --w45: rgba(255, 255, 255, 0.45);
-  --w40: rgba(255, 255, 255, 0.4);
-  --w30: rgba(255, 255, 255, 0.3);
-  --w25: rgba(255, 255, 255, 0.25);
-  --w15: rgba(255, 255, 255, 0.15);
-  --w10: rgba(255, 255, 255, 0.1);
-  --w05: rgba(255, 255, 255, 0.05);
-  --mono: 'Space Mono', monospace;
-  --display: 'Anton SC', sans-serif;
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Space Mono', monospace;
+  --font-mono: 'Space Mono', monospace;
+  --font-watermark: 'Anton SC', sans-serif;
+
+  --step-hero: clamp(2.4rem, 8vw, 6.6rem);
+  --step-h2: clamp(1.9rem, 5.4vw, 4.2rem);
+  --step-h3: clamp(1.3rem, 2.6vw, 2.1rem);
+  --step-body: clamp(0.92rem, 1.05vw, 1.02rem);
+  --step-mono: clamp(0.66rem, 0.82vw, 0.78rem);
+
+  --gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.83, 0, 0.17, 1);
 }
