@@ -1,59 +1,18 @@
-/* Design tokens — Performance System. Dark is default; light = "Apple clarity". */
-:root,
-[data-theme='dark'] {
-  --bg: #0a0b0d;
-  --bg-2: #101216;
-  --bg-3: #16191f;
-  --ink: #f2f4f6;
-  --ink-dim: #9aa3ad;
-  --ink-faint: #565e68;
-  --accent: #00e5ff;
-  --accent-ink: #00e5ff;
-  --accent-soft: rgba(0, 229, 255, 0.12);
-  --line: rgba(242, 244, 246, 0.09);
-  --line-strong: rgba(242, 244, 246, 0.18);
-  --glass: rgba(14, 16, 20, 0.55);
-  --glass-border: rgba(242, 244, 246, 0.08);
-  --card: #101318;
-  --accent-contrast: #06171a;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
-  --pill-merged: #38e08b;
-  --pill-open: #ffb02e;
-}
-
-[data-theme='light'] {
-  --bg: #f3f1ec;
-  --bg-2: #ffffff;
-  --bg-3: #e8e5de;
-  --ink: #131519;
-  --ink-dim: #454c55;
-  --ink-faint: #878e98;
-  --accent: #0e7c8c;
-  --accent-ink: #0a5e6b;
-  --accent-soft: rgba(14, 124, 140, 0.1);
-  --line: rgba(19, 21, 25, 0.13);
-  --line-strong: rgba(19, 21, 25, 0.3);
-  --glass: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(19, 21, 25, 0.12);
-  --card: #ffffff;
-  --accent-contrast: #ffffff;
-  --shadow: 0 20px 60px rgba(19, 21, 25, 0.14);
-  --pill-merged: #0d7a48;
-  --pill-open: #96600a;
-}
-
+/* Signal Black design tokens. One theme: pure black, white opacity hierarchy. */
 :root {
-  --font-display: 'Archivo', sans-serif;
-  --font-body: 'Satoshi', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  --step-hero: clamp(3.2rem, 11.5vw, 9.5rem);
-  --step-h2: clamp(2.2rem, 6.5vw, 5rem);
-  --step-h3: clamp(1.4rem, 3vw, 2.4rem);
-  --step-body: clamp(0.98rem, 1.15vw, 1.12rem);
-  --step-mono: clamp(0.68rem, 0.85vw, 0.8rem);
-
-  --gutter: clamp(1.25rem, 5vw, 5.5rem);
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-inout: cubic-bezier(0.83, 0, 0.17, 1);
+  --bg: #000;
+  --bg-fade: #010103;
+  --ink: #fff;
+  --w85: rgba(255, 255, 255, 0.85);
+  --w60: rgba(255, 255, 255, 0.6);
+  --w50: rgba(255, 255, 255, 0.5);
+  --w45: rgba(255, 255, 255, 0.45);
+  --w40: rgba(255, 255, 255, 0.4);
+  --w30: rgba(255, 255, 255, 0.3);
+  --w25: rgba(255, 255, 255, 0.25);
+  --w15: rgba(255, 255, 255, 0.15);
+  --w10: rgba(255, 255, 255, 0.1);
+  --w05: rgba(255, 255, 255, 0.05);
+  --mono: 'Space Mono', monospace;
+  --display: 'Anton SC', sans-serif;
 }

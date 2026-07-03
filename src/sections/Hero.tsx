@@ -1,140 +1,114 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
-import { scrollToTarget } from '../lib/scrollState';
+import { useEffect, useRef } from 'react';
+import { ScrambleIn } from '../components/ScrambleIn';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+const PROFILES = [
+  { label: 'GITHUB ↗', url: 'https://github.com/G26karthik' },
+  { label: 'LINKEDIN ↗', url: 'https://www.linkedin.com/in/g-karthik26' },
+  { label: 'CODECHEF ↗', url: 'https://www.codechef.com/users/g26karthikk' },
+  { label: 'LEETCODE ↗', url: 'https://leetcode.com/u/G26KarthikK/' },
+  { label: 'EMAIL', url: 'mailto:Karthikofficialmain@gmail.com' },
+];
 
-function istTime() {
-  return new Date().toLocaleTimeString('en-IN', {
-    timeZone: 'Asia/Kolkata',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  });
-}
+export function Hero({ entered }: { entered: boolean }) {
+  const vidRef = useRef<HTMLVideoElement>(null);
 
-export function Hero({ ready }: { ready: boolean }) {
-  const root = useRef<HTMLElement>(null);
-  const [time, setTime] = useState(istTime);
-
+  // Hero video is paused and scrubbed by horizontal mouse movement.
+  // Seeks chain through the `seeked` event so frames are never dropped.
   useEffect(() => {
-    const id = setInterval(() => setTime(istTime()), 30_000);
-    return () => clearInterval(id);
+    const vid = vidRef.current;
+    if (!vid) return;
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!fine || reduced) {
+      if (!reduced) {
+        vid.loop = true;
+        vid.play().catch(() => {});
+      }
+      return;
+    }
+
+    vid.pause();
+    let target = 0;
+    let seeking = false;
+    let lastX: number | null = null;
+
+    const wrap = (t: number) => {
+      const d = vid.duration;
+      return ((t % d) + d) % d;
+    };
+    const seek = () => {
+      if (seeking || !vid.duration) return;
+      const next = wrap(target);
+      if (Math.abs(next - vid.currentTime) < 0.02) return;
+      seeking = true;
+      vid.currentTime = next;
+    };
+    const onSeeked = () => {
+      seeking = false;
+      seek();
+    };
+    const onMove = (e: MouseEvent) => {
+      if (!vid.duration) return;
+      if (lastX !== null) {
+        target += ((e.clientX - lastX) / window.innerWidth) * vid.duration * 0.8;
+        seek();
+      }
+      lastX = e.clientX;
+    };
+
+    vid.addEventListener('seeked', onSeeked);
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => {
+      vid.removeEventListener('seeked', onSeeked);
+      window.removeEventListener('mousemove', onMove);
+    };
   }, []);
 
-  useLayoutEffect(() => {
-    if (!ready) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ctx = gsap.context(() => {
-      gsap.set('.hero-inner', { autoAlpha: 1 });
-      if (reduced) return;
-
-      const split = new SplitText('.hero-name .hero-line', { type: 'chars' });
-      const tl = gsap.timeline();
-      tl.from(split.chars, {
-        yPercent: 115,
-        duration: 1.05,
-        stagger: 0.028,
-        ease: 'power4.out',
-      })
-        .from(
-          '.hero-portrait',
-          { clipPath: 'inset(100% 0 0 0)', duration: 1.1, ease: 'power4.inOut' },
-          0.15,
-        )
-        .from(
-          '.hero-strap > *, .hero-actions > *',
-          { y: 26, autoAlpha: 0, stagger: 0.07, duration: 0.7, ease: 'power3.out' },
-          '-=0.7',
-        )
-        .from('.hero-meta', { autoAlpha: 0, duration: 0.8 }, '-=0.35');
-
-      gsap.to('.hero-inner', {
-        yPercent: -14,
-        autoAlpha: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top top',
-          end: 'bottom 45%',
-          scrub: true,
-        },
-      });
-    }, root);
-    return () => ctx.revert();
-  }, [ready]);
-
   return (
-    <section id="top" className="hero" ref={root}>
-      <div className="hero-inner">
-        <div className="hero-left">
-          <p className="kicker hero-kicker">PORTFOLIO / 2026 — HYDERABAD, IN · {time} IST</p>
-          <h1 className="display hero-name">
-            <span className="hero-mask">
-              <span className="hero-line">G. KARTHIK</span>
-            </span>
-            <span className="hero-mask">
-              <span className="hero-line hero-line-accent">KOUNDINYA</span>
-            </span>
-          </h1>
-          <div className="hero-strap">
-            <span className="hero-role">SYSTEMS &amp; AI ENGINEER</span>
-            <p className="hero-tagline">
-              High-throughput AI infra, agents &amp; RAG — engineered end to end, measured at every
-              step, shipped to production.
+    <section id="top" className="stage hero">
+      <div className="video-bg" aria-hidden="true">
+        <video ref={vidRef} src="/video/blackhole.mp4" muted playsInline preload="auto" />
+      </div>
+      <div className="hero-dots" aria-hidden="true" />
+      <span className="hero-watermark" aria-hidden="true">
+        Koundinya
+      </span>
+
+      <div className={`hero-content ${entered ? 'on' : ''}`}>
+        <div className="hero-row">
+          <div className="hero-col">
+            <h1 className="hero-h1">
+              <ScrambleIn text="G. Karthik" delay={200} triggered={entered} />
+              <br />
+              <ScrambleIn text="Koundinya" delay={500} triggered={entered} />
+            </h1>
+            <p className="hero-desc">
+              Built at the intersection of systems engineering and applied AI. Agents, retrieval
+              pipelines, and edge inference, engineered end to end and measured at every step.
             </p>
           </div>
-          <div className="hero-actions">
-            <button className="hero-btn hero-btn-primary" onClick={() => scrollToTarget('#work')}>
-              VIEW WORK ↓
-            </button>
-            <a className="hero-btn" href="https://github.com/G26karthik" target="_blank" rel="noreferrer">
-              GITHUB ↗
-            </a>
-            <a
-              className="hero-btn"
-              href="https://www.linkedin.com/in/g-karthik26"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LINKEDIN ↗
-            </a>
-            <a
-              className="hero-btn"
-              href="https://www.codechef.com/users/g26karthikk"
-              target="_blank"
-              rel="noreferrer"
-            >
-              CODECHEF ↗
-            </a>
-            <a
-              className="hero-btn"
-              href="https://leetcode.com/u/G26KarthikK/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LEETCODE ↗
-            </a>
-            <a className="hero-btn" href="mailto:Karthikofficialmain@gmail.com">
-              EMAIL
-            </a>
-          </div>
-          <div className="hero-meta">
-            <span className="hero-avail kicker">
-              <span className="hero-avail-dot" aria-hidden="true" />
-              OPEN TO SDE / AI ENGINEER ROLES — 2026-27
-            </span>
-          </div>
+          <p className="hero-h1 hero-h1-right" aria-label="Systems and AI Engineer">
+            <ScrambleIn text="Systems &" delay={700} triggered={entered} />
+            <br />
+            <ScrambleIn text="AI Engineer" delay={1000} triggered={entered} />
+          </p>
         </div>
 
-        <figure className="hero-portrait">
-          <img src="/portrait.jpg" alt="Portrait of G. Karthik Koundinya" loading="eager" />
-          <figcaption className="hero-portrait-caption kicker">
-            GKK — SYSTEMS &amp; AI ENGINEER
-          </figcaption>
-        </figure>
+        <nav className="hero-links" aria-label="Profiles">
+          {PROFILES.map((p) => (
+            <a
+              key={p.label}
+              href={p.url}
+              target={p.url.startsWith('mailto') ? undefined : '_blank'}
+              rel="noreferrer"
+            >
+              {p.label}
+            </a>
+          ))}
+        </nav>
+
+        <p className="hero-avail">Open to SDE and AI engineer roles · 2026-27 · Hyderabad, IN</p>
       </div>
     </section>
   );

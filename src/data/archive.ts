@@ -1,13 +1,5 @@
 export type ArchiveCat = 'agents' | 'fullstack' | 'systems' | 'research';
 
-export const archiveCats: { id: ArchiveCat | 'all'; label: string }[] = [
-  { id: 'all', label: 'All' },
-  { id: 'agents', label: 'Agents / AI' },
-  { id: 'fullstack', label: 'Full-Stack' },
-  { id: 'systems', label: 'Systems' },
-  { id: 'research', label: 'Research' },
-];
-
 export interface ArchiveItem {
   name: string;
   desc: string;
@@ -26,42 +18,42 @@ export const archive: ArchiveItem[] = [
   },
   {
     name: 'Dual AI Benchmark',
-    desc: 'OSS vs frontier assistant evaluation — 1,000 runs, 3-judge LLM panel, live on HF Spaces',
+    desc: 'OSS vs frontier assistant evaluation: 1,000 runs, 3-judge LLM panel, live on HF Spaces',
     cat: 'research',
     lang: 'Python',
     url: 'https://github.com/G26karthik/Dual-AI-Assistant-s-Benchmark',
   },
   {
     name: 'ParkSentinel',
-    desc: '115,400 parking violations → HDBSCAN hotspots + Prophet forecasts for Bengaluru Traffic Police',
+    desc: '115,400 parking violations turned into HDBSCAN hotspots + Prophet forecasts for Bengaluru Traffic Police',
     cat: 'agents',
     lang: 'Python · TS',
     url: 'https://github.com/G26karthik/ParkSentinel',
   },
   {
     name: 'Sandbox Warm Pool Controller',
-    desc: 'Kubernetes CRD controller pre-warming gVisor/Kata pods — kills 1–5s cold starts',
+    desc: 'Kubernetes CRD controller pre-warming gVisor/Kata pods, killing 1-5s cold starts',
     cat: 'systems',
     lang: 'Go',
     url: 'https://github.com/G26karthik/sandbox-warm-pool-controller',
   },
   {
     name: 'MindSafe',
-    desc: 'Privacy-first mental-health screening dApp — VoiceHack 2026 privacy-track winner',
+    desc: 'Privacy-first mental-health screening dApp, VoiceHack 2026 privacy-track winner',
     cat: 'fullstack',
     lang: 'TypeScript',
     url: 'https://github.com/G26karthik/MindSafe',
   },
   {
     name: 'Supply-Chain-Auditor-Env',
-    desc: 'Deterministic eval environment for AI security agents — CVE lookup, SBOM, typosquats',
+    desc: 'Deterministic eval environment for AI security agents: CVE lookup, SBOM, typosquats',
     cat: 'research',
     lang: 'Python',
     url: 'https://github.com/G26karthik/Supply-Chain-Auditor-Env',
   },
   {
     name: 'Lumina Search',
-    desc: 'Hybrid FAISS + BM25 retrieval engine with a content-hash cache — ~90% faster re-indexing',
+    desc: 'Hybrid FAISS + BM25 retrieval engine with a content-hash cache, ~90% faster re-indexing',
     cat: 'systems',
     lang: 'Python',
     url: 'https://github.com/G26karthik/Lumina-Search',
@@ -75,14 +67,14 @@ export const archive: ArchiveItem[] = [
   },
   {
     name: 'AI Network Traffic Shaper',
-    desc: 'Real-time packet classifier (80–90% acc) driving automated Windows QoS enforcement',
+    desc: 'Real-time packet classifier (80-90% acc) driving automated Windows QoS enforcement',
     cat: 'systems',
     lang: 'Python',
     url: 'https://github.com/G26karthik/AI-Network-Traffic-Shaper',
   },
   {
     name: 'PinPoint AI',
-    desc: 'Last-mile delivery app — pin-drop addressing, race-safe agent claiming, Gemini navigation',
+    desc: 'Last-mile delivery app: pin-drop addressing, race-safe agent claiming, Gemini navigation',
     cat: 'fullstack',
     lang: 'Flutter',
     url: 'https://github.com/G26karthik/Pin-Point-New-Gen-Logistics-App',
@@ -96,21 +88,21 @@ export const archive: ArchiveItem[] = [
   },
   {
     name: 'VectorCart',
-    desc: 'RAG shopping assistant — PgVector similarity + Gemini embeddings over scraped catalogs',
+    desc: 'RAG shopping assistant: PgVector similarity + Gemini embeddings over scraped catalogs',
     cat: 'agents',
     lang: 'Python',
     url: 'https://github.com/G26karthik/VectorCart',
   },
   {
     name: 'Skin-Disease DSS',
-    desc: 'EfficientNet-B0 on HAM10000 — 81% val accuracy, Grad-CAM, <50ms inference',
+    desc: 'EfficientNet-B0 on HAM10000: 81% val accuracy, Grad-CAM, <50ms inference',
     cat: 'research',
     lang: 'Python',
     url: 'https://github.com/G26karthik/Skin-Disease',
   },
   {
     name: 'Voice-to-Notes',
-    desc: 'Lecture audio → notes, flashcards, MCQs — GPU Whisper with VAD, ~80% faster',
+    desc: 'Lecture audio to notes, flashcards, MCQs. GPU Whisper with VAD, ~80% faster',
     cat: 'agents',
     lang: 'Python',
     url: 'https://github.com/G26karthik/voice',
@@ -124,21 +116,21 @@ export const archive: ArchiveItem[] = [
   },
   {
     name: 'Lost & Found',
-    desc: 'Campus MERN platform used by 200+ students — JWT auth, Cloudinary media',
+    desc: 'Campus MERN platform used by 200+ students, JWT auth, Cloudinary media',
     cat: 'fullstack',
     lang: 'JavaScript',
     url: 'https://github.com/G26karthik/Lost-and-Found',
   },
   {
     name: 'UML Designer AI',
-    desc: 'Code / natural language → UML diagrams across 4 languages, 3-service architecture',
+    desc: 'Code and natural language to UML diagrams across 4 languages, 3-service architecture',
     cat: 'fullstack',
     lang: 'Python · JS',
     url: 'https://github.com/G26karthik/UML-Designer',
   },
   {
     name: 'AI Interview Assistant',
-    desc: 'Client-side resume parsing + timed streaming LLM interviews — zero backend',
+    desc: 'Client-side resume parsing + timed streaming LLM interviews, zero backend',
     cat: 'fullstack',
     lang: 'JavaScript',
     url: 'https://github.com/G26karthik/AI-Interview-Assistant',

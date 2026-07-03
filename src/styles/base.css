@@ -1,15 +1,102 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: auto;
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--mono);
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #fff;
+  color: #000;
+}
+
+:focus-visible {
+  outline: 1px solid var(--w60);
+  outline-offset: 3px;
+}
+
+/* Type primitives */
+.label {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--w40);
+}
+
+.section-h {
+  font-size: clamp(36px, 8vw, 72px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+/* Full-viewport stage with optional video behind */
+.stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(var(--bg-fade), transparent);
+  z-index: 1;
+}
+
+/* Lenis smooth scroll */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -19,123 +106,24 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: var(--step-body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-  transition: background-color 0.6s var(--ease-inout), color 0.6s var(--ease-inout);
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
-::selection {
-  background: var(--accent);
-  color: #0a0b0d;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-img,
-canvas {
-  display: block;
-  max-width: 100%;
-}
-
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* Layers */
-.webgl-stage {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+.lenis.lenis-scrolling iframe {
   pointer-events: none;
-}
-
-.site {
-  position: relative;
-  z-index: 1;
-}
-
-.grain {
-  position: fixed;
-  inset: -50%;
-  z-index: 40;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain-shift 0.9s steps(4) infinite;
-}
-
-@keyframes grain-shift {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-2%, 3%); }
-  50% { transform: translate(3%, -2%); }
-  75% { transform: translate(-3%, -3%); }
-  100% { transform: translate(2%, 2%); }
-}
-
-/* Typographic primitives */
-.kicker {
-  font-family: var(--font-mono);
-  font-size: var(--step-mono);
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-}
-
-.display {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  text-transform: uppercase;
-}
-
-section {
-  position: relative;
-  padding: clamp(6rem, 14vh, 10rem) var(--gutter);
-}
-
-.section-head {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: clamp(2.5rem, 6vh, 5rem);
-}
-
-.section-head h2 {
-  font-size: var(--step-h2);
-}
-
-.section-head .rule {
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--line) 40%, transparent 100%);
-  transform-origin: left;
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.001s !important;
-    transition-duration: 0.001s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
