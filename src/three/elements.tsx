@@ -11,9 +11,9 @@ const SPAN = PATH_LENGTH + 80;
 export const palette = {
   bgDark: new THREE.Color('#000000'),
   bgLight: new THREE.Color('#f3f1ec'),
-  accentDark: new THREE.Color('#ff2d55'),
+  accentDark: new THREE.Color('#e3b258'),
   accentLight: new THREE.Color('#0e7c8c'),
-  lineDark: new THREE.Color('#4a3038'),
+  lineDark: new THREE.Color('#4a3f28'),
   lineLight: new THREE.Color('#8a8f93'),
 };
 

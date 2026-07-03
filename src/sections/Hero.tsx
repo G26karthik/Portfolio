@@ -76,7 +76,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <p className="kicker hero-kicker">PORTFOLIO / 2026 · HYDERABAD, IN · {time} IST</p>
           <h1 className="display hero-name">
             <span className="hero-mask">
-              <span className="hero-line">G. KARTHIK</span>
+              <span className="hero-line">G.KARTHIK</span>
             </span>
             <span className="hero-mask">
               <span className="hero-line hero-line-accent">KOUNDINYA</span>
