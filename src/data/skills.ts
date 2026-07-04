@@ -6,7 +6,7 @@ export interface SkillRow {
 export const skillRows: SkillRow[] = [
   {
     label: 'Languages',
-    items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Go', 'C++', 'SQL', 'Dart'],
+    items: ['Python', 'TypeScript', 'JavaScript', 'Go', 'SQL'],
   },
   {
     label: 'AI / ML',
