@@ -3,3 +3,4 @@ dist
 .DS_Store
 *.local
 portrait-original.jpg
+.env
