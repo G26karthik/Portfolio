@@ -133,7 +133,7 @@ export function Hero({ ready }: { ready: boolean }) {
         </div>
 
         <figure className="hero-portrait">
-          <img src="/portrait.jpg" alt="Portrait of G. Karthik Koundinya" loading="eager" />
+          <img src={`${import.meta.env.BASE_URL}portrait.jpg`} alt="Portrait of G. Karthik Koundinya" loading="eager" />
           <figcaption className="hero-portrait-caption kicker">
             GKK · SYSTEMS &amp; AI ENGINEER
           </figcaption>
