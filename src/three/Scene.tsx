@@ -88,8 +88,8 @@ export function Scene({ perf }: { perf: PerfProfile }) {
             fadeStrength={2.5}
             cellThickness={0.5}
             sectionThickness={0.9}
-            cellColor={theme === 'dark' ? '#171308' : '#d5d2c8'}
-            sectionColor={theme === 'dark' ? '#302408' : '#b3b0a4'}
+            cellColor={theme === 'dark' ? '#0f141f' : '#d5d2c8'}
+            sectionColor={theme === 'dark' ? '#1c2a44' : '#b3b0a4'}
           />
           {perf.tier === 'high' && theme === 'dark' && (
             <EffectComposer key={`fx-${theme}`}>

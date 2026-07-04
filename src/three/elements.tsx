@@ -11,9 +11,10 @@ const SPAN = PATH_LENGTH + 80;
 export const palette = {
   bgDark: new THREE.Color('#000000'),
   bgLight: new THREE.Color('#f3f1ec'),
-  accentDark: new THREE.Color('#e3b258'),
+  accentDark: new THREE.Color('#ff2d55'),
+  accent2Dark: new THREE.Color('#4d8dff'),
   accentLight: new THREE.Color('#0e7c8c'),
-  lineDark: new THREE.Color('#4a3f28'),
+  lineDark: new THREE.Color('#2c3d5e'),
   lineLight: new THREE.Color('#8a8f93'),
 };
 
@@ -102,7 +103,7 @@ export function MetricParticles({ count }: { count: number }) {
   useFrame(({ clock }) => {
     if (group.current) group.current.rotation.z = clock.elapsedTime * 0.012;
     if (mat.current) {
-      lerpTheme(mat.current.color, palette.accentLight, palette.accentDark);
+      lerpTheme(mat.current.color, palette.accentLight, palette.accent2Dark);
       const dark = scrollState.themeMix > 0.5;
       const blending = dark ? THREE.AdditiveBlending : THREE.NormalBlending;
       if (mat.current.blending !== blending) {
@@ -175,7 +176,7 @@ function Gate({ x, z, dir }: { x: number; z: number; dir: number }) {
     g.scale.set(s, s, s);
 
     if (outerMat.current && innerMat.current) {
-      lerpTheme(outerMat.current.color, palette.accentLight, palette.accentDark);
+      lerpTheme(outerMat.current.color, palette.accentLight, palette.accent2Dark);
       lerpTheme(innerMat.current.color, palette.lineLight, palette.lineDark);
       outerMat.current.opacity = 0.1 + near * 0.85;
       innerMat.current.opacity = 0.08 + near * 0.5;
