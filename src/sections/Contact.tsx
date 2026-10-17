@@ -7,7 +7,6 @@ const LINKS = [
   { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/g-karthik26' },
   { label: 'CODECHEF', url: 'https://www.codechef.com/users/g26karthikk' },
   { label: 'LEETCODE', url: 'https://leetcode.com/u/G26KarthikK/' },
-  { label: 'CODOLIO', url: 'https://codolio.com/profile/G26karthik/card' },
   { label: 'CREDLY', url: 'https://www.credly.com/users/g26karthik' },
   { label: 'EMAIL', url: 'mailto:Karthikofficialmain@gmail.com' },
 ];
