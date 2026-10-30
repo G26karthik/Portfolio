@@ -32,10 +32,10 @@ async function ask(request: Request, env: Env) {
   const q = typeof body?.q === 'string' ? body.q.trim() : '';
   if (q.length < 3 || q.length > 300) return json({ error: 'q must be 3 to 300 characters' }, 400);
 
-  corpus ??= (await (await env.ASSETS.fetch(new URL('/corpus.json', request.url))).json()) as Passage[];
-  const hits = retrieve(corpus, q, 6);
-  if (!hits.length) return json({ answer: "I don't have that in my portfolio.", sources: [] });
   try {
+    corpus ??= (await (await env.ASSETS.fetch(new URL('/corpus.json', request.url))).json()) as Passage[];
+    const hits = retrieve(corpus, q, 6);
+    if (!hits.length) return json({ answer: "I don't have that in my portfolio.", sources: [] });
     const { response } = await env.AI.run(MODEL, {
       messages: [
         { role: 'system', content: `${SYSTEM}\n\n${hits.map((p, i) => `[${i + 1}] ${p.title}: ${p.text}`).join('\n')}` },
@@ -45,8 +45,8 @@ async function ask(request: Request, env: Env) {
       temperature: 0.2,
     });
     if (!response) return json({ error: 'No answer' }, 502);
-    // An answer with no [n] citation is not grounded in the passages (often a prompt injection): refuse it.
-    if (!/\[\d+\]/.test(response)) return json({ answer: "I don't have that in my portfolio.", sources: [] });
+    // An answer with no [n] citing one of the passages is not grounded (often a prompt injection): refuse it.
+    if (![...response.matchAll(/\[(\d+)\]/g)].some((m) => +m[1] >= 1 && +m[1] <= hits.length)) return json({ answer: "I don't have that in my portfolio.", sources: [] });
     return json({ answer: response.trim(), sources: hits.map(({ title, href }) => ({ title, href })) });
   } catch (e) {
     console.error(e);

@@ -42,14 +42,14 @@ export const GET: APIRoute = async () => {
     add(`${x.org}: ${x.role}`, href, `${x.when}. Stack: ${x.stack}.`);
     x.points.forEach((p) => add(`${x.org}: ${x.role}`, href, p));
   }
-  add('Education', '/experience#education', `Where I study or studied (college, university, degree):${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
+  add('Education', '/experience#education', `Where I study or studied (college, university, degree): ${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
 
   add('Open source overview', '/open-source', `${ossStats.merged} merged pull requests across ${ossStats.projects} projects, ${ossStats.stars} combined stars, including PyTorch, pandas and mem0.`);
   for (const p of merged) add(`${p.project} pull request ${p.n}`, '/open-source', `Merged in ${p.project} (${p.stars} stars). ${p.what}`);
   for (const c of credited) add(`${c.project}: credited fix`, '/open-source', c.text);
   add('Langfuse security Hall of Fame', '/open-source', hallOfFame.text);
 
-  for (const p of placements) add(p.event, '/achievements#placements', `${p.rank} ${ofText(p.of)}. ${p.note}`);
+  for (const p of placements) add(p.event, '/achievements#placements', `${[p.rank, ofText(p.of)].filter(Boolean).join(' ')}. ${p.note}`);
   add(also.event, '/achievements#placements', `${also.rank} ${also.note}`);
   add('Featured certifications', '/achievements#certifications', `Most relevant for applied AI: ${featuredCerts.map(([i, n]) => `${n} (${i})`).join('; ')}.`);
   for (const i of issuers) add(`Certifications: ${i.name}`, '/achievements#certifications', `${certCount} certifications in all. ${i.name}: ${i.certs.map((c) => c.name + (c.note ? ` (${c.note})` : '')).join('; ')}.`);
