@@ -1,0 +1,8 @@
+---
+// An issuer mark, drawn in the text colour: a simple-icons SVG from public/logos, or initials where none exists.
+const { i } = Astro.props;
+---
+
+{i.logo
+  ? <span class="logo" style={`--l:url(/logos/${i.logo}.svg)`} title={i.name} aria-hidden="true"></span>
+  : <span class="logo ini" title={i.name} aria-hidden="true">{i.ini}</span>}

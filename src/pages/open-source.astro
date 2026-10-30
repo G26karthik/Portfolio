@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Next from '../components/Next.astro';
+import { merged, credited, hallOfFame, ossStats } from '../data/oss';
+import gh from '../data/github.json';
+import { links } from '../data/profile';
+import { heatmap } from '../lib/heatmap';
+
+const areas = ['ML', 'Agents', 'Data', 'Science', 'Tooling'];
+const h = heatmap(gh.calendar.start, gh.calendar.counts);
+const n = (v: number) => v.toLocaleString('en');
+const nums = [
+  [n(gh.contributions), 'contributions, past year'],
+  [n(gh.commits), 'commits'],
+  [n(gh.prs), 'pull requests opened'],
+  [n(gh.mergedPRs), 'pull requests merged, all repositories'],
+  [n(gh.activeDays), 'active days'],
+  [n(gh.longestStreak), 'day longest streak'],
+];
+---
+
+<Base title="Open source" description={`${ossStats.merged} merged pull requests across ${ossStats.projects} open-source projects including PyTorch, pandas and mem0, plus fixes the maintainers landed with credit.`} shape="constellation">
+  <PageHead title="Merged where it counts." lede="Bugs found in the libraries I use, fixed with a test, reviewed and merged by their maintainers. Every merged pull request is below." />
+
+  <div class="wrap stack">
+    <div class="oss-stats" data-reveal>
+      <div><b data-count={ossStats.merged}>{ossStats.merged}</b><span>merged PRs</span></div>
+      <div><b data-count={ossStats.projects}>{ossStats.projects}</b><span>projects</span></div>
+      <div><b>{ossStats.stars}</b><span>combined stars</span></div>
+    </div>
+
+    <section aria-labelledby="ledger-title">
+      <h2 id="ledger-title">The ledger</h2>
+      <div class="filters" data-filters="ledger" role="group" aria-label="Filter pull requests by area">
+        <button type="button" data-filter="all" aria-pressed="true">All {merged.length}</button>
+        {areas.map((a) => <button type="button" data-filter={a} aria-pressed="false">{a}</button>)}
+      </div>
+      <ul class="prs" id="ledger">
+        {merged.map((p) => (
+          <li data-tags={p.area}>
+            <a href={p.href} target="_blank" rel="noopener">
+              <span class="p">{p.project}<small>★ {p.stars}</small></span>
+              <span class="w">{p.what}</span>
+              <span class="num">{p.n} <span class="tag merged">Merged</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="credit-title">
+      <h2 id="credit-title">Fixes credited to me</h2>
+      <p>These pull requests were closed without merging, but the maintainer landed the fix and credited me.</p>
+      <div class="notes">
+        {credited.map((c) => (
+          <a class="note" href={c.href} target="_blank" rel="noopener" data-reveal>
+            <span class="tag">{c.status}</span>
+            <h3>{c.project}</h3>
+            <p>{c.text}</p>
+          </a>
+        ))}
+        <a class="note hof" href={hallOfFame.href} target="_blank" rel="noopener" data-reveal>
+          <span class="tag red">Hall of Fame</span>
+          <h3>Langfuse security</h3>
+          <p>{hallOfFame.text}</p>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="gh-title">
+      <h2 id="gh-title">GitHub activity</h2>
+      <div class="gh" data-reveal>
+        <div class="gh-head">
+          <span>As of {gh.asOf}</span>
+          <a class="link" href={links.github} target="_blank" rel="noopener">@{gh.login} on GitHub</a>
+        </div>
+        <ul class="gh-nums">
+          {nums.map(([v, l]) => <li><b>{v}</b><span>{l}</span></li>)}
+        </ul>
+        <svg class="heat" viewBox={`0 0 ${h.width} ${h.height}`} role="img" aria-label={`Daily GitHub contributions, ${h.from} to ${h.to}`}>
+          {h.groups.map((g) => (
+            <g class={`h${g.l}`} fill-opacity={g.opacity}>
+              {g.cells.map((c) => <rect x={c.x} y={c.y} width={h.cell} height={h.cell} rx="2" />)}
+            </g>
+          ))}
+        </svg>
+        <div class="heat-cap"><span>{h.from}</span><span>{h.to}</span></div>
+        <div class="langs" role="img" aria-label="Language share by bytes across original public repositories">
+          {gh.languages.map((l) => <span style={`flex:${l.pct};background:${l.color}`}></span>)}
+        </div>
+        <ul class="langs-key">
+          {gh.languages.map((l) => <li><i style={`background:${l.color}`}></i>{l.name} {l.pct}%</li>)}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <Next href="/research" label="Research" />
+</Base>

@@ -1,6 +1,16 @@
 node_modules
 dist
+.astro
 .DS_Store
 *.local
 portrait-original.jpg
 .env
+.wrangler
+
+sources/
+.claude/
+29-10-26/
+Professional Information GKK.txt
+REPOSITORY_REPORT.md
+OSS_PULL_REQUESTS.md
+.serena/

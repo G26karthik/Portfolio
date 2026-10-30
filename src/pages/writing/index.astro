@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Next from '../../components/Next.astro';
+import { getCollection } from 'astro:content';
+import { fmtDate } from '../../lib/date';
+
+const posts = (await getCollection('writing')).sort((a, b) => +b.data.date - +a.data.date);
+---
+
+<Base title="Writing" description="Engineering write-ups on the systems and research behind my results, starting with the Amazon ML Challenge 2026 solution that finished 38th of 32,000+ teams." shape="lattice">
+  <PageHead title="Writing" lede="Engineering write-ups on the systems and research behind the results: what I built, how I measured it, and what I took from it." />
+
+  <div class="wrap stack">
+    <ul class="cards">
+      {posts.map((p) => (
+        <li data-reveal>
+          <a class="card" href={`/writing/${p.id}/`}>
+            <span class="tag">Engineering post</span>
+            <span class="kick">{fmtDate(p.data.date)}, {p.data.minutes} min read</span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <ul class="tags">{p.data.skills.slice(0, 5).map((s) => <li>{s}</li>)}</ul>
+            <span class="go">Read the post</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <Next href="/projects" label="Projects" />
+</Base>

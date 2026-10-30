@@ -1,0 +1,31 @@
+# G. Karthik Koundinya
+
+> Applied AI engineer and researcher based in Hyderabad, India. I build agents, retrieval and ML systems that hold up on held-out data, and I research LLM quantization, quantum ML and coding-agent security. Open to applied AI and ML roles.
+
+Headline results (verified 2026-10-29):
+- 1st of 4,218 in Round 1 of HackerRank Orchestrate, October 2026 edition (about 50,000 registered).
+- Rank 38 of 32,000+ teams, Amazon ML Challenge 2026 (team lead); Amazon invited the team to its Applied Scientist Intern interview.
+- Three first-author papers: quantum ML (Quantum Machine Intelligence, Springer, major revision), low-bit quantization of Indic language models (RAIT 2027, IIT (ISM) Dhanbad, under review) and sensitive-data leakage in LLM coding agents (under revision).
+- 24 merged open-source pull requests across 18 projects with 338K+ combined stars, including PyTorch, pandas, mem0 and Hindsight.
+- Microsoft AI-103 and DP-800, Oracle OCI Generative AI Professional, and 23 certifications in all.
+- CodeChef 6★ 2483, LeetCode Guardian 2,720.
+
+## Pages
+- [Home](https://g26karthik.dev/): the overview and a hub linking every page below.
+- [Projects](https://g26karthik.dev/projects): 2 case studies, 4 featured products and 13 more products and tools, each with its stack and skills, plus a short archive.
+- [Experience](https://g26karthik.dev/experience): every role with all of its work, and education.
+- [Open source](https://g26karthik.dev/open-source): every merged pull request, fixes credited by maintainers, the Langfuse security Hall of Fame entry and GitHub activity.
+- [Research](https://g26karthik.dev/research): the three papers, KVQuant Lab and TraceWarrant.
+- [Achievements](https://g26karthik.dev/achievements): placements, competitive programming and curated certifications.
+- [Writing](https://g26karthik.dev/writing): engineering write-ups, starting with [the Amazon ML Challenge 2026 solution](https://g26karthik.dev/writing/amazon-ml-challenge-2026/), a 12-minute post with architecture and leaderboard diagrams.
+- Case studies: [BizMatch](https://g26karthik.dev/work/bizmatch/) (Amazon ML Challenge 2026) and [QNC](https://g26karthik.dev/work/qnc/) (quantum ML paper).
+- Products: [ParallaxOps](https://g26karthik.dev/work/parallaxops/), [Nishchay](https://g26karthik.dev/work/nishchay/), [WhatsApp Notification Router](https://g26karthik.dev/work/notification-router/) and [Grounded Support Triage](https://g26karthik.dev/work/grounded-triage/).
+- [Ask about my work](https://g26karthik.dev/corpus.json): the passage corpus behind the on-site "Ask" feature (JSON).
+
+## Contact
+- Email: Karthikofficialmain@gmail.com
+- Phone: +91 82476 97251
+- GitHub: https://github.com/G26karthik
+- LinkedIn: https://www.linkedin.com/in/g-karthik26
+- LeetCode: https://leetcode.com/u/G26KarthikK/
+- CodeChef: https://www.codechef.com/users/g26karthikk

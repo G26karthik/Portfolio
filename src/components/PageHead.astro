@@ -1,0 +1,9 @@
+---
+// Every subpage opens the same way: the page name large, one sentence beside it.
+const { title, lede } = Astro.props;
+---
+
+<header class="wrap phead">
+  <h1 class="page-title">{title}</h1>
+  <p class="lede">{lede}</p>
+</header>

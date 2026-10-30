@@ -1,0 +1,73 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+  return work.map((entry, i) => ({ params: { slug: entry.id }, props: { entry, next: work[(i + 1) % work.length] } }));
+}
+
+const { entry, next } = Astro.props;
+const d = entry.data;
+const product = d.kind === 'product';
+const own = (h: string) => h.startsWith(Astro.site!.origin); // links to this site open in place
+const { Content } = await render(entry);
+const article = {
+  '@context': 'https://schema.org',
+  '@type': product ? 'SoftwareSourceCode' : 'CreativeWork',
+  name: d.title,
+  description: d.hook,
+  author: { '@type': 'Person', name: 'G. Karthik Koundinya' },
+  dateCreated: String(d.year),
+  keywords: [...d.skills, ...d.stack].join(', '),
+};
+---
+
+<Base title={d.title} description={d.hook} shape={d.specimen} og={entry.id} jsonld={article}>
+  <article class="wrap">
+    <a class="crumb" href="/projects">← All projects</a>
+    <div class="cs">
+      <header class="cs-head">
+        <p class="kick">{product ? 'Product' : 'Case study'}, {d.kicker.replace(' · ', ', ')}</p>
+        <h1 class="page-title">{d.title}</h1>
+        {d.placement && <p class="cs-place">{d.placement}</p>}
+        <p class="cs-hook">{d.hook}</p>
+        {d.users && <p class="cs-for"><b>Who it’s for</b> {d.users}</p>}
+      </header>
+
+      <div class="cs-side">
+        <ul class="cs-metrics">
+          {d.metrics.map((m) => <li><b>{m.value}</b><span>{m.label}</span></li>)}
+        </ul>
+        <dl class="cs-meta">
+          <dt>Role</dt><dd>{d.role}</dd>
+          <dt>Year</dt><dd>{d.year}</dd>
+          <dt>Skills</dt><dd>{d.skills.join(', ')}</dd>
+          <dt>Stack</dt><dd>{d.stack.join(', ')}</dd>
+          <dt>Links</dt><dd>{d.links.map((l) => <a class="link" href={own(l.href) ? new URL(l.href).pathname : l.href} target={own(l.href) ? undefined : '_blank'} rel="noopener">{l.label}</a>)}</dd>
+        </dl>
+      </div>
+
+      <div class="cs-body">
+        <h2 class="sr-only">How it works</h2>
+        <ol class="pipeline" aria-label="System pipeline">
+          {d.pipeline.map((p) => <li><b>{p.name}</b><span>{p.detail}</span></li>)}
+        </ol>
+        <div class="prose">
+          <Content />
+        </div>
+        <section class="next-steps" aria-labelledby="next-title">
+          <h2 id="next-title">{product ? 'Next on the roadmap' : 'What I carry forward'}</h2>
+          <ul>{d.next.map((l) => <li>{l}</li>)}</ul>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <div class="wrap next" data-shape={next.data.specimen} data-title={next.data.title} data-field={next.data.field}>
+    <a href={`/work/${next.id}/`}>
+      <span>{next.data.kind === 'case' ? 'Next case study' : 'Next product'}</span>
+      <b>{next.data.title}</b>
+    </a>
+  </div>
+</Base>

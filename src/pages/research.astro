@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Next from '../components/Next.astro';
+import { papers, notes } from '../data/research';
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: papers[0].title,
+  author: [{ '@type': 'Person', name: 'G Karthik Koundinya' }, { '@type': 'Person', name: 'Puja S Prasad' }, { '@type': 'Person', name: 'Partha Pratim Roy' }],
+  url: 'https://github.com/G26karthik/QNC',
+  creativeWorkStatus: papers[0].status,
+};
+---
+
+<Base
+  title="Research"
+  description="Three first-author papers: quantum ML at Quantum Machine Intelligence (Springer), low-bit quantization of Indic language models at RAIT 2027, and sensitive-data leakage in LLM coding agents. Plus KVQuant Lab and TraceWarrant."
+  shape="qnc"
+  jsonld={article}
+>
+  <PageHead title="Research" lede="Three first-author papers across quantum ML, LLM quantization and coding-agent security, plus two public research repositories on systems and evaluation." />
+
+  <div class="wrap stack">
+    <div class="papers">
+    {papers.map((p) => (
+      <article class="paper" id={p.id} data-reveal>
+        <div>
+          <p class="meta"><span class="st">{p.status}</span><span>{p.venue}</span></p>
+          <h2>{p.title}</h2>
+          <p class="authors">{p.authors}</p>
+          <ul class="tags">{p.topics.map((t) => <li>{t}</li>)}</ul>
+          {p.links.length > 0 && (
+            <p class="acts">{p.links.map((l) => <a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noopener">{l.label}</a>)}</p>
+          )}
+        </div>
+        <div>{p.abstract.map((t) => <p>{t}</p>)}</div>
+      </article>
+    ))}
+    </div>
+
+    <section aria-labelledby="more-title">
+      <h2 id="more-title">More research, in public.</h2>
+      <div class="notes">
+        {notes.map((n) => (
+          <a class="note" href={n.href} target="_blank" rel="noopener" data-reveal>
+            <span class="tag">{n.kind}</span>
+            <h3>{n.name}</h3>
+            <p>{n.text}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <Next href="/achievements" label="Achievements" />
+</Base>

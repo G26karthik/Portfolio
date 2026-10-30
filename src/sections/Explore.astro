@@ -1,0 +1,43 @@
+---
+import { experience, anchor } from '../data/experience';
+import { ossStats } from '../data/oss';
+import { papers } from '../data/research';
+import { placements, issuers, certCount } from '../data/credentials';
+import { getCollection } from 'astro:content';
+import gh from '../data/github.json';
+import Logo from '../components/Logo.astro';
+
+const latest = experience[0];
+const post = (await getCollection('writing'))[0];
+const tiles = [
+  { href: `/experience#${anchor(latest.org)}`, title: 'Experience', big: `${experience.length}`, unit: 'roles', text: `Latest: ${latest.role} at ${latest.org}, ${latest.when}.`, wide: true },
+  { href: '/open-source', title: 'Open source', big: `${ossStats.merged}`, unit: 'merged PRs', text: `${ossStats.stars} combined stars across ${ossStats.projects} projects, and ${gh.contributions.toLocaleString('en')} GitHub contributions in the past year.`, wide: true, deep: true },
+  { href: '/research', title: 'Research', big: `${papers.length}`, unit: 'first-author papers', wide: true, text: 'Quantum ML at Springer QMI, LLM quantization at RAIT 2027, and coding-agent security.' },
+  { href: `/writing/${post.id}/`, title: 'Writing', big: `${post.data.minutes}`, unit: 'min read', wide: true, text: 'Engineering write-up of the 38th-place Amazon ML Challenge solution, with diagrams.' },
+  { href: '/achievements', title: 'Achievements', big: `${placements.length}`, unit: 'placements', text: 'Hackathon ranks, CodeChef 6★ and LeetCode Guardian.' },
+  { href: '/achievements#certifications', title: 'Certifications', big: `${certCount}`, unit: 'certifications', text: 'Microsoft AI-103 and DP-800, Oracle OCI Generative AI Professional, Stanford and DeepLearning.AI, and more.', logos: true, xl: true },
+];
+---
+
+<section class="wrap sec" aria-labelledby="explore-title">
+  <div class="sec-head">
+    <h2 id="explore-title">Behind the numbers.</h2>
+    <p>Each page holds the full detail.</p>
+  </div>
+  <ul class="tiles">
+    {tiles.map((t) => (
+      <li class:list={['tile', { wide: t.wide, xl: t.xl, deep: t.deep }]} data-reveal>
+        <a href={t.href}>
+          <h3>{t.title}</h3>
+          <b class="big">{t.big}{t.unit && <small>{t.unit}</small>}</b>
+          <p>{t.text}</p>
+          {t.logos && (
+            <ul class="logos" aria-label="Issuers">
+              {issuers.map((i) => <li><Logo i={i} /><span class="sr-only">{i.name}</span></li>)}
+            </ul>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

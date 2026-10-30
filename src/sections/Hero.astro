@@ -1,0 +1,28 @@
+---
+import { profile, links, proof } from '../data/profile';
+---
+
+<section class="wrap hero" data-shape="noise" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">{profile.name}.</h1>
+    <p class="role">{profile.role}</p>
+    <p class="thesis">{profile.line}</p>
+    <div class="btns">
+      <a class="btn solid" href={`mailto:${profile.email}`}>Email me</a>
+      <a class="btn" href={links.github} target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="band deep">
+    <ul class="stats" aria-label="Selected results">
+      {proof.map((p) => (
+        <li>
+          <span class="v">{p.value}</span>
+          <span class="of">{p.of}</span>
+          <span class="l">{p.label}</span>
+          <span class="n">{p.note}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+---
+// Render target for scripts/posters.mjs (OG images). Not linked, not indexed.
+import '@fontsource/gloock';
+import '@fontsource-variable/geist-mono';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Poster</title>
+    <style>
+      body { width: 1200px; height: 630px; overflow: hidden; }
+      #field { position: absolute; width: 1200px; height: 630px; opacity: 1; }
+      .pcard { position: absolute; inset: 0; padding: 56px 64px; display: grid; align-content: space-between; z-index: 1; }
+      .pcard h1 { font: 400 104px / 0.9 var(--display); letter-spacing: -0.03em; max-width: 8ch; margin-bottom: 18px; }
+      .pcard h1.long { font-size: 76px; }
+      .pcard > div { max-width: 560px; }
+      .pcard .m { font: 500 22px var(--mono); color: var(--carmine-ink); letter-spacing: 0.04em; }
+      .pcard .k { font: 500 18px var(--mono); color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; display: flex; justify-content: space-between; }
+    </style>
+  </head>
+  <body>
+    <canvas id="field"></canvas>
+    <div class="pcard">
+      <p class="k"><span data-k></span><span>g26karthik.dev</span></p>
+      <div><h1 data-t></h1><p class="m" data-m></p></div>
+    </div>
+    <script>
+      import { createField } from '../three/field';
+      import type { Shape } from '../three/specimens';
+
+      const q = new URLSearchParams(location.search);
+      const t = document.querySelector('[data-t]')!;
+      t.textContent = q.get('title') ?? '';
+      t.classList.toggle('long', t.textContent.length > 12);
+      document.querySelector('[data-k]')!.textContent = q.get('kicker') ?? '';
+      document.querySelector('[data-m]')!.textContent = q.get('metric') ?? '';
+      const f = createField(document.getElementById('field') as HTMLCanvasElement, { count: 160000, dpr: 2, still: true });
+      f.setShape((q.get('shape') ?? 'noise') as Shape, Number(q.get('offset') ?? 1.7));
+      setTimeout(() => document.documentElement.setAttribute('data-ready', ''), 300);
+    </script>
+  </body>
+</html>

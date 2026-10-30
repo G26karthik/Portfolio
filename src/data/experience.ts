@@ -1,60 +1,71 @@
-export interface Experience {
-  role: string;
-  org: string;
-  period: string;
-  points: string[];
-  stack?: string;
-}
+// From 29-10-26/Professional Information GKK.txt. RamanIQ bullets are verbatim by rule.
 
-export const experience: Experience[] = [
+export const experience = [
   {
-    role: 'Tech Intern · AI & Backend',
-    org: 'Hecta',
-    period: 'Jun 2026 - Present',
+    role: 'Applied AI Engineer Intern',
+    org: 'RamanIQ',
+    note: 'AI startup',
+    when: 'Aug – Oct 2026',
     points: [
-      'Engineering high-throughput RAG retrieval systems and backend data-scaling infrastructure.',
-      'Architected and co-developed a production agent end to end; now driving ML pipelining and prediction workstreams.',
-      'Designed a DAG pipeline architecture adopted by the team for parallel build-out.',
+      'Built REFEREE, an autonomous research-review product combining multi-agent orchestration and deterministic pipelines for paper analysis, experiment execution and evidence-backed verdicts; achieved ~87% accuracy on evals and tests.',
+      'Screened 36K+ research papers across top venues (NeurIPS, ICML, ICLR, CVPR, ACL) and curated 380+ compute-feasible reproduction candidates by evaluating code and dataset availability, benchmarking selected findings against Hugging Face reproduction reports.',
+      'Contributed 19+ pull requests across Polymath and Orbicular, delivering data connectors, UI improvements and backend features in collaboration with the engineering team.',
     ],
-    stack: 'Python · RAG · ML Pipelines · Backend Infra',
+    stack: 'Python · multi-agent orchestration · Docker · FastAPI · React · Next.js · Postgres',
+  },
+  {
+    role: 'Tech Engineer, AI and Backend',
+    org: 'Hecta Proptech',
+    when: 'Jun – Jul 2026',
+    points: [
+      'Built the preprocessing and feature pipeline behind a production REST API over 175K+ auction notices: CatBoost with GPU embeddings, 84.3% ROC-AUC, 80% less manual review.',
+      'Shipped features to production serving 5K+ users per day.',
+      'Trained a CatBoost Cox survival model (0.79 C-index) and deployed it behind a validated Flask inference API.',
+      'Architected the initial hybrid RAG retrieval platform; co-built an AI scraping system that cut manual data collection ~80%.',
+    ],
+    stack: 'Python · CatBoost · GPU embeddings · Flask · Docker · hybrid RAG',
   },
   {
     role: 'Full Stack Engineering Intern',
-    org: 'Stealth Startup',
-    period: 'Jan-Apr 2026',
+    org: 'chkchk',
+    href: 'https://chkchk.ai',
+    when: 'Jan – Apr 2026',
     points: [
-      'Sole full-stack engineer. Architected a scalable social platform from concept to deployment-ready.',
-      '~50% fewer database calls and ~30% latency improvement from restructured request pipelines.',
-      'Led a 0 to 1 platform migration and real-time systems on Supabase + AWS EC2.',
+      'Sole full-stack engineer, reporting to the CTO, taking a creative-talent marketplace from concept to a deployment-ready platform.',
+      '~50% fewer database calls and ~30% lower latency from restructured request pipelines and query execution.',
+      'Supabase Realtime and Row Level Security on every table; shipped the Android app (Capacitor 8) and led the Panzee → chkchk rebrand.',
+      'Authored 66 of 74 commits in the product repo.',
     ],
-    stack: 'Next.js · Node.js · TypeScript · Supabase · PostgreSQL · AWS',
-  },
-  {
-    role: 'Open Source Contributor',
-    org: 'pandas · matplotlib · sqlfluff · mem0 · sktime +',
-    period: 'Oct 2025 - Present',
-    points: [
-      '13 merged and 2 open PRs across 11 repositories, including tier-1 data-science libraries.',
-      'Parser features, memory-leak fixes, vector-store integrations and regression tests.',
-    ],
+    stack: 'Next.js 16 · React 19 · TypeScript · Supabase · AWS EC2 · Flutter · Capacitor',
   },
   {
     role: 'AI & Frontend Development Intern',
     org: 'Edunet Foundation',
-    period: 'Aug-Oct 2025',
+    when: 'Aug – Oct 2025',
     points: [
-      'Built an AI lecture audio-to-notes generator (Whisper + T5 + DistilBART) for 60+ minute lectures.',
-      '~80% inference-efficiency improvement via GPU-accelerated Whisper with caching.',
+      'Built a lecture audio-to-notes generator (Whisper + T5 + DistilBART) for 60+ minute lectures.',
+      '~80% faster inference through GPU-accelerated Whisper with caching, measured before and after.',
     ],
-    stack: 'Python · PyTorch · Whisper · React',
+    stack: 'Python · PyTorch · Whisper · T5 · DistilBART · React',
   },
   {
     role: 'Web Development & SEO Intern',
     org: 'Badakarobar',
-    period: 'Mar-Jun 2025',
+    when: 'Mar – Jun 2025',
     points: [
-      '~45% Lighthouse performance improvement across responsive landing pages.',
-      'Automated sitemap generation with Python, eliminating a recurring manual workflow.',
+      'Improved Lighthouse performance scores by ~45% on responsive landing pages; automated sitemap generation with Python.',
     ],
+    stack: 'HTML · CSS · JavaScript · Python',
   },
 ];
+
+/** URL fragment for a role card: /experience#ramaniq */
+export const anchor = (org: string) => org.toLowerCase().replace(/\W+/g, '-');
+
+export const education = {
+  extra: 'Aspire Leaders Program, Aspire Institute (founded at Harvard University), 2025.',
+  degree: 'B.Tech, Computer Science Engineering',
+  school: 'Geethanjali College of Engineering and Technology, Hyderabad',
+  when: '2023 – 2027',
+  coursework: 'Data Structures & Algorithms · Operating Systems · Database Management Systems · Computer Networks · Object-Oriented Programming · Discrete Mathematics · Software Engineering · Theory of Computation · Computer Architecture · Linear Algebra & Probability',
+};

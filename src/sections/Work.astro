@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+
+// kind filters /projects sections; with none, the home page features the first three by order.
+const { kind } = Astro.props;
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const shown = kind ? work.filter((w) => w.data.kind === kind) : work.slice(0, 3);
+---
+
+<ul class:list={['cards', { three: !kind }]}>
+  {shown.map((w) => (
+    <li data-shape={w.data.specimen} data-title={w.data.title} data-field={w.data.field} data-reveal>
+      <a class="card" href={`/work/${w.id}/`}>
+        <span class="tag">{w.data.kind === 'case' ? 'Case study' : 'Product'}</span>
+        <span class="kick">{w.data.kicker.replace(' · ', ', ')}</span>
+        <h3>{w.data.title}</h3>
+        {w.data.placement && <span class="place">{w.data.placement}</span>}
+        <p>{w.data.hook}</p>
+        <ul class="nums">
+          {w.data.metrics.slice(0, 3).map((m) => <li><b>{m.value}</b><span>{m.label}</span></li>)}
+        </ul>
+        <ul class="tags">{w.data.skills.slice(0, 4).map((s) => <li>{s}</li>)}</ul>
+        <span class="go">{w.data.kind === 'case' ? 'Read the case study' : 'See the product'}</span>
+      </a>
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,19 @@
+---
+import { profile, socials } from '../data/profile';
+---
+
+<section class="contact deep" id="contact" data-shape="sphere" aria-labelledby="contact-title">
+  <div class="wrap contact-in">
+    <h2 id="contact-title">Let’s build something measurable.</h2>
+    <div>
+      <p>Open to applied AI and ML roles.</p>
+      <p><a class="mail" href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <p><a class="mail" href={`tel:${profile.tel}`}>{profile.phone}</a></p>
+      <div class="btns">
+        <a class="btn solid" href={`mailto:${profile.email}`}>Email me</a>
+        <a class="btn" href={`tel:${profile.tel}`}>Call</a>
+        {socials.map((s) => <a class="btn" href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+      </div>
+    </div>
+  </div>
+</section>

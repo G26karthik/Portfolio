@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Next from '../components/Next.astro';
+import { experience, education, anchor } from '../data/experience';
+import { about } from '../data/profile';
+---
+
+<Base
+  title="Experience"
+  description={`${experience.length} roles from landing pages to production ML, most recently an applied AI internship at RamanIQ building an autonomous research-review product.`}
+  shape="lattice"
+>
+  <PageHead title="Experience" lede={`${experience.length} roles, from landing pages to production ML. Most recently an applied AI internship building autonomous research review.`} />
+
+  <div class="wrap stack">
+    <div class="about">
+      <div class="panel">
+        {about.map((t, i) => <p class={i === 0 ? 'big' : undefined}>{t}</p>)}
+      </div>
+      <section class="edu" id="education" aria-labelledby="edu-title">
+        <h2 id="edu-title">Education</h2>
+        <b>{education.degree}</b>
+        <p>{education.school}, {education.when}</p>
+        <p>{education.coursework}</p>
+        <p>{education.extra}</p>
+      </section>
+    </div>
+
+    <div class="roles">
+      {experience.map((x) => (
+        <article class="job" id={anchor(x.org)} data-reveal>
+          <header>
+            <p class="when">{x.when}</p>
+            <h2>{x.role}</h2>
+            <p class="org">{x.href ? <a class="link" href={x.href} target="_blank" rel="noopener">{x.org}</a> : x.org}{x.note && `, ${x.note}`}</p>
+            <ul class="tags">{x.stack.split(' · ').map((s) => <li>{s}</li>)}</ul>
+          </header>
+          <ul class="points">{x.points.map((p) => <li>{p}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <Next href="/open-source" label="Open source" />
+</Base>

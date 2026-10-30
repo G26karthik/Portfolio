@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../sections/Hero.astro';
+import Work from '../sections/Work.astro';
+import Explore from '../sections/Explore.astro';
+import Contact from '../sections/Contact.astro';
+import { getCollection } from 'astro:content';
+import { indexProjects } from '../data/projects';
+
+const work = await getCollection('work');
+const cases = work.filter((w) => w.data.kind === 'case').length;
+const products = work.filter((w) => w.data.kind === 'product').length;
+---
+
+<Base shape="noise">
+  <Hero />
+
+  <section class="wrap sec" aria-labelledby="work-title">
+    <div class="sec-head">
+      <h2 id="work-title">Selected work.</h2>
+      <p class="live" aria-live="polite"><span data-live>The background reshapes to each project.</span></p>
+    </div>
+    <Work />
+    <a class="more" href="/projects">All projects: {cases} case studies, {products} featured products and {indexProjects.length} more →</a>
+  </section>
+
+  <Explore />
+  <Contact />
+</Base>

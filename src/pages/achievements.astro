@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Next from '../components/Next.astro';
+import Logo from '../components/Logo.astro';
+import { placements, featuredPlacements, ofText, also, cp, issuers, featuredCerts, certCount, credly } from '../data/credentials';
+
+const top = placements.slice(0, featuredPlacements);
+const rest = placements.slice(featuredPlacements);
+const featured = featuredCerts.map(([issuer, name]) => {
+  const i = issuers.find((x) => x.name === issuer)!;
+  return { i, c: i.certs.find((x) => x.name === name)! };
+});
+---
+
+<Base
+  title="Achievements"
+  description={`Rank 38 of 32,000+ teams at the Amazon ML Challenge 2026, four HackerRank Orchestrate placements, a 2nd prize, CodeChef 6★ 2483, LeetCode Guardian 2,720 and ${certCount} certifications led by Microsoft AI-103 and DP-800 and Oracle OCI Generative AI Professional.`}
+  shape="sphere"
+>
+  <PageHead title="Achievements" lede="The results that matter most, then the full record: placements, competitive programming, and certifications curated for applied AI." />
+
+  <div class="wrap stack">
+    <section id="placements" aria-labelledby="place-title">
+      <h2 id="place-title">Placements</h2>
+      <ol class="places">
+        {top.map((p) => (
+          <li data-reveal>
+            <span class="rk">{p.rank}</span>
+            <span class="ev">{p.event}{p.of && <small>{ofText(p.of)}</small>}</span>
+            <p>{p.note}</p>
+          </li>
+        ))}
+      </ol>
+      <ul class="more-list" aria-label="More results">
+        {rest.map((p) => <li><b>{p.rank}</b> {p.event}{p.of && `, ${ofText(p.of)}`}. {p.note}</li>)}
+        <li><b>{also.rank}</b> {also.event}. {also.note}</li>
+      </ul>
+    </section>
+
+    <section id="competitive-programming" aria-labelledby="cp-title">
+      <h2 id="cp-title">Competitive programming</h2>
+      <div class="cp">
+        {cp.map((c) => (
+          <a href={c.href} target="_blank" rel="noopener" data-reveal>
+            <span class="s">{c.site}, {c.badge}</span>
+            <span class="r">{c.rating}</span>
+            <span class="st">{c.standing}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="certifications" aria-labelledby="cert-title">
+      <h2 id="cert-title">Certifications</h2>
+      <p>Six that matter most for applied AI, then the full list. <a class="link" href={credly} target="_blank" rel="noopener">Credly profile</a></p>
+      <ul class="featured-certs">
+        {featured.map(({ i, c }) => (
+          <li data-reveal>
+            <span class="who"><Logo i={i} />{i.name}</span>
+            <b>{c.name}</b>
+            {c.note && <small>{c.note}</small>}
+            {c.href && <a class="link" href={c.href} target="_blank" rel="noopener">View credential</a>}
+          </li>
+        ))}
+      </ul>
+      <details class="all-certs">
+        <summary>View all {certCount} certifications</summary>
+        <div class="certs">
+          {issuers.map((i) => (
+            <section class="issuer" aria-labelledby={`i-${i.name.replace(/\W+/g, '-')}`}>
+              <h3 id={`i-${i.name.replace(/\W+/g, '-')}`}><Logo i={i} />{i.name}</h3>
+              <ul>
+                {i.certs.map((c) => (
+                  <li>
+                    {c.name}
+                    {c.note && <small>{c.note}</small>}
+                    {c.href && <a class="link" href={c.href} target="_blank" rel="noopener">View credential</a>}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </details>
+    </section>
+  </div>
+
+  <Next href="/#contact" label="Get in touch" />
+</Base>

@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Next from '../../components/Next.astro';
+import { fmtDate } from '../../lib/date';
+
+export async function getStaticPaths() {
+  return (await getCollection('writing')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const post = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description: d.description,
+  datePublished: d.date.toISOString().slice(0, 10),
+  author: { '@type': 'Person', name: 'G. Karthik Koundinya' },
+  keywords: d.skills.join(', '),
+};
+---
+
+<Base title={d.title} description={d.description} shape="lattice" og={d.og} jsonld={post} calm>
+  <article class="wrap post">
+    <a class="crumb" href="/writing">← Writing</a>
+    <header class="post-head">
+      <p class="kick">{fmtDate(d.date)}, {d.minutes} min read</p>
+      <h1 class="post-title">{d.title}</h1>
+      <p class="cs-hook">{d.description}</p>
+      <ul class="tags" aria-label="Skills and techniques">{d.skills.map((s) => <li>{s}</li>)}</ul>
+    </header>
+    <div class="prose post-body">
+      <Content />
+    </div>
+  </article>
+
+  <Next href="/work/bizmatch/" label="BizMatch case study" />
+</Base>

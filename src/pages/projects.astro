@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Next from '../components/Next.astro';
+import Work from '../sections/Work.astro';
+import { getCollection } from 'astro:content';
+import { indexProjects, archive, roles } from '../data/projects';
+
+const work = await getCollection('work');
+const cases = work.filter((w) => w.data.kind === 'case').length;
+const products = work.filter((w) => w.data.kind === 'product').length;
+const more = indexProjects.length;
+---
+
+<Base title="Projects" description={`${cases} case studies, ${products} featured products and ${more} more public products and tools across agents, ML, research, systems and full stack, each with its stack and skills.`} shape="lattice">
+  <PageHead title="Projects" lede={`${cases} case studies, ${products} featured products and ${more} more things I have built and shipped. Each shows what it does, who it is for, its stack and the skills behind it.`} />
+
+  <div class="wrap stack">
+    <section aria-labelledby="cases-title">
+      <h2 id="cases-title">Case studies</h2>
+      <p>Deep technical write-ups: a competition solution and a research paper, with the reasoning behind the result. The <a class="link" href="/writing/amazon-ml-challenge-2026/">Amazon ML Challenge engineering post</a> goes further.</p>
+      <Work kind="case" />
+    </section>
+
+    <section aria-labelledby="products-title">
+      <h2 id="products-title">Featured products</h2>
+      <p>Systems I built and shipped, with measured results.</p>
+      <Work kind="product" />
+    </section>
+
+    <section aria-labelledby="index-title">
+      <h2 id="index-title">More products and tools</h2>
+      <p>Public repositories only. Filter by the kind of work.</p>
+      <div class="filters" data-filters="index-list" role="group" aria-label="Filter projects by area">
+        <button type="button" data-filter="all" aria-pressed="true">All {more}</button>
+        {roles.map((r) => <button type="button" data-filter={r} aria-pressed="false">{r}</button>)}
+      </div>
+      <ul class="cards" id="index-list">
+        {indexProjects.map((p) => (
+          <li data-tags={p.roles.join('|')}>
+            <article class="card">
+              <span class="kick">{p.roles.join(', ')}</span>
+              <h3>{p.name}</h3>
+              <p>{p.what}</p>
+              <p class="who"><b>For</b> {p.who}</p>
+              <p class="fact">{p.fact}</p>
+              <ul class="tags">{p.stack.map((s) => <li>{s}</li>)}</ul>
+              <p class="skills"><b>Skills</b> {p.skills.join(', ')}</p>
+              <span class="card-links">
+                {p.live && <a class="go" href={p.live} target="_blank" rel="noopener">Live demo</a>}
+                <a class="go" href={p.repo} target="_blank" rel="noopener">Code</a>
+              </span>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="archive-title">
+      <h2 id="archive-title">Archive</h2>
+      <details class="archive">
+        <summary>{archive.length} earlier projects, one line each</summary>
+        <ul>
+          {archive.map((a) => (
+            <li>
+              <b>{a.name}</b> <span>{a.what}</span> <small>{a.stack}</small>
+              <span class="card-links">
+                {a.live && <a class="link" href={a.live} target="_blank" rel="noopener">Live</a>}
+                <a class="link" href={a.repo} target="_blank" rel="noopener">Code</a>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </section>
+  </div>
+
+  <Next href="/experience" label="Experience" />
+</Base>
