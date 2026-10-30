@@ -6,7 +6,7 @@ import type { Passage } from '../lib/retrieve';
 import { profile, about, now, proof } from '../data/profile';
 import { experience, education, anchor } from '../data/experience';
 import { merged, credited, hallOfFame, ossStats } from '../data/oss';
-import { placements, ofText, also, cp, issuers, featuredCerts, certCount } from '../data/credentials';
+import { placements, ofText, also, issuers, featuredCerts, certCount } from '../data/credentials';
 import { indexProjects, archive } from '../data/projects';
 import { papers, notes } from '../data/research';
 import gh from '../data/github.json';
@@ -51,7 +51,6 @@ export const GET: APIRoute = async () => {
 
   for (const p of placements) add(p.event, '/achievements#placements', `${p.rank} ${ofText(p.of)}. ${p.note}`);
   add(also.event, '/achievements#placements', `${also.rank} ${also.note}`);
-  for (const c of cp) add(`${c.site} competitive programming`, '/achievements#competitive-programming', `Rating ${c.rating}, ${c.badge}. ${c.standing}.`);
   add('Featured certifications', '/achievements#certifications', `Most relevant for applied AI: ${featuredCerts.map(([i, n]) => `${n} (${i})`).join('; ')}.`);
   for (const i of issuers) add(`Certifications: ${i.name}`, '/achievements#certifications', `${certCount} certifications in all. ${i.name}: ${i.certs.map((c) => c.name + (c.note ? ` (${c.note})` : '')).join('; ')}.`);
 

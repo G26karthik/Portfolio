@@ -12,14 +12,14 @@ Headline results (verified 2026-10-29):
 
 ## Pages
 - [Home](https://g26karthik.dev/): the overview and a hub linking every page below.
-- [Projects](https://g26karthik.dev/projects): 2 case studies, 4 featured products and 13 more products and tools, each with its stack and skills, plus a short archive.
+- [Projects](https://g26karthik.dev/projects): 2 case studies, 5 featured products and 13 more products and tools, each with its stack and skills, plus a short archive.
 - [Experience](https://g26karthik.dev/experience): every role with all of its work, and education.
 - [Open source](https://g26karthik.dev/open-source): every merged pull request, fixes credited by maintainers, the Langfuse security Hall of Fame entry and GitHub activity.
 - [Research](https://g26karthik.dev/research): the three papers, KVQuant Lab and TraceWarrant.
 - [Achievements](https://g26karthik.dev/achievements): placements, competitive programming and curated certifications.
 - [Writing](https://g26karthik.dev/writing): engineering write-ups, starting with [the Amazon ML Challenge 2026 solution](https://g26karthik.dev/writing/amazon-ml-challenge-2026/), a 12-minute post with architecture and leaderboard diagrams.
 - Case studies: [BizMatch](https://g26karthik.dev/work/bizmatch/) (Amazon ML Challenge 2026) and [QNC](https://g26karthik.dev/work/qnc/) (quantum ML paper).
-- Products: [ParallaxOps](https://g26karthik.dev/work/parallaxops/), [Nishchay](https://g26karthik.dev/work/nishchay/), [WhatsApp Notification Router](https://g26karthik.dev/work/notification-router/) and [Grounded Support Triage](https://g26karthik.dev/work/grounded-triage/).
+- Products: [REFEREE](https://g26karthik.dev/work/referee/), [AlgoSentinel](https://g26karthik.dev/work/algosentinel/), [FounderOS](https://g26karthik.dev/work/founderos/), [Buy or Wait?](https://g26karthik.dev/work/buy-or-wait/) and [Closer](https://g26karthik.dev/work/closer/).
 - [Ask about my work](https://g26karthik.dev/corpus.json): the passage corpus behind the on-site "Ask" feature (JSON).
 
 ## Contact

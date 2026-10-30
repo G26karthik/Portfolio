@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import Next from '../components/Next.astro';
 import Logo from '../components/Logo.astro';
-import { placements, featuredPlacements, ofText, also, cp, issuers, featuredCerts, certCount, credly } from '../data/credentials';
+import { placements, featuredPlacements, ofText, also, issuers, featuredCerts, certCount, credly } from '../data/credentials';
 
 const top = placements.slice(0, featuredPlacements);
 const rest = placements.slice(featuredPlacements);
@@ -15,10 +15,10 @@ const featured = featuredCerts.map(([issuer, name]) => {
 
 <Base
   title="Achievements"
-  description={`Rank 38 of 32,000+ teams at the Amazon ML Challenge 2026, four HackerRank Orchestrate placements, a 2nd prize, CodeChef 6★ 2483, LeetCode Guardian 2,720 and ${certCount} certifications led by Microsoft AI-103 and DP-800 and Oracle OCI Generative AI Professional.`}
+  description={`Rank 38 of 32,000+ teams at the Amazon ML Challenge 2026, 1st of 4,218 in Round 1 of HackerRank Orchestrate (October 2026), a 2nd prize, CodeChef 6★ 2483, LeetCode Guardian 2,720 and ${certCount} certifications led by Microsoft AI-103 and DP-800 and Oracle OCI Generative AI Professional.`}
   shape="sphere"
 >
-  <PageHead title="Achievements" lede="The results that matter most, then the full record: placements, competitive programming, and certifications curated for applied AI." />
+  <PageHead title="Achievements" lede="The results that matter most, then the full record: placements, ratings, and certifications curated for applied AI." />
 
   <div class="wrap stack">
     <section id="placements" aria-labelledby="place-title">
@@ -27,7 +27,7 @@ const featured = featuredCerts.map(([issuer, name]) => {
         {top.map((p) => (
           <li data-reveal>
             <span class="rk">{p.rank}</span>
-            <span class="ev">{p.event}{p.of && <small>{ofText(p.of)}</small>}</span>
+            <span class="ev">{p.href ? <a class="link" href={p.href} target="_blank" rel="noopener">{p.event}</a> : p.event}{p.of && <small>{ofText(p.of)}</small>}</span>
             <p>{p.note}</p>
           </li>
         ))}
@@ -36,19 +36,6 @@ const featured = featuredCerts.map(([issuer, name]) => {
         {rest.map((p) => <li><b>{p.rank}</b> {p.event}{p.of && `, ${ofText(p.of)}`}. {p.note}</li>)}
         <li><b>{also.rank}</b> {also.event}. {also.note}</li>
       </ul>
-    </section>
-
-    <section id="competitive-programming" aria-labelledby="cp-title">
-      <h2 id="cp-title">Competitive programming</h2>
-      <div class="cp">
-        {cp.map((c) => (
-          <a href={c.href} target="_blank" rel="noopener" data-reveal>
-            <span class="s">{c.site}, {c.badge}</span>
-            <span class="r">{c.rating}</span>
-            <span class="st">{c.standing}</span>
-          </a>
-        ))}
-      </div>
     </section>
 
     <section id="certifications" aria-labelledby="cert-title">

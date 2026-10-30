@@ -55,8 +55,6 @@ if (/\brejected\b/i.test(all)) problems.push('uses the word "rejected" (use Clos
 if (/orcid/i.test(all)) problems.push('ORCID must not appear: the publications are not public');
 if (/codeforces/i.test(all)) problems.push('Codeforces must not appear anywhere');
 if (/sole[- ]author/i.test(all)) problems.push('QNC must never be called sole-author');
-const nish = readFileSync('src/content/work/nishchay.md', 'utf8');
-if (/^placement:/m.test(nish)) problems.push('Nishchay must cite no placement');
 const oss = readFileSync('src/data/oss.ts', 'utf8');
 const hof = oss.slice(oss.indexOf('export const hallOfFame'));
 if (/14789|15040|cache/i.test(hof.slice(0, hof.indexOf('};')))) problems.push('Langfuse Hall of Fame and cache-fix stories must stay separate');

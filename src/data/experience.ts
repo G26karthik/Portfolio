@@ -38,25 +38,6 @@ export const experience = [
     ],
     stack: 'Next.js 16 · React 19 · TypeScript · Supabase · AWS EC2 · Flutter · Capacitor',
   },
-  {
-    role: 'AI & Frontend Development Intern',
-    org: 'Edunet Foundation',
-    when: 'Aug – Oct 2025',
-    points: [
-      'Built a lecture audio-to-notes generator (Whisper + T5 + DistilBART) for 60+ minute lectures.',
-      '~80% faster inference through GPU-accelerated Whisper with caching, measured before and after.',
-    ],
-    stack: 'Python · PyTorch · Whisper · T5 · DistilBART · React',
-  },
-  {
-    role: 'Web Development & SEO Intern',
-    org: 'Badakarobar',
-    when: 'Mar – Jun 2025',
-    points: [
-      'Improved Lighthouse performance scores by ~45% on responsive landing pages; automated sitemap generation with Python.',
-    ],
-    stack: 'HTML · CSS · JavaScript · Python',
-  },
 ];
 
 /** URL fragment for a role card: /experience#ramaniq */

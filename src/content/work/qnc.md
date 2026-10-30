@@ -4,7 +4,7 @@ title: "QNC"
 kicker: "Quantum ML research · Neural collapse in VQCs"
 hook: "A paper showing that training a variational quantum classifier rotates its states instead of contracting them, and where collapse can still appear."
 year: 2026
-order: 3
+order: 2
 specimen: qnc
 field: "class caps rotating rigidly on a Bloch sphere"
 role: "First author · 3 authors"

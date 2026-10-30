@@ -19,6 +19,19 @@ The training set has 2,206,821 businesses, 10,320,219 Source 2 and 3 records and
 
 The noise is rich. Names change case and accents, gain brackets, swap legal forms (Inc, Pvt Ltd, SARL), reorder words, collect typos, turn into initials or web handles, or arrive in Devanagari, Bengali, Telugu, Tamil or Kannada. Addresses lose PIN codes, abbreviate "Road" and "Rue", and mistype house numbers. The decoys are built to look right: "Uptown Diner" next to "Uptown Diner Southside", or in France a *sibling* at the business's own address where the distinctive word is swapped for another real one ("Lille Club SARL" becomes "Lille Amicale SARL").
 
+<figure class="fig">
+<svg viewBox="0 0 360 176" role="img" aria-labelledby="tl-t"><title id="tl-t">Each Source 1 business has true copies and look-alike decoys in Sources 2 and 3</title>
+<text class="s" x="10" y="16">Source 1 (reference)</text><text class="s" x="160" y="16">Sources 2 and 3 (noisy)</text>
+<rect class="bx" x="10" y="26" width="130" height="86" rx="8"/><text class="lb" x="24" y="73">Uptown Diner</text>
+<path class="ar" d="M143 69h14m-4 -4l4 4l-4 4"/>
+<rect class="bx" x="160" y="26" width="190" height="40" rx="8"/><rect class="bar" x="172" y="41" width="10" height="10" rx="2"/><text class="lb" x="190" y="43">Uptown Diner</text><text class="s" x="190" y="58">match: a true copy</text>
+<rect class="bx" x="160" y="72" width="190" height="40" rx="8"/><rect class="bar bad" x="172" y="87" width="10" height="10" rx="2"/><text class="lb" x="190" y="89">Uptown Diner Southside</text><text class="s" x="190" y="104">decoy: not a copy</text>
+<rect class="bx" x="10" y="126" width="130" height="40" rx="8"/><text class="lb" x="24" y="151">Lille Club SARL</text>
+<path class="ar" d="M143 146h14m-4 -4l4 4l-4 4"/>
+<rect class="bx" x="160" y="126" width="190" height="40" rx="8"/><rect class="bar bad" x="172" y="141" width="10" height="10" rx="2"/><text class="lb" x="190" y="143">Lille Amicale SARL</text><text class="s" x="190" y="158">sibling decoy</text></svg>
+<figcaption>Decoys are built to look right, so the model has to tell a true copy from a near-identical sibling.</figcaption>
+</figure>
+
 ## Start from the record's side
 
 Every Source 2 or 3 record belongs to at most one business, and that holds across all 7,638,365 training pairs. So instead of asking "what are this business's copies?", we ask each record "which business are you, if any?" and group the answers. That reframing turns the task into candidate search plus classification, and it let us run country by country.
@@ -42,6 +55,22 @@ So we reshaped validation to look like test, in four moves.
 2. **Match the test density.** We hid 19% of Source 1 businesses from the candidate pool. Their records stay in the data but can no longer be matched, which reproduces the test set's share of unmatched records.
 3. **Match the test difficulty.** The unmatched records in test look more like decoys, so we chose the decision rule on a stricter metric that counts every false match from an unmatched record three times.
 4. **Compare with a paired bootstrap.** Every change was tested against its predecessor on the same 89,000 half-B businesses, which gives a confidence interval on the difference instead of one number.
+
+<figure class="fig">
+<svg viewBox="0 0 360 262" role="img" aria-labelledby="vs-t"><title id="vs-t">Validation is split by business, so one business never sits on both sides, and only half B reports</title>
+<text class="lb" x="10" y="20">Split by pair</text>
+<rect class="bx" x="10" y="30" width="28" height="26" rx="4"/><rect class="bar" x="46" y="30" width="28" height="26" rx="4"/><rect class="bx" x="82" y="30" width="28" height="26" rx="4"/><rect class="bx" x="118" y="30" width="28" height="26" rx="4"/><rect class="bar" x="154" y="30" width="28" height="26" rx="4"/>
+<rect class="bx" x="230" y="30" width="12" height="12" rx="3"/><text class="s" x="250" y="41">training</text><rect class="bar" x="230" y="46" width="12" height="12" rx="3"/><text class="s" x="250" y="57">validation</text>
+<text class="s" x="10" y="76">One business lands on both sides.</text>
+<text class="lb" x="10" y="108">Split by business</text>
+<rect class="bx" x="10" y="118" width="28" height="26" rx="4"/><rect class="bx" x="46" y="118" width="28" height="26" rx="4"/><rect class="bx" x="82" y="118" width="28" height="26" rx="4"/><rect class="bar" x="130" y="118" width="28" height="26" rx="4"/><rect class="bar" x="166" y="118" width="28" height="26" rx="4"/><rect class="bar" x="202" y="118" width="28" height="26" rx="4"/>
+<text class="s" x="10" y="162">All records of a business move together.</text>
+<text class="s" x="10" y="178">Validation: hash(entity_id, seed 42) % 10 == 0</text>
+<path class="ar" d="M180 186v8m-4 -4l4 4l4 -4"/>
+<g><rect class="bx" x="10" y="198" width="165" height="56" rx="8"/><text class="t" x="24" y="222">Half A</text><text class="s" x="24" y="242">makes every choice</text></g>
+<g class="hl"><rect class="bx" x="185" y="198" width="165" height="56" rx="8"/><text class="t" x="199" y="222">Half B</text><text class="s" x="199" y="242">only ever reports</text></g></svg>
+<figcaption>Grouped by business, and reported on a half that never made a choice, validation predicted the test score of 0.9913 exactly.</figcaption>
+</figure>
 
 Later we noticed something sharper. Empty-address records, which are almost always genuine copies, occur at the same rate per business in training and test (US 0.168 and 0.1665, India 0.139 and 0.138). So the extra test records are decoys with addresses, not copies of businesses missing from Source 1. We built a "test-like" validation without the records that exist only because of the hiding, and used it for the final calibration.
 
@@ -87,6 +116,19 @@ F0.5 = 1.25·TP / (1.25·TP + FP + 0.25·FN)      FP = k - TP
 
 where TP follows a Poisson-binomial distribution over the first k probabilities and FN one over the rest. An empty prediction scores 1 only when the business truly has no copies, which happens with probability ∏(1 - p). A dynamic program computes the exact expected F0.5 for every k, and we keep the best. For independent probabilities the best subset is always a prefix of the sorted list, so this is exact, not a heuristic. Probabilities are sharpened with an exponent of 1.5, chosen on half A, and leaderboard probes on either side confirmed it. We cap each business at 5 Source 2 and 6 Source 3 matches, mirroring the generator.
 
+<figure class="fig">
+<svg viewBox="0 0 360 262" role="img" aria-labelledby="sc-t"><title id="sc-t">A wrong match costs about three times a missed copy, so each business keeps the top k records by expected F0.5</title>
+<g class="hl"><rect class="bx" x="10" y="10" width="165" height="56" rx="8"/><text class="t" x="24" y="34">Wrong match</text><text class="s" x="24" y="54">costs about three times</text></g>
+<g><rect class="bx" x="185" y="10" width="165" height="56" rx="8"/><text class="t" x="199" y="34">Missed copy</text><text class="s" x="199" y="54">the lighter cost</text></g>
+<text class="s" x="10" y="92">One business: its records, most probable first</text>
+<rect class="bx dash" x="4" y="102" width="140" height="94" rx="8"/>
+<rect class="bar" x="10" y="120" width="36" height="70" rx="3"/><rect class="bar" x="56" y="128" width="36" height="62" rx="3"/><rect class="bar" x="102" y="140" width="36" height="50" rx="3"/>
+<rect class="bx" x="148" y="160" width="36" height="30" rx="3"/><rect class="bx" x="194" y="172" width="36" height="18" rx="3"/><rect class="bx" x="240" y="180" width="36" height="10" rx="3"/>
+<text class="s" x="10" y="212">keep the top k</text><text class="s" x="148" y="212">leave out the rest</text>
+<text class="s" x="10" y="236">k is the cut with the best expected F0.5,</text><text class="s" x="10" y="252">computed exactly by dynamic programming</text></svg>
+<figcaption>A wrong match costs about three times a miss, so each business keeps the prefix of its sorted records that maximises expected F0.5.</figcaption>
+</figure>
+
 ## France, with no labels
 
 The US and India were at 0.9913. France was where the room was, at 0.953. With no French labels we studied how the generator builds French records, and found two label-free witnesses:
@@ -95,6 +137,16 @@ The US and India were at 0.9913. France was where the room was, at 0.953. With n
 - A formatting marker. Copy noise puts the changed word in brackets for 4.2% of French copies and only 0.9% of decoys, and the model's probabilities don't depend on brackets, so the marker is an independent witness.
 
 Using both, we removed same-address one-word swaps to another French vocabulary word (bracket share 0.8%, the sibling decoys) and kept swaps to a misspelling or a generic word like Fils, Cie or Associés (bracket share 6.0%, the signature of copies). The rules lifted our score by 0.0039, in line with what the markers predicted, and moved France from 0.953 to about 0.979.
+
+<figure class="fig">
+<svg viewBox="0 0 360 250" role="img" aria-labelledby="fm-t"><title id="fm-t">The bracket marker is far more common on French copies than on decoys, which separates them without labels</title>
+<text class="s" x="10" y="16">Share of records with the changed word in brackets</text>
+<text class="s lb" x="10" y="46">French copies</text><rect class="bar" x="10" y="54" width="168" height="14" rx="3"/><text class="t vl" x="186" y="66">4.2%</text>
+<text class="s lb" x="10" y="90">French decoys</text><rect class="bar bad" x="10" y="98" width="36" height="14" rx="3"/><text class="t vl bad" x="54" y="110">0.9%</text>
+<text class="s lb" x="10" y="170">Swaps to a misspelling or generic word (kept)</text><rect class="bar hl" x="10" y="178" width="240" height="14" rx="3"/><text class="t vl hl" x="258" y="190">6.0%</text>
+<text class="s lb" x="10" y="214">Swaps to another French word (removed)</text><rect class="bar bad" x="10" y="222" width="32" height="14" rx="3"/><text class="t vl bad" x="50" y="234">0.8%</text></svg>
+<figcaption>Copies bracket the changed word far more often than decoys do, so the rules kept the swaps that look like copies and removed the sibling decoys.</figcaption>
+</figure>
 
 ## A recalibrator built like the test set
 

@@ -4,12 +4,11 @@
 export const placements = [
   { rank: '#1', of: '4,218 in Round 1', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
   { rank: '#38', of: '32,000+ teams', event: 'Amazon ML Challenge 2026', note: 'Team lead. Invited to Amazon’s Applied Scientist Intern interview.' },
-  { rank: '12th', of: '1,349 with all four submissions', event: 'HackerRank Orchestrate, May 2026', note: '12,885 registered from 48 countries. 24-hour agentic-AI build.' },
   { rank: '2nd', of: '', event: 'Ambient Intelligence Hackathon, May 2026', note: 'Prize for FounderOS, a voice-first AI chief of staff.' },
-  { rank: '20th', of: '1,983 submissions', event: 'HackerRank Orchestrate, Aug 2026', note: 'Final score 78.3/100.' },
-  { rank: '64th', of: '', event: 'HackerRank Orchestrate, Sep 2026', note: 'Buy or Wait? decision engine.' },
+  { rank: '#4', of: 'in India', event: 'CodeChef, 6★, rating 2483', note: '#28 global.', href: 'https://www.codechef.com/users/g26karthikk' },
+  { rank: '2,720', of: '', event: 'LeetCode Guardian', note: 'Top 0.06%, 575 of 888,637.', href: 'https://leetcode.com/u/G26KarthikK/' },
   { rank: 'Finalist', of: '', event: 'VoiceHack 2026, ML track', note: 'Call Quality Auto-Flagger.' },
-];
+] as { rank: string; of: string; event: string; note: string; href?: string }[];
 export const featuredPlacements = 4;
 
 /** "of 4,218 in Round 1" for counts, the text itself for anything else. */
@@ -17,11 +16,6 @@ export const ofText = (of: string) => (/^\d/.test(of) ? `of ${of}` : of);
 
 /** Won or placed elsewhere (29-10-26 Professional Information, Hackathons). */
 export const also = { rank: '5+', event: 'HiDevs, TRINIT, CodeCircuit and SmartBridge', note: 'Hackathons won or placed, in 24–48 hour builds.' };
-
-export const cp = [
-  { site: 'CodeChef', rating: '2483', badge: '6★', standing: '#4 in India, #28 global', href: 'https://www.codechef.com/users/g26karthikk' },
-  { site: 'LeetCode', rating: '2,720', badge: 'Guardian', standing: 'Top 0.06%, 575 of 888,637', href: 'https://leetcode.com/u/G26KarthikK/' },
-];
 
 // Certifications: 29-10-26/Professional Information GKK.txt, plus the previous portfolio's certifications.html
 // (credential links). Curated for applied-AI hiring: six are featured, the rest sit in a collapsed list, and

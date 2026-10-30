@@ -1,6 +1,6 @@
-// Products and tools without a page of their own. The four with full pages (ParallaxOps, Nishchay, the
-// notification router, grounded triage) live in src/content/work. Facts come from 29-10-26/ and sources/;
-// only public repositories are linked (checked with `gh repo view --json isPrivate`).
+// Products and tools without a page of their own. The five with full pages (REFEREE, AlgoSentinel, FounderOS,
+// Buy or Wait?, Closer) live in src/content/work. Facts come from 29-10-26/ and sources/; only public
+// repositories are linked (checked with `gh repo view --json isPrivate`).
 
 export const roles = ['Agents & LLM', 'ML', 'Research', 'Systems', 'Full stack', 'Security'] as const;
 export type Role = (typeof roles)[number];
@@ -21,34 +21,34 @@ export interface Project {
 
 export const indexProjects: Project[] = [
   {
-    name: 'REFEREE', what: 'Reads a research paper, lists its main claims, tests each one in Docker and writes a reviewer page: Verified or Not verified, with the evidence.',
-    who: 'Reviewers and researchers who want claims checked against runs.', fact: '~87% accuracy on evals and tests',
-    stack: ['Python', 'Docker', 'multi-agent orchestration', 'Claude Code'], skills: ['Agent orchestration', 'Claim verification', 'Reproducibility'],
-    roles: ['Agents & LLM', 'Research'], repo: gh('referee'),
-  },
-  {
-    name: 'AlgoSentinel', what: 'Audits pull requests for complexity regressions by profiling the old and new function in a Docker sandbox across growing inputs.',
-    who: 'Maintainers reviewing performance-sensitive changes.', fact: '55 tools across 4 namespaces',
-    stack: ['Python', 'FastAPI', 'Gemini', 'Docker', 'Pydantic'], skills: ['Tool design', 'Agent orchestration', 'Performance analysis'],
-    roles: ['Agents & LLM', 'Systems'], repo: gh('algosentinel'),
-  },
-  {
-    name: 'Buy or Wait?', what: 'Recommends pay in full, wait, installments, partial payments or decline from a 90-day cash-flow forecast. The LLM reads documents; code does the money.',
-    who: 'Anyone weighing a purchase against real cash flow.', fact: '64th, HackerRank Orchestrate Sep 2026 · 318 tests',
-    stack: ['Python', 'exact Decimal', 'OpenAI vision', 'unittest'], skills: ['Deterministic-first design', 'Independent verification', 'LLM perception'],
-    roles: ['Agents & LLM'], repo: gh('Buy-OR-Wait-Agentic-Decision-System'),
-  },
-  {
     name: 'Setu', what: 'Turns WhatsApp and SMS stock updates into shortage forecasts and transfer recommendations. A person approves every transfer.',
     who: 'District health teams coordinating medicine stock.', fact: 'Transportation solver with a deterministic fallback',
     stack: ['React', 'Firebase', 'Node.js', 'Python', 'Gemini', 'Twilio', 'PuLP', 'Cloud Run'], skills: ['Structured extraction', 'Optimization', 'Human-in-the-loop design'],
     roles: ['Full stack', 'Agents & LLM'], repo: gh('Sethu-AI'), live: 'https://setu-health-net.web.app',
   },
   {
-    name: 'FounderOS', what: 'A voice-first AI chief of staff: it turns spoken thoughts into decisions, tasks and insights, with Qdrant memory that keeps raw conversation private.',
-    who: 'Solo founders.', fact: '2nd prize, Ambient Intelligence Hackathon',
-    stack: ['JavaScript', 'FastAPI', 'Qdrant', 'Lyzr', 'Omi'], skills: ['Voice agents', 'Semantic memory', 'Rapid prototyping'],
-    roles: ['Agents & LLM'], repo: gh('FounderOS'), live: 'https://founder-os-pi-lemon.vercel.app',
+    name: 'ParallaxOps', what: 'Reconstructs a 3D scene from 15–60 overlapping photographs with COLMAP on one laptop, then scores the geometry against ground truth.',
+    who: 'Anyone who needs a measured 3D model from ordinary photographs, on their own machine.', fact: '0.31% camera position error vs ground truth · 199 tests',
+    stack: ['Python', 'COLMAP', 'Temporal', 'Fastify', 'PostgreSQL', 'Next.js', 'Three.js'], skills: ['Structure from motion', 'Workflow orchestration', 'Systems reliability'],
+    roles: ['Systems', 'ML'], repo: gh('parallaxops'),
+  },
+  {
+    name: 'Nishchay', what: 'Decides which cash-on-delivery orders to flag for return-to-origin risk, pricing each decision in the merchant\'s own rupees.',
+    who: 'Merchants who ship cash-on-delivery orders.', fact: '₹72.9L net vs the existing rule on 44,288 held-out orders',
+    stack: ['Python', 'LightGBM', 'scikit-learn', 'FastAPI', 'React'], skills: ['Probability calibration', 'Conformal prediction', 'Cost-sensitive decisions'],
+    roles: ['ML', 'Full stack'], repo: gh('Nishchay'),
+  },
+  {
+    name: 'WhatsApp Notification Router', what: 'Decides, per user, whether each WhatsApp message (text, image poster or voice note) should notify, digest or mute, and cites why.',
+    who: 'People whose WhatsApp never stops.', fact: '5-vote majority cut run-to-run variance from about 3 rows in 40 to 1.3',
+    stack: ['Python', 'OpenAI', 'whisper-1', 'Pydantic', 'rank-bm25', 'pytest'], skills: ['LLM evaluation', 'Prompt-injection defense', 'Deterministic guardrails'],
+    roles: ['Agents & LLM', 'Security'], repo: gh('whatsapp-notification-router'),
+  },
+  {
+    name: 'Grounded Support Triage', what: 'Reads a support ticket, finds the answer in the product docs, checks the citations, then replies or escalates.',
+    who: 'Support teams that want every automated reply grounded in their own documentation.', fact: '774-document corpus, 0–2 LLM calls for a typical ticket',
+    stack: ['Python', 'LangGraph', 'Claude', 'Gemini', 'BM25', 'SentenceTransformers'], skills: ['LangGraph agents', 'Hybrid retrieval', 'Answer verification'],
+    roles: ['Agents & LLM'], repo: gh('grounded-support-triage'),
   },
   {
     name: 'Avia', what: 'Scores insurance claims on Claim, Customer and Pattern risk with XGBoost and Isolation Forest, explains them with SHAP and reads documents with Gemini.',
