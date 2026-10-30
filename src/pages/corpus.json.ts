@@ -42,7 +42,7 @@ export const GET: APIRoute = async () => {
     add(`${x.org}: ${x.role}`, href, `${x.when}. Stack: ${x.stack}.`);
     x.points.forEach((p) => add(`${x.org}: ${x.role}`, href, p));
   }
-  add('Education', '/experience#education', `${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
+  add('Education', '/experience#education', `Where I study or studied (college, university, degree):${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
 
   add('Open source overview', '/open-source', `${ossStats.merged} merged pull requests across ${ossStats.projects} projects, ${ossStats.stars} combined stars, including PyTorch, pandas and mem0.`);
   for (const p of merged) add(`${p.project} pull request ${p.n}`, '/open-source', `Merged in ${p.project} (${p.stars} stars). ${p.what}`);
