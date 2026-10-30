@@ -2,10 +2,10 @@
 // The first four are featured on /achievements; the rest sit in a compact list.
 
 export const placements = [
-  { rank: '#1', of: '4,218 in Round 1', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
-  { rank: '#38', of: '32,000+ teams', event: 'Amazon ML Challenge 2026', note: 'Team lead. Invited to Amazon’s Applied Scientist Intern interview.' },
+  { rank: '1st', of: '4,218 in Round 1', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
+  { rank: '38th', of: '32,000+ teams', event: 'Amazon ML Challenge 2026', note: 'Team lead. Invited to Amazon’s Applied Scientist Intern interview.' },
   { rank: '2nd', of: '', event: 'Ambient Intelligence Hackathon, May 2026', note: 'Prize for FounderOS, a voice-first AI chief of staff.' },
-  { rank: '#4', of: 'in India', event: 'CodeChef, 6★, rating 2483', note: '#28 global.', href: 'https://www.codechef.com/users/g26karthikk' },
+  { rank: '4th', of: 'in India', event: 'CodeChef, 6★, rating 2483', note: '28th globally.', href: 'https://www.codechef.com/users/g26karthikk' },
   { rank: '2,720', of: '', event: 'LeetCode Guardian', note: 'Top 0.06%, 575 of 888,637.', href: 'https://leetcode.com/u/G26KarthikK/' },
   { rank: 'Finalist', of: '', event: 'VoiceHack 2026, ML track', note: 'Call Quality Auto-Flagger.' },
 ] as { rank: string; of: string; event: string; note: string; href?: string }[];
