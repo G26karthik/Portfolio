@@ -3,14 +3,14 @@ kind: case
 title: "BizMatch"
 kicker: "Amazon ML Challenge 2026 · Entity resolution"
 hook: "Finds every real copy of a business across ~10M noisy records and sets aside the look-alike decoys."
-placement: "Rank 38 of 32,000+ teams"
+placement: "38th of 32,000+ teams"
 year: 2026
 order: 1
 specimen: bizmatch
 field: "~10M noisy records collapsing into entity clusters"
 role: "Team lead · 4 people"
 metrics:
-  - { value: "38", label: "Final rank out of 32,000+ teams in the Amazon ML Challenge 2026" }
+  - { value: "38th", label: "Final place out of 32,000+ teams in the Amazon ML Challenge 2026" }
   - { value: "0.990", label: "Best public-leaderboard macro F0.5, up from 0.921 at the first submission" }
   - { value: "98.75%", label: "Candidate recall at ~5 candidates per business (TF-IDF + fine-tuned multilingual-e5)" }
   - { value: "+0.0039", label: "Gain from label-free France rules, confirmed by two independent statistical tests" }
@@ -53,7 +53,7 @@ The last step is a decision, not a threshold. F0.5 is scored per business, so a 
 
 ## Results
 
-We climbed from **0.921** at the first submission to **0.990 macro F0.5** on the public leaderboard and finished **rank 38 of 32,000+ teams**. Amazon's email confirmed a top-50 finish nationwide.
+We climbed from **0.921** at the first submission to **0.990 macro F0.5** on the public leaderboard and finished **38th of 32,000+ teams**. Amazon's email confirmed a top-50 finish nationwide.
 
 The engineering write-up, with the architecture and the leaderboard history drawn out, is in [Writing](/writing/amazon-ml-challenge-2026/).
 

@@ -4,7 +4,7 @@
 
 Headline results (verified 2026-10-29):
 - 1st of 4,218 in Round 1 of HackerRank Orchestrate, October 2026 edition (about 50,000 registered).
-- Rank 38 of 32,000+ teams, Amazon ML Challenge 2026 (team lead); Amazon invited the team to its Applied Scientist Intern interview.
+- 38th of 32,000+ teams, Amazon ML Challenge 2026 (team lead); Amazon invited the team to its Applied Scientist Intern interview.
 - Three first-author papers: quantum ML (Quantum Machine Intelligence, Springer, major revision), low-bit quantization of Indic language models (RAIT 2027, IIT (ISM) Dhanbad, under review) and sensitive-data leakage in LLM coding agents (under revision).
 - 24 merged open-source pull requests across 18 projects with 338K+ combined stars, including PyTorch, pandas, mem0 and Hindsight.
 - Microsoft AI-103 and DP-800, Oracle OCI Generative AI Professional, and 23 certifications in all.
