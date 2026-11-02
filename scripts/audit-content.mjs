@@ -61,7 +61,9 @@ if (/14789|15040|cache/i.test(hof.slice(0, hof.indexOf('};')))) problems.push('L
 
 // Merged PR count on the site must match the ledger.
 const mergedRows = (oss.match(/^\s+\{ project: '/gm) ?? []).length - 3; // minus the 3 credited rows
-assert.equal(mergedRows, 24, `oss.ts merged rows = ${mergedRows}, expected 24`);
+const stat = (k) => Number(oss.match(new RegExp(`${k}: ([0-9]+)`))?.[1]);
+assert.equal(mergedRows, stat('merged'), `oss.ts merged rows = ${mergedRows}, ossStats.merged = ${stat('merged')}`);
+assert.equal(stat('contributions'), stat('merged') + stat('credited'), 'ossStats.contributions must equal merged + credited');
 
 if (problems.length) {
   console.error(problems.join('\n'));

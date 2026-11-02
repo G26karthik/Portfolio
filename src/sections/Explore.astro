@@ -11,7 +11,7 @@ const latest = experience[0];
 const post = (await getCollection('writing'))[0];
 const tiles = [
   { href: `/experience#${anchor(latest.org)}`, title: 'Experience', big: `${experience.length}`, unit: 'roles', text: `Latest: ${latest.role} at ${latest.org}, ${latest.when}.`, wide: true },
-  { href: '/open-source', title: 'Open source', big: `${ossStats.merged}`, unit: 'merged PRs', text: `${ossStats.stars} combined stars across ${ossStats.projects} projects, and ${gh.contributions.toLocaleString('en')} GitHub contributions in the past year.`, wide: true, deep: true },
+  { href: '/open-source', title: 'Open source', big: `${ossStats.contributions}`, unit: 'open-source contributions', text: `${ossStats.merged} merged PRs and ${ossStats.credited} credited fixes, ${ossStats.stars} combined stars across ${ossStats.projects} projects, and ${gh.contributions.toLocaleString('en')} GitHub contributions in the past year.`, wide: true, deep: true },
   { href: '/research', title: 'Research', big: `${papers.length}`, unit: 'first-author papers', wide: true, text: 'Quantum ML at Springer QMI, LLM quantization at RAIT 2027, and coding-agent security.' },
   { href: `/writing/${post.id}/`, title: 'Writing', big: `${post.data.minutes}`, unit: 'min read', wide: true, text: 'Engineering write-up of the 38th-place Amazon ML Challenge solution, with diagrams.' },
   { href: '/achievements', title: 'Achievements', big: `${placements.length}`, unit: 'placements', text: 'Hackathon ranks, CodeChef 6★ and LeetCode Guardian.' },

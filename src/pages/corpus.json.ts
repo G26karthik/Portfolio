@@ -44,7 +44,7 @@ export const GET: APIRoute = async () => {
   }
   add('Education', '/experience#education', `Where I study or studied (college, university, degree): ${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
 
-  add('Open source overview', '/open-source', `${ossStats.merged} merged pull requests across ${ossStats.projects} projects, ${ossStats.stars} combined stars, including PyTorch, pandas and mem0.`);
+  add('Open source overview', '/open-source', `${ossStats.contributions} open-source contributions: ${ossStats.merged} merged pull requests across ${ossStats.projects} projects (${ossStats.stars} combined stars, including PyTorch, pandas and mem0) plus ${ossStats.credited} fixes the maintainers landed with credit.`);
   for (const p of merged) add(`${p.project} pull request ${p.n}`, '/open-source', `Merged in ${p.project} (${p.stars} stars). ${p.what}`);
   for (const c of credited) add(`${c.project}: credited fix`, '/open-source', c.text);
   add('Langfuse security Hall of Fame', '/open-source', hallOfFame.text);

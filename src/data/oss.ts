@@ -12,17 +12,17 @@ export interface PR {
   area: 'ML' | 'Data' | 'Agents' | 'Science' | 'Tooling';
 }
 
-export const ossStats = { merged: 25, projects: 19, stars: '350K+' };
+export const ossStats = { contributions: 28, merged: 25, credited: 3, projects: 19, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
 export const merged: PR[] = [
-  { project: 'PyTorch', stars: '105.0K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML' },
-  { project: 'mem0', stars: '67.6K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents' },
+  { project: 'PyTorch', stars: '105.1K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML' },
+  { project: 'mem0', stars: '68.3K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents' },
   { project: 'Hindsight', stars: '57.9K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents' },
-  { project: 'pandas', stars: '50.2K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
-  { project: 'pandas', stars: '50.2K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
-  { project: 'pandas', stars: '50.2K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
+  { project: 'pandas', stars: '50.3K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
+  { project: 'pandas', stars: '50.3K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
+  { project: 'pandas', stars: '50.3K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
   { project: 'matplotlib', stars: '23.4K', n: '#30639', href: gh('matplotlib/matplotlib', 30639), what: 'Documented the TwoSlopeNorm linear colorbar workaround.', area: 'Data' },
   { project: 'sktime', stars: '10.1K', n: '#8923', href: gh('sktime/sktime', 8923), what: 'Repaired broken pytorch-forecasting doc references in forecaster adapters.', area: 'ML' },
   { project: 'SQLFluff', stars: '10.0K', n: '#7163', href: gh('sqlfluff/sqlfluff', 7163), what: 'PostgreSQL OPERATOR(schema.operator) parser via a new QualifiedOperatorSegment (+649 lines).', area: 'Tooling' },
@@ -35,8 +35,8 @@ export const merged: PR[] = [
   { project: 'QuTiP', stars: '2.1K', n: '#3049', href: gh('qutip/qutip', 3049), what: 'rand_dm / rand_herm no longer hang forever on equal eigenvalues.', area: 'Science' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3215', href: gh('pymc-labs/pymc-marketing', 3215), what: 'Fixed notebook equation rendering.', area: 'Science' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3206', href: gh('pymc-labs/pymc-marketing', 3206), what: 'Fixed extend_dataset.', area: 'Science' },
-  { project: 'sbi', stars: '876', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
-  { project: 'sbi', stars: '876', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science' },
+  { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
+  { project: 'sbi', stars: '882', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science' },
   { project: 'toqito', stars: '292', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'QuTiP-QIP', stars: '157', n: '#427', href: gh('qutip/qutip-qip', 427), what: 'Processor.run_state no longer mutates the caller’s collapse operators.', area: 'Science' },
   { project: 'PyMC-Extras', stars: '143', n: '#802', href: gh('pymc-devs/pymc-extras', 802), what: 'Deterministic Windows parallel-pathfinder test.', area: 'Science' },

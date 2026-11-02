@@ -20,12 +20,14 @@ const nums = [
 ];
 ---
 
-<Base title="Open source" description={`${ossStats.merged} merged pull requests across ${ossStats.projects} open-source projects including PyTorch, pandas and mem0, plus fixes the maintainers landed with credit.`} shape="constellation">
+<Base title="Open source" description={`${ossStats.contributions} open-source contributions: ${ossStats.merged} merged pull requests across ${ossStats.projects} projects including PyTorch, pandas and mem0, plus ${ossStats.credited} fixes the maintainers landed with credit.`} shape="constellation">
   <PageHead title="Merged where it counts." lede="Bugs found in the libraries I use, fixed with a test, reviewed and merged by their maintainers. Every merged pull request is below." />
 
   <div class="wrap stack">
     <div class="oss-stats" data-reveal>
+      <div><b data-count={ossStats.contributions}>{ossStats.contributions}</b><span>contributions</span></div>
       <div><b data-count={ossStats.merged}>{ossStats.merged}</b><span>merged PRs</span></div>
+      <div><b data-count={ossStats.credited}>{ossStats.credited}</b><span>credited fixes</span></div>
       <div><b data-count={ossStats.projects}>{ossStats.projects}</b><span>projects</span></div>
       <div><b>{ossStats.stars}</b><span>combined stars</span></div>
     </div>
