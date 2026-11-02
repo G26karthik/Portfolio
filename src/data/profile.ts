@@ -10,7 +10,7 @@ export const profile = {
   tel: '+918247697251',
   line: 'I build AI systems that hold up on data they have never seen, and I research how LLMs and quantum models behave.',
   description:
-    'Applied AI engineer and researcher in Hyderabad. 38th of 32,000+ teams at the Amazon ML Challenge 2026, three first-author papers on quantum ML, LLM quantization and coding-agent security, and 24 merged open-source PRs across 18 projects including PyTorch, pandas and mem0.',
+    'Applied AI engineer and researcher in Hyderabad. 38th of 32,000+ teams at the Amazon ML Challenge 2026, three first-author papers on quantum ML, LLM quantization and coding-agent security, and 25 merged open-source PRs across 19 projects including PyTorch, pandas and mem0.',
 };
 
 export const links = {
@@ -29,14 +29,14 @@ export const socials = [
 
 /** Headline results, most impressive first. */
 export const proof = [
-  { value: '1st', of: 'of 4,218', label: 'HackerRank Orchestrate, Oct 2026, Round 1', note: '~50,000 registered' },
+  { value: '1st', of: 'of 4,600', label: 'HackerRank Orchestrate, Oct 2026', note: '~50,000 registered' },
   { value: '38th', of: 'of 32,000+ teams', label: 'Amazon ML Challenge 2026', note: 'team lead' },
-  { value: '24', of: 'merged PRs', label: 'PyTorch, pandas, mem0, Hindsight +14 more', note: '338K+ combined stars' },
+  { value: '25', of: 'merged PRs', label: 'PyTorch, pandas, mem0, Hindsight +15 more', note: '350K+ combined stars' },
   { value: '3', of: 'first-author papers', label: 'Quantum ML, LLM quantization, agent security', note: 'In review or revision' },
 ];
 
 /** What I'm doing right now. */
-export const now = 'Ranked 1st of 4,218 in Round 1 of HackerRank Orchestrate (Oct 2026), revising my quantum-ML paper for Springer, with a quantization paper under review at RAIT 2027, and looking for applied AI and ML roles.';
+export const now = 'Ranked 1st of 4,600 at HackerRank Orchestrate (Oct 2026), revising my quantum-ML paper for Springer, with a quantization paper under review at RAIT 2027, and looking for applied AI and ML roles.';
 
 export const about = [
   'I build AI systems end to end: agents, retrieval, ranking models and the infrastructure under them. I came to it as an engineer first, with a production REST API serving 5K+ users a day, a marketplace shipped as the only full-stack engineer, and fixes merged into PyTorch, pandas and mem0.',

@@ -15,3 +15,8 @@ Facts stated directly by Karthik that are newer than `29-10-26/`. The content au
 - Certifications curated for applied-AI hiring: 23 remain. Dropped: IBM Web Development, Google IT Support Specialization, HackerRank Problem Solving Certification and Cisco CCNA Introduction to Networks. The Aspire Leaders Program moved to the education panel on /experience. Six are featured; the rest sit in a collapsed list.
 - Structure: `/work/<slug>` holds two kinds. Case studies (BizMatch, QNC) are deep technical write-ups; products (REFEREE, AlgoSentinel, FounderOS, Buy or Wait?, Closer) get a product page, re-curated on 2026-10-30 from the repositories themselves (see `sources/github-readmes.md`); ParallaxOps, Nishchay, the notification router and grounded triage moved into the filterable index with 9 more products and tools, and six older ones sit in an archive.
 - Writing: `/writing` holds the Amazon ML Challenge 2026 engineering post. No Medium profile exists in the CV, the old portfolio, the GitHub profile or the Downloads folder, so none is linked.
+
+## 2026-11-02 corrections
+
+- HackerRank Orchestrate, October 2026 edition: 1st of 4,600 (owner's correction, 2026-11-02). It replaces "1st of 4,218 in Round 1" in `src/data/profile.ts`, `src/data/credentials.ts`, `src/pages/achievements.astro`, the Ask corpus and `public/llms.txt`; about 50,000 registered is unchanged.
+- Open source: 25 merged PRs across 19 projects with 350K+ combined stars (authlib #974 merged 2026-11-02; stars from GitHub the same day). Only projects Karthik does not own are counted. The home-page label reads "PyTorch, pandas, mem0, Hindsight +15 more". Hindsight is 57.9K stars.

@@ -12,14 +12,14 @@ export interface PR {
   area: 'ML' | 'Data' | 'Agents' | 'Science' | 'Tooling';
 }
 
-export const ossStats = { merged: 24, projects: 18, stars: '338K+' };
+export const ossStats = { merged: 25, projects: 19, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
 export const merged: PR[] = [
   { project: 'PyTorch', stars: '105.0K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML' },
   { project: 'mem0', stars: '67.6K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents' },
-  { project: 'Hindsight', stars: '52.6K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents' },
+  { project: 'Hindsight', stars: '57.9K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents' },
   { project: 'pandas', stars: '50.2K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
   { project: 'pandas', stars: '50.2K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
   { project: 'pandas', stars: '50.2K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
@@ -28,6 +28,7 @@ export const merged: PR[] = [
   { project: 'SQLFluff', stars: '10.0K', n: '#7163', href: gh('sqlfluff/sqlfluff', 7163), what: 'PostgreSQL OPERATOR(schema.operator) parser via a new QualifiedOperatorSegment (+649 lines).', area: 'Tooling' },
   { project: 'hiring-agent', stars: '7.3K', n: '#133', href: gh('interviewstreet/hiring-agent', 133), what: 'Fixed a PyMuPDF memory leak that grew by hundreds of MB over ~50-PDF batches.', area: 'Agents' },
   { project: 'hiring-agent', stars: '7.3K', n: '#129', href: gh('interviewstreet/hiring-agent', 129), what: 'Fixed cross-platform UTF-8 cache-write failures on Windows.', area: 'Agents' },
+  { project: 'authlib', stars: '5.4K', n: '#974', href: gh('authlib/authlib', 974), what: 'OAuth endpoints now answer insecure-transport requests with a proper error response instead of raising.', area: 'Tooling' },
   { project: 'PyTorch-Ignite', stars: '4.8K', n: '#3876', href: gh('pytorch/ignite', 3876), what: 'ReduceLROnPlateauScheduler now respects min_lr instead of decaying past it.', area: 'ML' },
   { project: 'NumPyro', stars: '2.8K', n: '#2364', href: gh('pyro-ppl/numpyro', 2364), what: 'Hurdle distributions over positive continuous bases now include zero in their support.', area: 'Science' },
   { project: 'NumPyro', stars: '2.8K', n: '#2370', href: gh('pyro-ppl/numpyro', 2370), what: 'init_to_mean falls back to the median when a heavy-tailed prior has no finite mean.', area: 'Science' },

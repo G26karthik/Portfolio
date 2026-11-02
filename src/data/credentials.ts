@@ -2,7 +2,7 @@
 // The first four are featured on /achievements; the rest sit in a compact list.
 
 export const placements = [
-  { rank: '1st', of: '4,218 in Round 1', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
+  { rank: '1st', of: '4,600', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
   { rank: '38th', of: '32,000+ teams', event: 'Amazon ML Challenge 2026', note: 'Team lead. Invited to Amazon’s Applied Scientist Intern interview.' },
   { rank: '2nd', of: '', event: 'Ambient Intelligence Hackathon, May 2026', note: 'Prize for FounderOS, a voice-first AI chief of staff.' },
   { rank: '4th', of: 'in India', event: 'CodeChef, 6★, rating 2483', note: '28th globally.', href: 'https://www.codechef.com/users/g26karthikk' },
@@ -11,7 +11,7 @@ export const placements = [
 ] as { rank: string; of: string; event: string; note: string; href?: string }[];
 export const featuredPlacements = 4;
 
-/** "of 4,218 in Round 1" for counts, the text itself for anything else. */
+/** "of 4,600" for counts, the text itself for anything else. */
 export const ofText = (of: string) => (/^\d/.test(of) ? `of ${of}` : of);
 
 /** Won or placed elsewhere (29-10-26 Professional Information, Hackathons). */
