@@ -12,7 +12,7 @@ export interface PR {
   area: 'ML' | 'Data' | 'Agents' | 'Science' | 'Tooling';
 }
 
-export const ossStats = { contributions: 31, merged: 28, credited: 3, projects: 22, stars: '350K+' };
+export const ossStats = { contributions: 32, merged: 29, credited: 3, projects: 23, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -24,6 +24,7 @@ export const merged: PR[] = [
   { project: 'pandas', stars: '50.3K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
   { project: 'pandas', stars: '50.3K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
   { project: 'matplotlib', stars: '23.4K', n: '#30639', href: gh('matplotlib/matplotlib', 30639), what: 'Documented the TwoSlopeNorm linear colorbar workaround.', area: 'Data' },
+  { project: 'tantivy', stars: '16.4K', n: '#3241', href: gh('quickwit-oss/tantivy', 3241), what: 'BitSet::clear now resets the cached length, so len() no longer reports the old count after a clear.', area: 'Data' },
   { project: 'sktime', stars: '10.1K', n: '#8923', href: gh('sktime/sktime', 8923), what: 'Repaired broken pytorch-forecasting doc references in forecaster adapters.', area: 'ML' },
   { project: 'SQLFluff', stars: '10.0K', n: '#7163', href: gh('sqlfluff/sqlfluff', 7163), what: 'PostgreSQL OPERATOR(schema.operator) parser via a new QualifiedOperatorSegment (+649 lines).', area: 'Tooling' },
   { project: 'hiring-agent', stars: '7.3K', n: '#133', href: gh('interviewstreet/hiring-agent', 133), what: 'Fixed a PyMuPDF memory leak that grew by hundreds of MB over ~50-PDF batches.', area: 'Agents' },
