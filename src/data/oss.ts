@@ -12,7 +12,7 @@ export interface PR {
   area: 'ML' | 'Data' | 'Agents' | 'Science' | 'Tooling';
 }
 
-export const ossStats = { contributions: 28, merged: 25, credited: 3, projects: 19, stars: '350K+' };
+export const ossStats = { contributions: 31, merged: 28, credited: 3, projects: 22, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -33,13 +33,16 @@ export const merged: PR[] = [
   { project: 'NumPyro', stars: '2.8K', n: '#2364', href: gh('pyro-ppl/numpyro', 2364), what: 'Hurdle distributions over positive continuous bases now include zero in their support.', area: 'Science' },
   { project: 'NumPyro', stars: '2.8K', n: '#2370', href: gh('pyro-ppl/numpyro', 2370), what: 'init_to_mean falls back to the median when a heavy-tailed prior has no finite mean.', area: 'Science' },
   { project: 'QuTiP', stars: '2.1K', n: '#3049', href: gh('qutip/qutip', 3049), what: 'rand_dm / rand_herm no longer hang forever on equal eigenvalues.', area: 'Science' },
+  { project: 'cspell', stars: '1.7K', n: '#9519', href: gh('streetsidesoftware/cspell', 9519), what: 'Cached issues are reported at the file’s current location, so a cache copied to another folder or machine no longer prints old paths.', area: 'Tooling' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3215', href: gh('pymc-labs/pymc-marketing', 3215), what: 'Fixed notebook equation rendering.', area: 'Science' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3206', href: gh('pymc-labs/pymc-marketing', 3206), what: 'Fixed extend_dataset.', area: 'Science' },
+  { project: 'NetworKit', stars: '883', n: '#1564', href: gh('networkit/networkit', 1564), what: 'SpectralColoring no longer raises IndexError on small graphs such as K2 and C4.', area: 'Science' },
   { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
   { project: 'sbi', stars: '882', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science' },
   { project: 'toqito', stars: '292', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'QuTiP-QIP', stars: '157', n: '#427', href: gh('qutip/qutip-qip', 427), what: 'Processor.run_state no longer mutates the caller’s collapse operators.', area: 'Science' },
   { project: 'PyMC-Extras', stars: '143', n: '#802', href: gh('pymc-devs/pymc-extras', 802), what: 'Deterministic Windows parallel-pathfinder test.', area: 'Science' },
+  { project: 'ScyllaDB python-driver', stars: '82', n: '#1157', href: gh('scylladb/python-driver', 1157), what: 'VectorType now reports vector as its typename.', area: 'Data' },
   { project: 'naija-nutri-hub', stars: '24', n: '#52', href: gh('mlsanigeria/naija-nutri-hub', 52), what: 'Secure OTP email verification on signup, with rollback on failure.', area: 'Tooling' },
   { project: 'ArviZ-Stats', stars: '18', n: '#505', href: gh('arviz-devs/arviz-stats', 505), what: 'histogram put the two largest integer values in one bin; 0/1 data got a single bin.', area: 'Science' },
 ];
