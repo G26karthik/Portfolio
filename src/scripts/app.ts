@@ -288,6 +288,14 @@ input.addEventListener('keydown', (e) => {
 });
 pal.d.addEventListener('click', (e) => { if (e.target === pal.d) pal.close(); }); // backdrop
 
+// ── "Show more" for a collapsed list (OSS ledger) ──────────────────────────
+const expand = (id: string) => {
+  document.getElementById(id)?.removeAttribute('data-collapsed');
+  document.querySelectorAll<HTMLElement>(`[data-more="${id}"]`).forEach((b) => { b.hidden = true; });
+  lenis?.resize();
+};
+document.querySelectorAll<HTMLElement>('[data-more]').forEach((b) => b.addEventListener('click', () => expand(b.dataset.more!)));
+
 // ── Filters (projects index + OSS ledger) ─────────────────────────────────
 document.querySelectorAll<HTMLElement>('[data-filters]').forEach((group) => {
   const items = document.querySelectorAll<HTMLElement>(`#${group.dataset.filters} > li`);
@@ -296,6 +304,7 @@ document.querySelectorAll<HTMLElement>('[data-filters]').forEach((group) => {
     if (!b) return;
     const f = b.dataset.filter!;
     const apply = () => {
+      if (f !== 'all') expand(group.dataset.filters!); // a filter must see the collapsed rows too
       group.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       items.forEach((li) => { li.hidden = f !== 'all' && !li.dataset.tags!.split('|').includes(f); });
       lenis?.resize();

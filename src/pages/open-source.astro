@@ -2,12 +2,13 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import Next from '../components/Next.astro';
-import { merged, credited, hallOfFame, ossStats } from '../data/oss';
+import { merged, ranked, credited, hallOfFame, ossStats } from '../data/oss';
 import gh from '../data/github.json';
 import { links } from '../data/profile';
 import { heatmap } from '../lib/heatmap';
 
 const areas = ['ML', 'Agents', 'Data', 'Science', 'Tooling'];
+const rest = merged.filter((p) => !p.top).length;
 const h = heatmap(gh.calendar.start, gh.calendar.counts);
 const n = (v: number) => v.toLocaleString('en');
 const nums = [
@@ -21,7 +22,7 @@ const nums = [
 ---
 
 <Base title="Open source" description={`${ossStats.contributions} open-source contributions: ${ossStats.merged} merged pull requests across ${ossStats.projects} projects including PyTorch, pandas and mem0, plus ${ossStats.credited} fixes the maintainers landed with credit.`} shape="constellation">
-  <PageHead title="Merged where it counts." lede="Bugs found in the libraries I use, fixed with a test, reviewed and merged by their maintainers. Every merged pull request is below." />
+  <PageHead title="Merged where it counts." lede="Bugs found in the libraries I use, fixed with a test, reviewed and merged by their maintainers. The strongest ones come first; every merged pull request is listed below." />
 
   <div class="wrap stack">
     <div class="oss-stats" data-reveal>
@@ -38,9 +39,9 @@ const nums = [
         <button type="button" data-filter="all" aria-pressed="true">All {merged.length}</button>
         {areas.map((a) => <button type="button" data-filter={a} aria-pressed="false">{a}</button>)}
       </div>
-      <ul class="prs" id="ledger">
-        {merged.map((p) => (
-          <li data-tags={p.area}>
+      <ul class="prs" id="ledger" data-collapsed>
+        {ranked.map((p) => (
+          <li data-tags={p.area} class={p.top ? undefined : 'more'}>
             <a href={p.href} target="_blank" rel="noopener">
               <span class="p">{p.project}<small>★ {p.stars}</small></span>
               <span class="w">{p.what}</span>
@@ -49,6 +50,8 @@ const nums = [
           </li>
         ))}
       </ul>
+      <button type="button" class="more-btn" data-more="ledger" aria-controls="ledger" aria-expanded="false">Show {rest} more</button>
+      <noscript><style>{`#ledger li.more{display:list-item!important}.more-btn{display:none}`}</style></noscript>
     </section>
 
     <section aria-labelledby="credit-title">

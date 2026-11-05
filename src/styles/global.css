@@ -324,6 +324,9 @@ main { position: relative; z-index: 1; display: block; padding-bottom: clamp(56p
 @media (hover: hover) and (pointer: fine) { .filters button:hover:not([aria-pressed='true']) { background: var(--line); } }
 .prs { list-style: none; display: grid; gap: 4px; }
 .prs li[hidden] { display: none; }
+.prs[data-collapsed] li.more { display: none; }
+.more-btn { margin-top: 14px; min-height: 44px; padding: 0 22px; border-radius: 99px; background: var(--surface-2); font-weight: 500; font-size: 0.9rem; transition: background-color 0.15s ease, color 0.15s ease; }
+@media (hover: hover) and (pointer: fine) { .more-btn:hover { background: var(--ink); color: var(--bg); } }
 .prs a { display: grid; grid-template-columns: minmax(0, 170px) minmax(0, 1fr) auto; gap: 4px 24px; padding: 14px 18px; align-items: baseline; background: var(--surface-a); border-radius: var(--r); transition: background-color 0.15s ease; }
 .prs .p { font-weight: 600; }
 .prs .p small { display: block; font: 500 0.75rem var(--mono); color: var(--muted); }
