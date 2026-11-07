@@ -14,7 +14,7 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 33, merged: 30, credited: 3, projects: 23, stars: '350K+' };
+export const ossStats = { contributions: 34, merged: 31, credited: 3, projects: 24, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -42,6 +42,7 @@ export const merged: PR[] = [
   { project: 'NetworKit', stars: '884', n: '#1564', href: gh('networkit/networkit', 1564), what: 'SpectralColoring no longer raises IndexError on small graphs such as K2 and C4.', area: 'Science', top: true },
   { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
   { project: 'sbi', stars: '882', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science', top: true },
+  { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
   { project: 'toqito', stars: '293', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'QuTiP-QIP', stars: '157', n: '#427', href: gh('qutip/qutip-qip', 427), what: 'Processor.run_state no longer mutates the caller’s collapse operators.', area: 'Science' },
   { project: 'PyMC-Extras', stars: '143', n: '#802', href: gh('pymc-devs/pymc-extras', 802), what: 'Deterministic Windows parallel-pathfinder test.', area: 'Science' },
