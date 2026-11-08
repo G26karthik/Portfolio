@@ -14,7 +14,7 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 35, merged: 32, credited: 3, projects: 24, stars: '350K+' };
+export const ossStats = { contributions: 36, merged: 33, credited: 3, projects: 25, stars: '350K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -41,6 +41,7 @@ export const merged: PR[] = [
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3206', href: gh('pymc-labs/pymc-marketing', 3206), what: 'Fixed extend_dataset.', area: 'Science' },
   { project: 'NetworKit', stars: '884', n: '#1564', href: gh('networkit/networkit', 1564), what: 'SpectralColoring no longer raises IndexError on small graphs such as K2 and C4.', area: 'Science', top: true },
   { project: 'NetworKit', stars: '884', n: '#1572', href: gh('networkit/networkit', 1572), what: 'overview() no longer raises on an empty graph (ZeroDivisionError undirected, ValueError directed); it prints zeros.', area: 'Science' },
+  { project: 'Doctrine MongoDB ODM', stars: '1.1K', n: '#3099', href: gh('doctrine/mongodb-odm', 3099), what: 'Documented MongoDB text indexes: attribute and XML mapping, the weights, default_language and language_override options, and when schema update recreates the index.', area: 'Data' },
   { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
   { project: 'sbi', stars: '882', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science', top: true },
   { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
