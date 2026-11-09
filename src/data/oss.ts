@@ -14,7 +14,7 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 36, merged: 33, credited: 3, projects: 25, stars: '350K+' };
+export const ossStats = { contributions: 39, merged: 36, credited: 3, projects: 28, stars: '400K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -22,6 +22,7 @@ export const merged: PR[] = [
   { project: 'PyTorch', stars: '105.1K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
   { project: 'mem0', stars: '68.3K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
   { project: 'Hindsight', stars: '57.9K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents', top: true },
+  { project: 'Ruff', stars: '51.1K', n: '#30189', href: gh('astral-sh/ruff', 30189), what: 'The B028 and UP022 autofixes no longer produce broken code when a keyword argument has a parenthesized value, such as category=(DeprecationWarning).', area: 'Tooling', top: true },
   { project: 'pandas', stars: '50.3K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
   { project: 'pandas', stars: '50.3K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
   { project: 'pandas', stars: '50.3K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
@@ -35,6 +36,7 @@ export const merged: PR[] = [
   { project: 'PyTorch-Ignite', stars: '4.8K', n: '#3876', href: gh('pytorch/ignite', 3876), what: 'ReduceLROnPlateauScheduler now respects min_lr instead of decaying past it.', area: 'ML', top: true },
   { project: 'NumPyro', stars: '2.8K', n: '#2364', href: gh('pyro-ppl/numpyro', 2364), what: 'Hurdle distributions over positive continuous bases now include zero in their support.', area: 'Science', top: true },
   { project: 'NumPyro', stars: '2.8K', n: '#2370', href: gh('pyro-ppl/numpyro', 2370), what: 'init_to_mean falls back to the median when a heavy-tailed prior has no finite mean.', area: 'Science' },
+  { project: 'pulldown-cmark', stars: '2.8K', n: '#1192', href: gh('pulldown-cmark/pulldown-cmark', 1192), what: 'Fixed the strikethrough wording in the superscript and subscript spec.', area: 'Tooling' },
   { project: 'QuTiP', stars: '2.1K', n: '#3049', href: gh('qutip/qutip', 3049), what: 'rand_dm / rand_herm no longer hang forever on equal eigenvalues.', area: 'Science', top: true },
   { project: 'cspell', stars: '1.7K', n: '#9519', href: gh('streetsidesoftware/cspell', 9519), what: 'Cached issues are reported at the file’s current location, so a cache copied to another folder or machine no longer prints old paths.', area: 'Tooling' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3215', href: gh('pymc-labs/pymc-marketing', 3215), what: 'Fixed notebook equation rendering.', area: 'Science' },
@@ -44,6 +46,7 @@ export const merged: PR[] = [
   { project: 'Doctrine MongoDB ODM', stars: '1.1K', n: '#3099', href: gh('doctrine/mongodb-odm', 3099), what: 'Documented MongoDB text indexes: attribute and XML mapping, the weights, default_language and language_override options, and when schema update recreates the index.', area: 'Data' },
   { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
   { project: 'sbi', stars: '882', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science', top: true },
+  { project: 'Sentient', stars: '719', n: '#553', href: gh('existence-master/Sentient', 553), what: 'A claimed memory save in a memory-off turn no longer triggers the stored-memory check.', area: 'Agents' },
   { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
   { project: 'toqito', stars: '293', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'QuTiP-QIP', stars: '157', n: '#427', href: gh('qutip/qutip-qip', 427), what: 'Processor.run_state no longer mutates the caller’s collapse operators.', area: 'Science' },
