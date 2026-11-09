@@ -14,7 +14,7 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 39, merged: 36, credited: 3, projects: 28, stars: '400K+' };
+export const ossStats = { contributions: 40, merged: 37, credited: 3, projects: 29, stars: '400K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -32,6 +32,7 @@ export const merged: PR[] = [
   { project: 'SQLFluff', stars: '10.0K', n: '#7163', href: gh('sqlfluff/sqlfluff', 7163), what: 'PostgreSQL OPERATOR(schema.operator) parser via a new QualifiedOperatorSegment (+649 lines).', area: 'Tooling', top: true },
   { project: 'hiring-agent', stars: '7.3K', n: '#133', href: gh('interviewstreet/hiring-agent', 133), what: 'Fixed a PyMuPDF memory leak that grew by hundreds of MB over ~50-PDF batches.', area: 'Agents', top: true },
   { project: 'hiring-agent', stars: '7.3K', n: '#129', href: gh('interviewstreet/hiring-agent', 129), what: 'Fixed cross-platform UTF-8 cache-write failures on Windows.', area: 'Agents' },
+  { project: 'mockery', stars: '7.2K', n: '#1208', href: gh('vektra/mockery', 1208), what: 'Removed an unused import from the replace-type example in the docs.', area: 'Tooling' },
   { project: 'authlib', stars: '5.4K', n: '#974', href: gh('authlib/authlib', 974), what: 'OAuth endpoints now answer insecure-transport requests with a proper error response instead of raising.', area: 'Tooling', top: true },
   { project: 'PyTorch-Ignite', stars: '4.8K', n: '#3876', href: gh('pytorch/ignite', 3876), what: 'ReduceLROnPlateauScheduler now respects min_lr instead of decaying past it.', area: 'ML', top: true },
   { project: 'NumPyro', stars: '2.8K', n: '#2364', href: gh('pyro-ppl/numpyro', 2364), what: 'Hurdle distributions over positive continuous bases now include zero in their support.', area: 'Science', top: true },
