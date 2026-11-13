@@ -10,7 +10,7 @@ export const profile = {
   tel: '+918247697251',
   line: 'I build AI systems that hold up on data they have never seen, and I research how LLMs and quantum models behave.',
   description:
-    'Applied AI engineer and researcher in Hyderabad. 38th of 32,000+ teams at the Amazon ML Challenge 2026, three first-author papers on quantum ML, LLM quantization and coding-agent security, and 51 open-source contributions (48 merged PRs across 38 projects including PyTorch, Ruff, pandas and mem0, plus 3 fixes maintainers landed with credit).',
+    'Applied AI engineer and researcher in Hyderabad. 38th of 32,000+ teams at the Amazon ML Challenge 2026, three first-author papers on quantum ML, LLM quantization and coding-agent security, and 59 open-source contributions (56 merged PRs across 40 projects including PyTorch, Ruff, pandas and mem0, plus 3 fixes maintainers landed with credit).',
 };
 
 export const links = {
@@ -31,7 +31,7 @@ export const socials = [
 export const proof = [
   { value: '1st', of: 'of 4,600', label: 'HackerRank Orchestrate, Oct 2026', note: '~50,000 registered' },
   { value: '38th', of: 'of 32,000+ teams', label: 'Amazon ML Challenge 2026', note: 'team lead' },
-  { value: '51', of: 'open-source contributions', label: '48 merged PRs (PyTorch, Ruff, pandas, mem0 +34 more) + 3 credited fixes', note: '460K+ combined stars' },
+  { value: '59', of: 'open-source contributions', label: '56 merged PRs (PyTorch, Ruff, pandas, mem0 +36 more) + 3 credited fixes', note: '465K+ combined stars' },
   { value: '3', of: 'first-author papers', label: 'Quantum ML, LLM quantization, agent security', note: 'In review or revision' },
 ];
 
