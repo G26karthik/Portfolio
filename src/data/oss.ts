@@ -14,13 +14,13 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 59, merged: 56, credited: 3, projects: 40, stars: '465K+' };
+export const ossStats = { contributions: 64, merged: 61, credited: 3, projects: 40, stars: '466K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
 export const merged: PR[] = [
   { project: 'PyTorch', stars: '105.5K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
-  { project: 'mem0', stars: '68.9K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
+  { project: 'mem0', stars: '69.0K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
   { project: 'Hindsight', stars: '57.9K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents', top: true },
   { project: 'Ruff', stars: '51.1K', n: '#30189', href: gh('astral-sh/ruff', 30189), what: 'The B028 and UP022 autofixes no longer produce broken code when a keyword argument has a parenthesized value, such as category=(DeprecationWarning).', area: 'Tooling', top: true },
   { project: 'pandas', stars: '50.5K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
@@ -37,6 +37,7 @@ export const merged: PR[] = [
   { project: 'hiring-agent', stars: '7.3K', n: '#129', href: gh('interviewstreet/hiring-agent', 129), what: 'Fixed cross-platform UTF-8 cache-write failures on Windows.', area: 'Agents' },
   { project: 'mockery', stars: '7.2K', n: '#1208', href: gh('vektra/mockery', 1208), what: 'Removed an unused import from the replace-type example in the docs.', area: 'Tooling' },
   { project: 'authlib', stars: '5.4K', n: '#974', href: gh('authlib/authlib', 974), what: 'OAuth endpoints now answer insecure-transport requests with a proper error response instead of raising.', area: 'Tooling', top: true },
+  { project: 'authlib', stars: '5.4K', n: '#1049', href: gh('authlib/authlib', 1049), what: 'The device code grant now answers an unknown device code, or one issued to another client, with invalid_grant as RFC 8628 requires.', area: 'Tooling' },
   { project: 'PyTorch-Ignite', stars: '4.8K', n: '#3876', href: gh('pytorch/ignite', 3876), what: 'ReduceLROnPlateauScheduler now respects min_lr instead of decaying past it.', area: 'ML', top: true },
   { project: 'graphql-go', stars: '4.8K', n: '#828', href: gh('graph-gophers/graphql-go', 828), what: 'Block strings with an escaped triple quote no longer end early with a syntax error.', area: 'Tooling', top: true },
   { project: 'Kinto', stars: '4.4K', n: '#3823', href: gh('Kinto/kinto', 3823), what: 'Search filters now match special characters in the search value literally, on both storage backends.', area: 'Data' },
@@ -54,9 +55,12 @@ export const merged: PR[] = [
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3206', href: gh('pymc-labs/pymc-marketing', 3206), what: 'Fixed extend_dataset.', area: 'Science' },
   { project: 'PyMC-Marketing', stars: '1.3K', n: '#3334', href: gh('pymc-labs/pymc-marketing', 3334), what: 'Silenced a sphinx-design 0.8 deprecation warning that was failing the docs build.', area: 'Science' },
   { project: 'Phobos (D standard library)', stars: '1.3K', n: '#11149', href: gh('dlang/phobos', 11149), what: 'BigInt to float and double conversion was wrong at 64-bit word boundaries and overflowed to infinity two binades early.', area: 'Tooling', top: true },
+  { project: 'Phobos (D standard library)', stars: '1.3K', n: '#11155', href: gh('dlang/phobos', 11155), what: 'integer / BigInt no longer gives wrong results when either operand is negative.', area: 'Tooling' },
   { project: 'OWASP pytm', stars: '1.2K', n: '#390', href: gh('OWASP/pytm', 390), what: '--stale_days no longer warns a day early: the age is compared before it is rounded.', area: 'Tooling' },
+  { project: 'OWASP pytm', stars: '1.2K', n: '#393', href: gh('OWASP/pytm', 393), what: 'With ignoreUnused, a nested boundary is drawn inside its parent in the data-flow diagram again.', area: 'Tooling' },
   { project: 'NetworKit', stars: '884', n: '#1564', href: gh('networkit/networkit', 1564), what: 'SpectralColoring no longer raises IndexError on small graphs such as K2 and C4.', area: 'Science', top: true },
   { project: 'NetworKit', stars: '884', n: '#1572', href: gh('networkit/networkit', 1572), what: 'overview() no longer raises on an empty graph (ZeroDivisionError undirected, ValueError directed); it prints zeros.', area: 'Science' },
+  { project: 'NetworKit', stars: '884', n: '#1586', href: gh('networkit/networkit', 1586), what: 'Profile.create no longer raises UnboundLocalError when the config enables only partition measures.', area: 'Science' },
   { project: 'Doctrine MongoDB ODM', stars: '1.1K', n: '#3099', href: gh('doctrine/mongodb-odm', 3099), what: 'Documented MongoDB text indexes: attribute and XML mapping, the weights, default_language and language_override options, and when schema update recreates the index.', area: 'Data' },
   { project: 'Doctrine MongoDB ODM', stars: '1.1K', n: '#3104', href: gh('doctrine/mongodb-odm', 3104), what: 'Schema updates no longer rebuild a collation index on every run: only the mapped collation fields are compared.', area: 'Data', top: true },
   { project: 'sbi', stars: '882', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
@@ -72,6 +76,7 @@ export const merged: PR[] = [
   { project: 'PyMC-Extras', stars: '143', n: '#802', href: gh('pymc-devs/pymc-extras', 802), what: 'Deterministic Windows parallel-pathfinder test.', area: 'Science' },
   { project: 'Phoenix', stars: '88', n: '#1060', href: gh('HSF/phoenix', 1060), what: '"Extend to radius" on tracks now ends on the requested radius instead of one step short.', area: 'Science' },
   { project: 'ScyllaDB python-driver', stars: '82', n: '#1157', href: gh('scylladb/python-driver', 1157), what: 'VectorType now reports vector as its typename.', area: 'Data' },
+  { project: 'ScyllaDB python-driver', stars: '82', n: '#1250', href: gh('scylladb/python-driver', 1250), what: 'Decimal parameters in simple statements keep every digit instead of being rounded through float.', area: 'Data' },
   { project: 'naija-nutri-hub', stars: '24', n: '#52', href: gh('mlsanigeria/naija-nutri-hub', 52), what: 'Secure OTP email verification on signup, with rollback on failure.', area: 'Tooling' },
   { project: 'ArviZ-Stats', stars: '18', n: '#528', href: gh('arviz-devs/arviz-stats', 528), what: 'histogram gave boolean and unsigned-integer data fractional, mostly empty bins; it now bins them as integers.', area: 'Science' },
   { project: 'ArviZ-Stats', stars: '18', n: '#505', href: gh('arviz-devs/arviz-stats', 505), what: 'histogram put the two largest integer values in one bin; 0/1 data got a single bin.', area: 'Science' },
