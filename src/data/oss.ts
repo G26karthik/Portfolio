@@ -14,13 +14,13 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 64, merged: 61, credited: 3, projects: 40, stars: '466K+' };
+export const ossStats = { contributions: 69, merged: 65, credited: 4, projects: 43, stars: '472K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
 export const merged: PR[] = [
-  { project: 'PyTorch', stars: '105.5K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
-  { project: 'mem0', stars: '69.0K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
+  { project: 'PyTorch', stars: '105.6K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
+  { project: 'mem0', stars: '69.1K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
   { project: 'Hindsight', stars: '57.9K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents', top: true },
   { project: 'Ruff', stars: '51.1K', n: '#30189', href: gh('astral-sh/ruff', 30189), what: 'The B028 and UP022 autofixes no longer produce broken code when a keyword argument has a parenthesized value, such as category=(DeprecationWarning).', area: 'Tooling', top: true },
   { project: 'pandas', stars: '50.5K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
@@ -41,10 +41,13 @@ export const merged: PR[] = [
   { project: 'PyTorch-Ignite', stars: '4.8K', n: '#3876', href: gh('pytorch/ignite', 3876), what: 'ReduceLROnPlateauScheduler now respects min_lr instead of decaying past it.', area: 'ML', top: true },
   { project: 'graphql-go', stars: '4.8K', n: '#828', href: gh('graph-gophers/graphql-go', 828), what: 'Block strings with an escaped triple quote no longer end early with a syntax error.', area: 'Tooling', top: true },
   { project: 'Kinto', stars: '4.4K', n: '#3823', href: gh('Kinto/kinto', 3823), what: 'Search filters now match special characters in the search value literally, on both storage backends.', area: 'Data' },
+  { project: 'Kinto', stars: '4.4K', n: '#3830', href: gh('Kinto/kinto', 3830), what: 'A JSON merge patch that sets an object on a string, number or list field now replaces the value as RFC 7396 says instead of returning a 500.', area: 'Data' },
+  { project: 'fortio', stars: '3.7K', n: '#1181', href: gh('fortio/fortio', 1181), what: 'Counter.RecordN no longer inflates the standard deviation when it records a value more than once.', area: 'Tooling' },
   { project: 'NumPyro', stars: '2.8K', n: '#2364', href: gh('pyro-ppl/numpyro', 2364), what: 'Hurdle distributions over positive continuous bases now include zero in their support.', area: 'Science', top: true },
   { project: 'NumPyro', stars: '2.8K', n: '#2370', href: gh('pyro-ppl/numpyro', 2370), what: 'init_to_mean falls back to the median when a heavy-tailed prior has no finite mean.', area: 'Science' },
   { project: 'pulldown-cmark', stars: '2.8K', n: '#1192', href: gh('pulldown-cmark/pulldown-cmark', 1192), what: 'Fixed the strikethrough wording in the superscript and subscript spec.', area: 'Tooling' },
   { project: 'QuTiP', stars: '2.1K', n: '#3049', href: gh('qutip/qutip', 3049), what: 'rand_dm / rand_herm no longer hang forever on equal eigenvalues.', area: 'Science', top: true },
+  { project: 'ceph-ansible', stars: '1.8K', n: '#7756', href: gh('ceph/ceph-ansible', 7756), what: 'ceph_orch_apply no longer fails with KeyError on service specs without a service_id, such as node-exporter or crash.', area: 'Tooling' },
   { project: 'cspell', stars: '1.7K', n: '#9519', href: gh('streetsidesoftware/cspell', 9519), what: 'Cached issues are reported at the file’s current location, so a cache copied to another folder or machine no longer prints old paths.', area: 'Tooling' },
   { project: 'cspell', stars: '1.7K', n: '#9579', href: gh('streetsidesoftware/cspell', 9579), what: 'Added a Vim file type for .vim files and .vimrc.', area: 'Tooling' },
   { project: 'cspell', stars: '1.7K', n: '#9589', href: gh('streetsidesoftware/cspell', 9589), what: 'Files such as console.log.ts are no longer taken for log files and skipped: file type patterns now match the whole name.', area: 'Tooling' },
@@ -69,6 +72,7 @@ export const merged: PR[] = [
   { project: 'bandersnatch', stars: '559', n: '#2402', href: gh('pypa/bandersnatch', 2402), what: 'The prerelease filter now matches projects whose PyPI name is not canonical, such as Django.', area: 'Tooling' },
   { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
   { project: 'OpenWISP netjsonconfig', stars: '389', n: '#430', href: gh('openwisp/netjsonconfig', 430), what: 'Europe/Kyiv and Asia/Qostanay no longer fail validation in some Python processes: two timezone entries were sets instead of tuples.', area: 'Tooling' },
+  { project: 'gammapy', stars: '295', n: '#7014', href: gh('gammapy/gammapy', 7014), what: 'Fixed the normalisation of the point-to-point excess variance in compute_fpp: it was missing the factor 2 of the paper it cites.', area: 'Science' },
   { project: 'toqito', stars: '293', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'toqito', stars: '293', n: '#2046', href: gh('vprusso/toqito', 2046), what: 'is_trace_preserving accepts wrapped Kraus forms, so is_quantum_channel no longer returns False for valid channels given that way.', area: 'Science' },
   { project: 'openfoodfacts-dart', stars: '231', n: '#1310', href: gh('openfoodfacts/openfoodfacts-dart', 1310), what: 'The barcode validator no longer accepts non-digit characters as an EAN.', area: 'Tooling' },
@@ -90,6 +94,7 @@ export const credited = [
   { project: 'Langfuse', status: 'Closed-Unmerged' as Status, text: 'Diagnosed a prompt-cache key collision (version 3 and label "3" shared one Redis key). Maintainers landed the fix as #15040, crediting my PR #14789.', href: gh('langfuse/langfuse', 14789) },
   { project: 'PyTensor', status: 'Closed-Unmerged' as Status, text: 'Found a numba Cholesky compile failure on read-only inputs. The maintainer landed the fix in #2558 with me as co-author (my PR #2548).', href: 'https://github.com/pymc-devs/pytensor/pull/2548' },
   { project: 'PyMC', status: 'Closed-Unmerged' as Status, text: 'Found wrong ExGaussian and SkewStudentT means. The maintainer landed the fix with me as co-author (my PR #8515).', href: 'https://github.com/pymc-devs/pymc/pull/8515' },
+  { project: 'libunftp', status: 'Commit applied', text: 'Wrote a command-line length limit. The maintainer applied my commit and released it in libunftp 0.25.0.', href: 'https://github.com/Cloudinvoke/libunftp/commit/90c7c035' },
 ];
 
 /** Langfuse security recognition: a separate story from the cache fix. */

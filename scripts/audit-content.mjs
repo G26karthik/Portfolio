@@ -60,8 +60,10 @@ const hof = oss.slice(oss.indexOf('export const hallOfFame'));
 if (/14789|15040|cache/i.test(hof.slice(0, hof.indexOf('};')))) problems.push('Langfuse Hall of Fame and cache-fix stories must stay separate');
 
 // Merged PR count on the site must match the ledger.
-const mergedRows = (oss.match(/^\s+\{ project: '/gm) ?? []).length - 3; // minus the 3 credited rows
 const stat = (k) => Number(oss.match(new RegExp(`${k}: ([0-9]+)`))?.[1]);
+const count = (from, to) => (oss.slice(oss.indexOf(from), oss.indexOf(to)).match(/^\s+\{ project: '/gm) ?? []).length;
+const mergedRows = count('export const merged', 'export const ranked');
+assert.equal(count('export const credited', 'export const hallOfFame'), stat('credited'), 'oss.ts credited rows must equal ossStats.credited');
 assert.equal(mergedRows, stat('merged'), `oss.ts merged rows = ${mergedRows}, ossStats.merged = ${stat('merged')}`);
 assert.equal(stat('contributions'), stat('merged') + stat('credited'), 'ossStats.contributions must equal merged + credited');
 
