@@ -21,7 +21,7 @@ export const papers: Paper[] = [
     authors: 'G Karthik Koundinya (first author), Puja S Prasad (corresponding), Pankaj Kumar and Partha Pratim Roy',
     topics: ['Quantum ML', 'PennyLane', 'IBM Quantum', 'PyTorch'],
     abstract: [
-      'I proved geometry conservation: a variational quantum classifier that encodes each input once only rotates the encoded states. Within-class variance and the overlaps between class means stay fixed during training, so the encoding fixes which class geometry training can reach.',
+      'The paper proves geometry conservation: a variational quantum classifier that encodes each input once only rotates the encoded states. Within-class variance and the overlaps between class means stay fixed during training, so the encoding fixes which class geometry training can reach.',
       'Conservation held to rounding error in all 56 single-instance runs at 4, 6 and 8 qubits, and a trained circuit was also run on two IBM quantum processors.',
       'Neural collapse shows up where a measurement can see it: the within-class variability of the measured outputs (NC1) ends below all 2000 untrained circuits per data seed, while a small circuit reaches 0.937 test accuracy on MNIST and 0.920 on Fashion-MNIST (three classes), comparable to classical baselines. Code will be released on acceptance.',
     ],

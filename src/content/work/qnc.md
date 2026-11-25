@@ -32,7 +32,7 @@ next:
 
 Neural collapse is a geometry classical networks reach late in training: samples of the same class squeeze together around their class mean. I wanted to know what training can and cannot do to the geometry of encoded states in a variational quantum classifier (VQC), and where collapse can actually be measured.
 
-## What I proved
+## What the paper proves
 
 A VQC that encodes each input once only rotates the encoded states. I call this **geometry conservation**: training keeps the within-class variance and the overlaps between class means fixed, so it is a rotation, not a contraction. The encoding, not the training, fixes which class geometry the classifier can reach.
 
