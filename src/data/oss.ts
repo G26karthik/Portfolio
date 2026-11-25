@@ -1,5 +1,5 @@
 // Upstream PRs, status-tagged exactly as 29-10-26/Open Source Contributions.md.
-// Stars from that file's §8 index. Never write "rejected".
+// Stars from that file's §1 recount (2026-11-25); projects under 1K show the exact §8 count. Never write "rejected".
 
 export type Status = 'Merged' | 'Open' | 'Closed-Unmerged';
 
@@ -14,28 +14,30 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 74, merged: 70, credited: 4, projects: 45, stars: '476K+' };
+export const ossStats = { contributions: 79, merged: 75, credited: 4, projects: 49, stars: '525K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
 export const merged: PR[] = [
-  { project: 'PyTorch', stars: '105.2K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
-  { project: 'mem0', stars: '68.5K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
-  { project: 'Hindsight', stars: '59.3K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents', top: true },
-  { project: 'Ruff', stars: '51.3K', n: '#30189', href: gh('astral-sh/ruff', 30189), what: 'The B028 and UP022 autofixes no longer produce broken code when a keyword argument has a parenthesized value, such as category=(DeprecationWarning).', area: 'Tooling', top: true },
-  { project: 'Ruff', stars: '51.3K', n: '#30493', href: gh('astral-sh/ruff', 30493), what: 'The B033 and RUF068 fixes no longer leave a stray parenthesis when a duplicate item is parenthesized, as in {1, (1)}.', area: 'Tooling' },
-  { project: 'pandas', stars: '50.5K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
-  { project: 'pandas', stars: '50.5K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
-  { project: 'pandas', stars: '50.5K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
-  { project: 'pandas', stars: '50.5K', n: '#72049', href: gh('pandas-dev/pandas', 72049), what: 'describe_option no longer prints an empty replacement name for deprecated options that have none.', area: 'Data' },
-  { project: 'matplotlib', stars: '23.4K', n: '#30639', href: gh('matplotlib/matplotlib', 30639), what: 'Documented the TwoSlopeNorm linear colorbar workaround.', area: 'Data' },
-  { project: 'tantivy', stars: '16.4K', n: '#3241', href: gh('quickwit-oss/tantivy', 3241), what: 'BitSet::clear now resets the cached length, so len() no longer reports the old count after a clear.', area: 'Data', top: true },
+  { project: 'PyTorch', stars: '105.7K', n: '#199953', href: gh('pytorch/pytorch', 199953), what: 'SGD rejects NaN lr, momentum and weight_decay at construction instead of silently training on NaN.', area: 'ML', top: true },
+  { project: 'mem0', stars: '69.5K', n: '#3549', href: gh('mem0ai/mem0', 3549), what: 'Azure AI Search vector store for the TypeScript SDK: hybrid search, quantization, OData filters (+754 lines).', area: 'Agents', top: true },
+  { project: 'Hindsight', stars: '63.3K', n: '#5092', href: gh('vectorize-io/hindsight', 5092), what: 'Fixed two silent audit-log losses: GC-able fire-and-forget tasks and writes dropped at shutdown.', area: 'Agents', top: true },
+  { project: 'Ruff', stars: '51.5K', n: '#30189', href: gh('astral-sh/ruff', 30189), what: 'The B028 and UP022 autofixes no longer produce broken code when a keyword argument has a parenthesized value, such as category=(DeprecationWarning).', area: 'Tooling', top: true },
+  { project: 'Ruff', stars: '51.5K', n: '#30493', href: gh('astral-sh/ruff', 30493), what: 'The B033 and RUF068 fixes no longer leave a stray parenthesis when a duplicate item is parenthesized, as in {1, (1)}.', area: 'Tooling' },
+  { project: 'pandas', stars: '50.6K', n: '#62592', href: gh('pandas-dev/pandas', 62592), what: 'Regression test for a PyArrow datetime merge (GH#61926).', area: 'Data' },
+  { project: 'pandas', stars: '50.6K', n: '#62591', href: gh('pandas-dev/pandas', 62591), what: 'Ruff B905 strict-zip enforcement in pandas/_config.', area: 'Data' },
+  { project: 'pandas', stars: '50.6K', n: '#62600', href: gh('pandas-dev/pandas', 62600), what: '@Appender to inline docstring migration for DataFrame.items().', area: 'Data' },
+  { project: 'pandas', stars: '50.6K', n: '#72049', href: gh('pandas-dev/pandas', 72049), what: 'describe_option no longer prints an empty replacement name for deprecated options that have none.', area: 'Data' },
+  { project: 'libuv', stars: '27.3K', n: '#5411', href: gh('libuv/libuv', 5411), what: 'The WTF-8 decoder now rejects overlong three- and four-byte sequences, which could decode to / or a NUL inside the UTF-16 strings built for Windows paths and environment variables.', area: 'Tooling', top: true },
+  { project: 'matplotlib', stars: '23.5K', n: '#30639', href: gh('matplotlib/matplotlib', 30639), what: 'Documented the TwoSlopeNorm linear colorbar workaround.', area: 'Data' },
+  { project: 'Sentence Transformers', stars: '19.3K', n: '#4223', href: gh('huggingface/sentence-transformers', 4223), what: 'GISTEmbedLoss and CachedGISTEmbedLoss now gather anchors across devices, so multi-GPU training with gather_across_devices=True follows the same objective as one device on the same global batch.', area: 'ML', top: true },
+  { project: 'tantivy', stars: '16.5K', n: '#3241', href: gh('quickwit-oss/tantivy', 3241), what: 'BitSet::clear now resets the cached length, so len() no longer reports the old count after a clear.', area: 'Data', top: true },
   { project: 'webpack-bundle-analyzer', stars: '12.7K', n: '#753', href: gh('webpack/webpack-bundle-analyzer', 753), what: 'A chunk with about 130,000 modules or more no longer crashes the analyzer with a call stack overflow.', area: 'Tooling', top: true },
   { project: 'webpack-bundle-analyzer', stars: '12.7K', n: '#755', href: gh('webpack/webpack-bundle-analyzer', 755), what: 'The CLI --default-sizes option now accepts brotli and zstd, as the README documents.', area: 'Tooling' },
   { project: 'sktime', stars: '10.1K', n: '#8923', href: gh('sktime/sktime', 8923), what: 'Repaired broken pytorch-forecasting doc references in forecaster adapters.', area: 'ML' },
   { project: 'SQLFluff', stars: '10.0K', n: '#7163', href: gh('sqlfluff/sqlfluff', 7163), what: 'PostgreSQL OPERATOR(schema.operator) parser via a new QualifiedOperatorSegment (+649 lines).', area: 'Tooling', top: true },
-  { project: 'hiring-agent', stars: '7.3K', n: '#133', href: gh('interviewstreet/hiring-agent', 133), what: 'Fixed a PyMuPDF memory leak that grew by hundreds of MB over ~50-PDF batches.', area: 'Agents', top: true },
-  { project: 'hiring-agent', stars: '7.3K', n: '#129', href: gh('interviewstreet/hiring-agent', 129), what: 'Fixed cross-platform UTF-8 cache-write failures on Windows.', area: 'Agents' },
+  { project: 'hiring-agent', stars: '7.4K', n: '#133', href: gh('interviewstreet/hiring-agent', 133), what: 'Fixed a PyMuPDF memory leak that grew by hundreds of MB over ~50-PDF batches.', area: 'Agents', top: true },
+  { project: 'hiring-agent', stars: '7.4K', n: '#129', href: gh('interviewstreet/hiring-agent', 129), what: 'Fixed cross-platform UTF-8 cache-write failures on Windows.', area: 'Agents' },
   { project: 'mockery', stars: '7.2K', n: '#1208', href: gh('vektra/mockery', 1208), what: 'Removed an unused import from the replace-type example in the docs.', area: 'Tooling' },
   { project: 'authlib', stars: '5.5K', n: '#974', href: gh('authlib/authlib', 974), what: 'OAuth endpoints now answer insecure-transport requests with a proper error response instead of raising.', area: 'Tooling', top: true },
   { project: 'authlib', stars: '5.5K', n: '#1049', href: gh('authlib/authlib', 1049), what: 'The device code grant now answers an unknown device code, or one issued to another client, with invalid_grant as RFC 8628 requires.', area: 'Tooling' },
@@ -71,6 +73,7 @@ export const merged: PR[] = [
   { project: 'sbi', stars: '890', n: '#2078', href: gh('sbi-dev/sbi', 2078), what: 'Sinkhorn solver behind wasserstein_2_squared now stops on marginal error and warns when unconverged.', area: 'Science' },
   { project: 'sbi', stars: '890', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science', top: true },
   { project: 'sbi', stars: '890', n: '#2157', href: gh('sbi-dev/sbi', 2157), what: 'The MMD misspecification test no longer returns p = 1.0 when there are as many observations as max_samples; the maintainer added further fixes on top before merging.', area: 'Science' },
+  { project: 'sbi', stars: '890', n: '#2171', href: gh('sbi-dev/sbi', 2171), what: 'Structured z-scoring now takes the per-sample std over the whole event; for single-channel image data it was NaN, so building the network failed.', area: 'Science' },
   { project: 'Sentient', stars: '719', n: '#553', href: gh('existence-master/Sentient', 553), what: 'A claimed memory save in a memory-off turn no longer triggers the stored-memory check.', area: 'Agents' },
   { project: 'bandersnatch', stars: '559', n: '#2402', href: gh('pypa/bandersnatch', 2402), what: 'The prerelease filter now matches projects whose PyPI name is not canonical, such as Django.', area: 'Tooling' },
   { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
@@ -78,9 +81,11 @@ export const merged: PR[] = [
   { project: 'gammapy', stars: '295', n: '#7014', href: gh('gammapy/gammapy', 7014), what: 'Fixed the normalisation of the point-to-point excess variance in compute_fpp: it was missing the factor 2 of the paper it cites.', area: 'Science' },
   { project: 'toqito', stars: '293', n: '#1989', href: gh('vprusso/toqito', 1989), what: 'kraus_to_choi misread wrapped completely-positive Kraus lists.', area: 'Science' },
   { project: 'toqito', stars: '293', n: '#2046', href: gh('vprusso/toqito', 2046), what: 'is_trace_preserving accepts wrapped Kraus forms, so is_quantum_channel no longer returns False for valid channels given that way.', area: 'Science' },
+  { project: 'TARDIS', stars: '248', n: '#3837', href: gh('tardis-sn/tardis', 3837), what: 'roman_to_int now rejects strings it can only partly parse, so a species such as "Si VX" is no longer read as Si V.', area: 'Science' },
   { project: 'openfoodfacts-dart', stars: '232', n: '#1310', href: gh('openfoodfacts/openfoodfacts-dart', 1310), what: 'The barcode validator no longer accepts non-digit characters as an EAN.', area: 'Tooling' },
   { project: 'openfoodfacts-dart', stars: '232', n: '#1313', href: gh('openfoodfacts/openfoodfacts-dart', 1313), what: 'The default query version 3.5 had a null schemaVersion; it now maps to 1003, as the server documents.', area: 'Tooling' },
   { project: 'libunftp', stars: '221', n: '#607', href: gh('Cloudinvoke/libunftp', 607), what: 'A command with an unparsable parameter now gets a 501 reply and keeps the control connection open, instead of the server closing it.', area: 'Tooling' },
+  { project: 'SPDX tools-golang', stars: '171', n: '#313', href: gh('spdx/tools-golang', 313), what: 'The tag-value reader now accepts files with lone carriage-return line breaks, closing an issue open since 2023.', area: 'Tooling' },
   { project: 'QuTiP-QIP', stars: '157', n: '#427', href: gh('qutip/qutip-qip', 427), what: 'Processor.run_state no longer mutates the caller’s collapse operators.', area: 'Science' },
   { project: 'PyMC-Extras', stars: '144', n: '#802', href: gh('pymc-devs/pymc-extras', 802), what: 'Deterministic Windows parallel-pathfinder test.', area: 'Science' },
   { project: 'Phoenix', stars: '88', n: '#1060', href: gh('HSF/phoenix', 1060), what: '"Extend to radius" on tracks now ends on the requested radius instead of one step short.', area: 'Science' },
@@ -106,4 +111,10 @@ export const credited = [
 export const hallOfFame = {
   text: 'Listed in the Langfuse Responsible Disclosure Hall of Fame (Jul 2026) for a responsibly disclosed project-role update issue.',
   href: 'https://langfuse.com/security/responsible-disclosure#hall-of-fame',
+};
+
+/** Kinto security advisory credit: separate from the merged Kinto PRs and not counted in ossStats. */
+export const advisory = {
+  text: 'Credited as reporter of GHSA-j22j-w4x4-3f6x, a high-severity advisory in Kinto (published 2026-11-23; patched in 26.6.0).',
+  href: 'https://github.com/Kinto/kinto/security/advisories/GHSA-j22j-w4x4-3f6x',
 };

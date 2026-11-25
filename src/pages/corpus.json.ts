@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 import type { Passage } from '../lib/retrieve';
 import { profile, about, now, proof } from '../data/profile';
 import { experience, education, anchor } from '../data/experience';
-import { merged, credited, hallOfFame, ossStats } from '../data/oss';
+import { merged, credited, hallOfFame, advisory, ossStats } from '../data/oss';
 import { placements, ofText, also, issuers, featuredCerts, certCount } from '../data/credentials';
 import { indexProjects, archive } from '../data/projects';
 import { papers, notes } from '../data/research';
@@ -42,12 +42,13 @@ export const GET: APIRoute = async () => {
     add(`${x.org}: ${x.role}`, href, `${x.when}. Stack: ${x.stack}.`);
     x.points.forEach((p) => add(`${x.org}: ${x.role}`, href, p));
   }
-  add('Education', '/experience#education', `Where I study or studied (college, university, degree): ${education.degree}, ${education.school}, ${education.when}. Coursework: ${education.coursework}.`);
+  add('Education', '/experience#education', `Where I study or studied (college, university, degree): ${education.degree}, ${education.school}, ${education.when}. ${education.scores}. Coursework: ${education.coursework}.`);
 
   add('Open source overview', '/open-source', `${ossStats.contributions} open-source contributions: ${ossStats.merged} merged pull requests across ${ossStats.projects} projects (${ossStats.stars} combined stars, including PyTorch, pandas and mem0) plus ${ossStats.credited} fixes the maintainers landed with credit.`);
   for (const p of merged) add(`${p.project} pull request ${p.n}`, '/open-source', `Merged in ${p.project} (${p.stars} stars). ${p.what}`);
   for (const c of credited) add(`${c.project}: credited fix`, '/open-source', c.text);
   add('Langfuse security Hall of Fame', '/open-source', hallOfFame.text);
+  add('Kinto security advisory credit', '/open-source', advisory.text);
 
   for (const p of placements) add(p.event, '/achievements#placements', `${[p.rank, ofText(p.of)].filter(Boolean).join(' ')}. ${p.note}`);
   add(also.event, '/achievements#placements', `${also.rank} ${also.note}`);

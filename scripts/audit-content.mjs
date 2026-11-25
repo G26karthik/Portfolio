@@ -48,8 +48,12 @@ for (const file of files) {
 
 // Rules from the source files.
 const all = [...files, 'src/worker.ts', 'src/scripts/app.ts'].map((f) => readFileSync(f, 'utf8').replace(/^\s*\/\/.*$/gm, '')).join('\n');
-for (const repo of ['deployment-op03-ten-times-cheaper', 'retail-scope', 'rlgym-266-durable-workflow-engine', 'Tic-Tac-Toe']) {
+for (const repo of ['deployment-op03-ten-times-cheaper', 'retail-scope', 'rlgym-266-durable-workflow-engine', 'Tic-Tac-Toe', 'ijcai-2027', 'G26karthik/research-lab', 'G26karthik/QNC', 'G26karthik/referee']) {
   if (all.includes(repo)) problems.push(`private repo linked: ${repo}`);
+}
+// Claims retired on 2026-11-25 (UPDATES.md): older history there still holds their numbers, so block the text itself.
+for (const old of ['4,600', 'Applied AI Engineer', 'Tech Engineer', 'Quantum Machine Intelligence', 'Springer', 'major revision', '52 predictions', '173+', '4.65', 'Designing and Implementing an Azure AI Solution']) {
+  if (all.toLowerCase().includes(old.toLowerCase())) problems.push(`retired claim still present: "${old}"`);
 }
 if (/\brejected\b/i.test(all)) problems.push('uses the word "rejected" (use Closed-Unmerged)');
 if (/orcid/i.test(all)) problems.push('ORCID must not appear: the publications are not public');

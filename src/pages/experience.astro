@@ -8,10 +8,10 @@ import { about } from '../data/profile';
 
 <Base
   title="Experience"
-  description={`${experience.length} roles from landing pages to production ML, most recently an applied AI internship at RamanIQ building an autonomous research-review product.`}
+  description={`${experience.length} roles from landing pages to production ML, most recently an AI engineering internship at RamanIQ building an autonomous research-review product.`}
   shape="lattice"
 >
-  <PageHead title="Experience" lede={`${experience.length} roles, from landing pages to production ML. Most recently an applied AI internship building autonomous research review.`} />
+  <PageHead title="Experience" lede={`${experience.length} roles, from landing pages to production ML. Most recently an AI engineering internship building autonomous research review.`} />
 
   <div class="wrap stack">
     <div class="about">
@@ -22,6 +22,7 @@ import { about } from '../data/profile';
         <h2 id="edu-title">Education</h2>
         <b>{education.degree}</b>
         <p>{education.school}, {education.when}</p>
+        <p>{education.scores}</p>
         <p>{education.coursework}</p>
         <p>{education.extra}</p>
       </section>

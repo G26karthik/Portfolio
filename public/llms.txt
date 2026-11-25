@@ -1,20 +1,22 @@
 # G. Karthik Koundinya
 
-> Applied AI engineer and researcher based in Hyderabad, India. I build agents, retrieval and ML systems that hold up on held-out data, and I research LLM quantization, quantum ML and coding-agent security. Open to applied AI and ML roles.
+> AI engineer and researcher based in Hyderabad, India. I build agents, retrieval and ML systems that hold up on held-out data, and I research LLM quantization, quantum ML and coding-agent security. Open to applied AI and ML roles.
 
-Headline results (verified 2026-10-29):
-- 1st of 4,600 at HackerRank Orchestrate, October 2026 edition (about 50,000 registered).
+Headline results (verified 2026-11-25):
+- 1st of 4,650 at HackerRank Orchestrate, October 2026 edition (about 50,000 registered), with Ghost Data Still Exists, a data-deletion audit agent.
 - 38th of 32,000+ teams, Amazon ML Challenge 2026 (team lead); Amazon invited the team to its Applied Scientist Intern interview.
-- Three first-author papers: quantum ML (Quantum Machine Intelligence, Springer, major revision), low-bit quantization of Indic language models (RAIT 2027, IIT (ISM) Dhanbad, under review) and sensitive-data leakage in LLM coding agents (under revision).
-- 74 open-source contributions: 70 merged pull requests across 45 projects with 476K+ combined stars (including PyTorch, Ruff, pandas, mem0 and Hindsight), plus 4 fixes that maintainers landed with credit (Langfuse, PyTensor, PyMC, libunftp).
-- Microsoft AI-103 and DP-800, Oracle OCI Generative AI Professional, and 23 certifications in all.
+- Three first-author papers: quantum ML (journal paper, in minor revision), low-bit quantization of Indic language models (RAIT 2027, IIT (ISM) Dhanbad, under review) and sensitive-data leakage in LLM coding agents (DAI 2026 AI Paper Track, under revision).
+- 79 open-source contributions: 75 merged pull requests across 49 projects with 525K+ combined stars (including PyTorch, Ruff, pandas, mem0, Hindsight, libuv and Sentence Transformers), plus 4 fixes that maintainers landed with credit (Langfuse, PyTensor, PyMC, libunftp).
+- Security: listed in the Langfuse Responsible Disclosure Hall of Fame (Jul 2026), and credited as reporter of GHSA-j22j-w4x4-3f6x, a high-severity advisory in Kinto (published 2026-11-23; patched in 26.6.0).
+- Experience: AI Engineer Intern at RamanIQ (Aug to Oct 2026), Tech Intern at Hecta Proptech (Jun to Jul 2026) and Full Stack Engineering Intern at chkchk (Jan to Apr 2026).
+- Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103) and SQL AI Developer Associate (DP-800), Oracle OCI Generative AI Professional, and 23 certifications in all.
 - CodeChef 6★ 2483, LeetCode Guardian 2,720.
 
 ## Pages
 - [Home](https://g26karthik.dev/): the overview and a hub linking every page below.
-- [Projects](https://g26karthik.dev/projects): 2 case studies, 5 featured products and 13 more products and tools, each with its stack and skills, plus a short archive.
+- [Projects](https://g26karthik.dev/projects): 2 case studies, 5 featured products and 14 more products and tools, each with its stack and skills, plus a short archive.
 - [Experience](https://g26karthik.dev/experience): every role with all of its work, and education.
-- [Open source](https://g26karthik.dev/open-source): every merged pull request, fixes credited by maintainers, the Langfuse security Hall of Fame entry and GitHub activity.
+- [Open source](https://g26karthik.dev/open-source): every merged pull request, fixes credited by maintainers, the Langfuse security Hall of Fame entry, the Kinto advisory credit and GitHub activity.
 - [Research](https://g26karthik.dev/research): the three papers, KVQuant Lab and TraceWarrant.
 - [Achievements](https://g26karthik.dev/achievements): placements, competitive programming and curated certifications.
 - [Writing](https://g26karthik.dev/writing): engineering write-ups, starting with [the Amazon ML Challenge 2026 solution](https://g26karthik.dev/writing/amazon-ml-challenge-2026/), a 12-minute post with architecture and leaderboard diagrams.

@@ -8,16 +8,15 @@ year: 2026
 order: 3
 specimen: triage
 field: "a paper's claims funnelling through Docker tests to one reviewer page"
-role: "Applied AI Engineer Intern at RamanIQ"
+role: "AI Engineer Intern at RamanIQ"
 metrics:
-  - { value: "~87%", label: "Accuracy on evals and tests" }
-  - { value: "36K+", label: "Research papers screened across NeurIPS, ICML, ICLR, CVPR and ACL, curating 380+ compute-feasible reproduction candidates" }
+  - { value: "~87%", label: "Accuracy on reproduction evaluations" }
+  - { value: "36K+", label: "Research papers collected and triaged from seven venues, including NeurIPS, ICML, ICLR, CVPR and ACL" }
+  - { value: "380+", label: "Compute-feasible reproduction candidates curated from them, each runnable on one consumer GPU" }
   - { value: "185", label: "Kernel tests, each one built to fail if a trust guarantee breaks" }
-  - { value: "248", label: "Commits and 1.1 MB of Python and JavaScript in the repository" }
 skills: ["Agent orchestration", "Claim verification", "Reproducibility", "Sandboxed execution", "Statistical decision rules", "Systems design"]
 stack: ["Python", "Docker", "Claude Code workflows", "PyMuPDF", "Zenodo, DataCite and Hugging Face registries", "CUDA (when present)"]
-links:
-  - { label: "GitHub", href: "https://github.com/G26karthik/referee" }
+links: []
 pipeline:
   - { name: "Read", detail: "Four reading lenses (overclaim, protocol, confound, contradiction) list the main claims; every quote a model gives must be found verbatim in the parsed PDF" }
   - { name: "Plan", detail: "A critic pass, then one test per main claim; public datasets are found through Zenodo, DataCite and Hugging Face" }
@@ -31,7 +30,7 @@ next:
 
 ## What it does
 
-A paper makes claims, and checking them by hand takes days. REFEREE reads the paper, lists its main claims and gives each one a test. Each test runs in Docker and is recorded. The reviewer page then says, for each claim, Verified or Not verified, with one specific reason. It is a first pass that a human reviewer can trust to be traceable, and it never accepts or declines a paper. I built it at RamanIQ as an Applied AI Engineer Intern.
+A paper makes claims, and checking them by hand takes days. REFEREE reads the paper, lists its main claims and gives each one a test. Each test runs in Docker and is recorded. The reviewer page then says, for each claim, Verified or Not verified, with one specific reason. It is a first pass that a human reviewer can trust to be traceable, and it never accepts or declines a paper. I built it at RamanIQ as an AI Engineer Intern.
 
 ## How it is built
 
@@ -45,9 +44,9 @@ The reviewer page runs to about two pages. Each decision is computed from the le
 
 ## Results
 
-REFEREE reached **~87% accuracy on evals and tests**. Beside it, I screened **36K+ research papers** across NeurIPS, ICML, ICLR, CVPR and ACL and curated **380+ compute-feasible reproduction candidates** by checking code and dataset availability, then benchmarked selected findings against Hugging Face reproduction reports.
+REFEREE reached **~87% accuracy on reproduction evaluations**. To feed it, I built a pipeline that collected and triaged **36K+ research papers** from seven venues, including NeurIPS, ICML, ICLR, CVPR and ACL, and curated **380+ compute-feasible reproduction candidates** that run on one consumer GPU, then benchmarked selected findings against Hugging Face reproduction reports.
 
-The repository holds **248 commits** and **1.1 MB** of Python and JavaScript. A suite of **185 kernel tests** pins the trust guarantees, such as quotes resolving uniquely or not at all, printed numbers matching as standalone tokens and a refused run reconciling nothing.
+A suite of **185 kernel tests** pins the trust guarantees, such as quotes resolving uniquely or not at all, printed numbers matching as standalone tokens and a refused run reconciling nothing.
 
 ## What I took from it
 

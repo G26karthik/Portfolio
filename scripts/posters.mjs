@@ -13,7 +13,7 @@ const lead = (src) => {
   return m ? `${m[1]} · ${m[2].split(' ').slice(0, 8).join(' ')}` : '';
 };
 
-const jobs = [{ id: 'home', shape: 'constellation', title: 'G. Karthik Koundinya', kicker: 'Applied AI Engineer and Researcher', metric: 'Measured, not claimed.' }];
+const jobs = [{ id: 'home', shape: 'constellation', title: 'G. Karthik Koundinya', kicker: 'AI Engineer and Researcher', metric: 'Measured, not claimed.' }];
 for (const f of readdirSync('src/content/work')) {
   const src = readFileSync(`src/content/work/${f}`, 'utf8');
   jobs.push({

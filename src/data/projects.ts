@@ -21,6 +21,12 @@ export interface Project {
 
 export const indexProjects: Project[] = [
   {
+    name: 'Ghost Data Still Exists', what: 'An audit agent that checks whether a person\'s deleted data is really gone: it resolves the person across systems, rebuilds each system\'s state at the audit cutoff, finds surviving PII and restore paths, and writes an ordered, cited remediation plan.',
+    who: 'Teams that must prove a deletion request removed a person\'s data.', fact: '1st of 4,650 at HackerRank Orchestrate (Oct 2026) · 503 of 518 first decisions matched the audit engine',
+    stack: ['Python', 'OpenAI tool calling', 'SQLite', 'pytest', 'GitHub Actions'], skills: ['Tool-using agents', 'Deterministic gating', 'Privacy auditing'],
+    roles: ['Agents & LLM', 'Security'], repo: gh('ghost-data-still-exists'),
+  },
+  {
     name: 'Setu', what: 'Turns WhatsApp and SMS stock updates into shortage forecasts and transfer recommendations. A person approves every transfer.',
     who: 'District health teams coordinating medicine stock.', fact: 'Transportation solver with a deterministic fallback',
     stack: ['React', 'Firebase', 'Node.js', 'Python', 'Gemini', 'Twilio', 'PuLP', 'Cloud Run'], skills: ['Structured extraction', 'Optimization', 'Human-in-the-loop design'],
@@ -81,8 +87,8 @@ export const indexProjects: Project[] = [
     roles: ['Research', 'Agents & LLM'], repo: gh('tracewarrant'),
   },
   {
-    name: 'KVQuant Lab', what: 'LLM KV-cache compression that extends TurboQuant with outlier-aware 2.5-bit quantization.',
-    who: 'People serving LLMs under tight memory budgets.', fact: '4.65× compression, perplexity 4.68 vs 4.26',
+    name: 'KVQuant Lab', what: 'A study of when LLM KV-cache quantization actually works, testing the TurboQuant (ICLR 2026) quantizers on real attention heads.',
+    who: 'People serving LLMs under tight memory budgets.', fact: 'Research in progress',
     stack: ['Python', 'PyTorch', 'Transformers'], skills: ['Quantization', 'LLM inference', 'Research reproduction'],
     roles: ['Research', 'ML', 'Systems'], repo: gh('kvquant-lab'),
   },
@@ -105,7 +111,7 @@ export const archive = [
   { name: 'Lumina', what: 'Hybrid FAISS + BM25 search with a content-hash embedding cache, ~90% faster re-indexing.', stack: 'Python, FastAPI, FAISS', repo: gh('Lumina-Search'), live: 'https://lumina-search.streamlit.app/' },
   { name: 'ParkSentinel', what: 'Parking enforcement intelligence over 115,400 violation records: HDBSCAN hotspots and Prophet forecasts.', stack: 'Python, DuckDB, Next.js, Deck.gl', repo: gh('ParkSentinel') },
   { name: 'SupplySentinel', what: 'Three-agent supply-chain risk monitor with a self-correcting confidence loop.', stack: 'Python, Gemini, Cloud Run', repo: gh('SupplySentinel') },
-  { name: 'Dermatology Decision Support', what: 'EfficientNet-B0 on HAM10000 with Grad-CAM: 81% validation accuracy, 2.8× faster training.', stack: 'PyTorch, Streamlit', repo: gh('Skin-Disease') },
+  { name: 'Dermatology Decision Support', what: 'EfficientNet-B0 on HAM10000 with Grad-CAM: 85.8% test accuracy on a lesion-level held-out split, 2.8× faster training.', stack: 'PyTorch, Streamlit', repo: gh('Skin-Disease') },
   { name: 'MindSafe', what: 'Privacy-first mental-health screening; a ZK circuit stores only a hash of the score.', stack: 'React 19, Gemini, Midnight', repo: gh('MindSafe') },
   { name: 'Lost & Found', what: 'Campus MERN platform with JWT auth and Cloudinary media, used by 200+ students.', stack: 'MongoDB, Express, React, Node.js', repo: gh('Lost-and-Found'), live: 'https://lost-and-found-rdjb.onrender.com' },
 ];

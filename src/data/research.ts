@@ -1,5 +1,5 @@
-// Research shown on /research, the home page and the Ask corpus. Facts come from the QNC case study,
-// 29-10-26/ and the master CV (sources/master-cv.txt); scripts/audit-content.mjs checks every number.
+// Research shown on /research, the home page and the Ask corpus. Facts come from 29-10-26/ (updated 2026-11-25)
+// and the master CV (sources/master-cv.txt); scripts/audit-content.mjs checks every number.
 
 export interface Paper {
   id: string;
@@ -16,16 +16,16 @@ export const papers: Paper[] = [
   {
     id: 'qnc',
     title: 'Geometry Conservation in Variational Quantum Classifiers and Where Neural Collapse Can Appear',
-    status: 'Major revision',
-    venue: 'Quantum Machine Intelligence (Springer), submitted Aug 2026',
-    authors: 'G Karthik Koundinya (first author, GCET), Puja S Prasad (corresponding) and Partha Pratim Roy, IIT (ISM) Dhanbad',
+    status: 'Minor revision',
+    venue: 'Journal paper',
+    authors: 'G Karthik Koundinya (first author), Puja S Prasad (corresponding), Pankaj Kumar and Partha Pratim Roy',
     topics: ['Quantum ML', 'PennyLane', 'IBM Quantum', 'PyTorch'],
     abstract: [
-      'Earlier work proved that variational quantum classifiers reach Neural Collapse at the static optimum. I asked whether collapse emerges during training, and found that it does by an exact rotation, not a contraction: training conjugates every state by one global unitary.',
-      'The rotation result holds to machine precision (~10⁻¹⁵ relative change) at 4, 6 and 8 qubits, on MNIST and Fashion-MNIST under two encodings, across a second optimizer and ansatz family, and on two IBM quantum backends. A matched classical MLP does the opposite: within-class scatter grows 27–163×.',
-      'The study ran as preregistered science: 52 predictions across 10 stages, every threshold committed before its metric was computed, on a frozen spec with 173+ tests.',
+      'I proved geometry conservation: a variational quantum classifier that encodes each input once only rotates the encoded states. Within-class variance and the overlaps between class means stay fixed during training, so the encoding fixes which class geometry training can reach.',
+      'Conservation held to rounding error in all 56 single-instance runs at 4, 6 and 8 qubits, and a trained circuit was also run on two IBM quantum processors.',
+      'Neural collapse shows up where a measurement can see it: the within-class variability of the measured outputs (NC1) ends below all 2000 untrained circuits per data seed, while a small circuit reaches 0.937 test accuracy on MNIST and 0.920 on Fashion-MNIST (three classes), comparable to classical baselines. Code will be released on acceptance.',
     ],
-    links: [{ label: 'Read the case study', href: '/work/qnc/' }, { label: 'Paper and code', href: 'https://github.com/G26karthik/QNC' }],
+    links: [{ label: 'Read the case study', href: '/work/qnc/' }],
   },
   {
     id: 'rait',
@@ -60,9 +60,9 @@ export const papers: Paper[] = [
 export const notes = [
   {
     name: 'KVQuant Lab',
-    kind: 'Systems research',
+    kind: 'Research in progress',
     href: 'https://github.com/G26karthik/kvquant-lab',
-    text: '4.65× KV-cache compression at near-baseline perplexity. An outlier-aware 2.5-bit extension of TurboQuant (ICLR 2026): 5664 KB → 957 KB, perplexity 4.68 vs 4.26. Adaptive QJL lifts Recall@1 from 38.8% to 67.4%, and MC-TurboQuant reaches 100% needle-in-a-haystack recall at 3.2× compression. A paper is in preparation. The theme matches the RAIT paper, low-bit quantization, but this one targets the KV cache and that one the weights.',
+    text: 'When does LLM KV-cache quantization actually work? This study in progress puts the TurboQuant (ICLR 2026) quantizers to the test on real attention heads, with one bit-accounting function and preregistered, logged runs. The theme matches the RAIT paper, low-bit quantization, but this one targets the KV cache and that one the weights.',
   },
   {
     name: 'TraceWarrant',

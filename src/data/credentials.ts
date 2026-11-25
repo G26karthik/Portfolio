@@ -2,16 +2,16 @@
 // The first four are featured on /achievements; the rest sit in a compact list.
 
 export const placements = [
-  { rank: '1st', of: '4,600', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered.' },
+  { rank: '1st', of: '4,650', event: 'HackerRank Orchestrate, Oct 2026', note: 'About 50,000 registered. Won with Ghost Data Still Exists, a data-deletion audit agent.', href: 'https://github.com/G26karthik/ghost-data-still-exists' },
   { rank: '38th', of: '32,000+ teams', event: 'Amazon ML Challenge 2026', note: 'Team lead. Invited to Amazon’s Applied Scientist Intern interview.' },
   { rank: '2nd', of: '', event: 'Ambient Intelligence Hackathon, May 2026', note: 'Prize for FounderOS, a voice-first AI chief of staff.' },
   { rank: '4th', of: 'in India', event: 'CodeChef, 6★, rating 2483', note: '28th globally.', href: 'https://www.codechef.com/users/g26karthikk' },
   { rank: '2,720', of: '', event: 'LeetCode Guardian', note: 'Top 0.06%, 575 of 888,637.', href: 'https://leetcode.com/u/G26KarthikK/' },
-  { rank: 'Finalist', of: '', event: 'VoiceHack 2026, ML track', note: 'Call Quality Auto-Flagger.' },
+  { rank: 'Finalist', of: '', event: 'VoiceHack 2026, ML track', note: 'Top-20 finalist of 326 applicants with Call Quality Auto-Flagger.' },
 ] as { rank: string; of: string; event: string; note: string; href?: string }[];
 export const featuredPlacements = 4;
 
-/** "of 4,600" for counts, the text itself for anything else. */
+/** "of 4,650" for counts, the text itself for anything else. */
 export const ofText = (of: string) => (/^\d/.test(of) ? `of ${of}` : of);
 
 /** Won or placed elsewhere (29-10-26 Professional Information, Hackathons). */
@@ -28,7 +28,7 @@ export const issuers: { name: string; logo?: string; ini?: string; certs: { name
   {
     name: 'Microsoft', ini: 'MS',
     certs: [
-      { name: 'AI-103: Designing and Implementing an Azure AI Solution' },
+      { name: 'Azure AI Apps and Agents Developer Associate', note: 'Exam AI-103' },
       { name: 'SQL AI Developer Associate', note: 'Exam DP-800: Developing AI-Enabled Database Solutions' },
       { name: 'Career Essentials in Generative AI', note: 'with LinkedIn', href: 'https://www.linkedin.com/learning/certificates/083a8c6ebaa5c94dd8948fff5e6e9d72a7a664dcf13c5ff33d26aa00aa630cbe' },
       { name: 'Orchestrating Multi-Agent Systems (Semantic Kernel)', note: 'Microsoft Learn' },
@@ -77,7 +77,7 @@ export const issuers: { name: string; logo?: string; ini?: string; certs: { name
 
 /** The six that matter most for applied-AI roles: [issuer, certificate], each an entry in `issuers`. */
 export const featuredCerts: [string, string][] = [
-  ['Microsoft', 'AI-103: Designing and Implementing an Azure AI Solution'],
+  ['Microsoft', 'Azure AI Apps and Agents Developer Associate'],
   ['Microsoft', 'SQL AI Developer Associate'],
   ['Oracle', 'OCI Generative AI Professional'],
   ['Stanford + DeepLearning.AI', 'Machine Learning Specialization'],

@@ -1,55 +1,53 @@
 ---
 kind: case
 title: "QNC"
-kicker: "Quantum ML research · Neural collapse in VQCs"
-hook: "A paper showing that training a variational quantum classifier rotates its states instead of contracting them, and where collapse can still appear."
+kicker: "Quantum ML research · Geometry conservation in VQCs"
+hook: "A journal paper, in minor revision, proving that a variational quantum classifier only rotates its encoded states, and showing where neural collapse can still appear: in the measured outputs."
 year: 2026
 order: 2
 specimen: qnc
 field: "class caps rotating rigidly on a Bloch sphere"
-role: "First author · 3 authors"
+role: "First author · 4 authors"
 metrics:
-  - { value: "~10⁻¹⁵", label: "Relative change when checking the exact-rotation result at 4, 6 and 8 qubits: machine precision" }
-  - { value: "2–3", label: "Orders of magnitude the measurement-visible projection decays during training" }
-  - { value: "52", label: "Preregistered predictions across 10 stages, each threshold committed before its metric" }
-  - { value: "2", label: "IBM quantum hardware backends used for verification: ibm_marrakesh and ibm_kingston" }
-skills: ["Quantum machine learning", "Preregistered experiment design", "Proof and numerical verification", "Scientific writing"]
-stack: ["Python", "PennyLane (default.qubit)", "IBM Quantum hardware", "PyTorch", "LaTeX (Springer sn-jnl)"]
-links:
-  - { label: "GitHub", href: "https://github.com/G26karthik/QNC" }
+  - { value: "56/56", label: "Runs where geometry conservation held to rounding error (single-instance, at 4, 6 and 8 qubits)" }
+  - { value: "2000", label: "Untrained circuits per data seed, all above the trained circuit's within-class variability (NC1)" }
+  - { value: "0.937", label: "Test accuracy on MNIST (three classes), with 0.920 on Fashion-MNIST, comparable to classical baselines" }
+  - { value: "2", label: "IBM quantum processors that ran a trained circuit" }
+skills: ["Quantum machine learning", "Theory and proof", "Numerical verification", "Quantum hardware experiments", "Scientific writing"]
+stack: ["Python", "PennyLane", "IBM Quantum hardware", "PyTorch", "LaTeX"]
+links: []
 pipeline:
-  - { name: "Preregister", detail: "52 predictions over 10 stages, thresholds committed before metrics are computed" }
-  - { name: "Train VQCs", detail: "PennyLane classifiers on MNIST and Fashion-MNIST, two encodings" }
-  - { name: "Measure geometry", detail: "Full-Hilbert-space collapse witnesses and the measurement-visible projection" }
-  - { name: "Prove", detail: "Proposition 3: training conjugates every state by one global unitary" }
-  - { name: "Hardware check", detail: "Verification on ibm_marrakesh and ibm_kingston" }
-  - { name: "Classical control", detail: "Matched classical MLP trained for comparison" }
+  - { name: "Prove", detail: "Geometry conservation: a classifier that encodes each input once only rotates the encoded states" }
+  - { name: "Train VQCs", detail: "PennyLane classifiers on MNIST and Fashion-MNIST (three classes)" }
+  - { name: "Check conservation", detail: "Within-class variance and class-mean overlaps in all 56 single-instance runs at 4, 6 and 8 qubits" }
+  - { name: "Measure collapse", detail: "NC1 of the measured outputs against 2000 untrained circuits per data seed" }
+  - { name: "Hardware run", detail: "A trained circuit run on two IBM quantum processors" }
 next:
-  - "Revision: the paper is in major revision at Quantum Machine Intelligence after 19 referee comments, and I am working through them."
+  - "Revision: the paper is in minor revision, and the code will be released on acceptance."
   - "Follow-up: confidence-controlled Pauli-path simulation for VQC training, which is in progress."
-  - "Scale: the evidence covers 4, 6 and 8 qubits, so larger circuits are the next place to test the rotation result."
+  - "Scale: the evidence covers 4, 6 and 8 qubits, so larger circuits are the next place to test geometry conservation."
 ---
 
 ## The question
 
-Neural Collapse is a geometry classical networks reach late in training: samples of the same class squeeze together. Earlier work (Du et al., PRL 2023) proved that variational quantum circuits reach it, but only at the static global optimum. I wanted to know whether it actually emerges while a VQC is being trained, and by what route.
+Neural collapse is a geometry classical networks reach late in training: samples of the same class squeeze together around their class mean. I wanted to know what training can and cannot do to the geometry of encoded states in a variational quantum classifier (VQC), and where collapse can actually be measured.
 
-## How I ran it
+## What I proved
 
-As preregistered science. Before computing any metric I wrote down **52 predictions across 10 stages**, each with a committed threshold, then scored every one CONFIRMED, REFUTED or PARTIAL against a frozen spec. The code carries **173+ tests** and runtime physics assertions on every state: Hermitian, trace 1, positive semidefinite.
+A VQC that encodes each input once only rotates the encoded states. I call this **geometry conservation**: training keeps the within-class variance and the overlaps between class means fixed, so it is a rotation, not a contraction. The encoding, not the training, fixes which class geometry the classifier can reach.
 
-Experiments use PennyLane's `default.qubit` at 4, 6 and 8 qubits, on MNIST and Fashion-MNIST under two encodings, repeated with a second optimizer and a second ansatz family. A matched classical MLP is the control. Two IBM quantum hardware backends, `ibm_marrakesh` and `ibm_kingston`, verified the result.
+## How I tested it
+
+The classifiers are built in PennyLane and trained on MNIST and Fashion-MNIST (three classes). Conservation held to rounding error in all **56 single-instance runs** at 4, 6 and 8 qubits. To judge collapse against a fair baseline, I compared each trained circuit with **2000 untrained circuits** per data seed. A trained circuit was also run on **two IBM quantum processors**.
 
 ## What I found
 
-Proposition 3: what looks like collapse in a trained VQC is an **exact rotation, not a contraction**. Training conjugates every sample's state by one global unitary, so the geometry between states is conserved. The relative change is **~10⁻¹⁵**, machine precision, at 4, 6 and 8 qubits.
+Collapse appears in the measured outputs. Their within-class variability (NC1) ends below **all 2000 untrained circuits** per data seed, and a small circuit reaches **0.937** test accuracy on MNIST and **0.920** on Fashion-MNIST, comparable to classical baselines.
 
-That explains why every full-Hilbert-space collapse witness comes back null. What does change is the projection a measurement can see, which decays by **2–3 orders of magnitude**. The classical MLP does the opposite: its within-class scatter grows **27–163×** in absolute terms.
-
-The paper is "Geometry Conservation in Variational Quantum Classifiers and Where Neural Collapse Can Appear" (earlier title "Collapse by Rotation"). I am first author, with Puja S Prasad (corresponding author) and Partha Pratim Roy of IIT (ISM) Dhanbad. It was submitted to Springer's *Quantum Machine Intelligence* in August 2026 and is in major revision after 19 referee comments. The repo is public on GitHub.
+The paper is "Geometry Conservation in Variational Quantum Classifiers and Where Neural Collapse Can Appear". I am first author, with Puja S Prasad (corresponding author), Pankaj Kumar and Partha Pratim Roy. It is a journal paper in minor revision, and the code will be released on acceptance.
 
 ## What I took from it
 
-I set out to measure collapse in the state space and found conservation instead. The collapse lives only in what a measurement can see, and the proof explains why. That reframing is the contribution.
+The state space conserves geometry, so collapse has to be looked for in what a measurement can see. Separating what training can change from what the encoding fixes is the contribution, and it points the design effort at the encoding.
 
-Preregistration changed how I read my own numbers. With thresholds fixed in advance, a REFUTED score is information, so I kept every one in the record instead of adjusting a metric until it passed.
+Comparing against untrained circuits made the collapse result a measured effect with a baseline, not a single number: the untrained circuits set the bar the trained one had to clear.

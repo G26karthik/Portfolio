@@ -44,7 +44,7 @@ const article = {
           <dt>Year</dt><dd>{d.year}</dd>
           <dt>Skills</dt><dd>{d.skills.join(', ')}</dd>
           <dt>Stack</dt><dd>{d.stack.join(', ')}</dd>
-          <dt>Links</dt><dd>{d.links.map((l) => <a class="link" href={own(l.href) ? new URL(l.href).pathname : l.href} target={own(l.href) ? undefined : '_blank'} rel="noopener">{l.label}</a>)}</dd>
+          {d.links.length > 0 && <><dt>Links</dt><dd>{d.links.map((l) => <a class="link" href={own(l.href) ? new URL(l.href).pathname : l.href} target={own(l.href) ? undefined : '_blank'} rel="noopener">{l.label}</a>)}</dd></>}
         </dl>
       </div>
 

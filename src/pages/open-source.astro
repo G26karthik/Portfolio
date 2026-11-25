@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import Next from '../components/Next.astro';
-import { merged, ranked, credited, hallOfFame, ossStats } from '../data/oss';
+import { merged, ranked, credited, hallOfFame, advisory, ossStats } from '../data/oss';
 import gh from '../data/github.json';
 import { links } from '../data/profile';
 import { heatmap } from '../lib/heatmap';
@@ -69,6 +69,11 @@ const nums = [
           <span class="tag red">Hall of Fame</span>
           <h3>Langfuse security</h3>
           <p>{hallOfFame.text}</p>
+        </a>
+        <a class="note hof" href={advisory.href} target="_blank" rel="noopener" data-reveal>
+          <span class="tag red">Advisory credit</span>
+          <h3>Kinto security</h3>
+          <p>{advisory.text}</p>
         </a>
       </div>
     </section>
