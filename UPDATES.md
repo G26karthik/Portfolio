@@ -49,3 +49,7 @@ The updated documents in `29-10-26/` (identical to the Claude.AI copies of 2026-
 - Security recognition: next to the Langfuse Hall of Fame entry, the site now shows "Credited as reporter of GHSA-j22j-w4x4-3f6x, a high-severity advisory in Kinto (published 2026-11-23; patched in 26.6.0)." It is not counted in the 79 and is not tied to Kinto #3823.
 - Smaller document matches: the skin-lesion archive entry reads 85.8% test accuracy on a lesion-level held-out split; VoiceHack 2026 reads Top-20 finalist of 326 applicants.
 - The content audit now also fails on the private repositories QNC, referee, research-lab and ijcai-2027, and on the retired claims listed above.
+
+## 2026-11-26
+
+- Open source headline refreshed (owner's instruction): 80 = 76 merged PRs across 50 projects plus 4 credited fixes, with 526K+ combined stars (526,198 = 525,372 plus 826 for brozzler, checked 2026-11-26). New merged row: internetarchive/brozzler #500 (merged 2026-11-25; 826 stars; a new project). `src/data/oss.ts` carries `contributions: 80, merged: 76, credited: 4, projects: 50`. The home-page label reads "PyTorch, Ruff, pandas, mem0 +46 more".

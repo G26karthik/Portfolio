@@ -1,5 +1,5 @@
 // Upstream PRs, status-tagged exactly as 29-10-26/Open Source Contributions.md.
-// Stars from that file's §1 recount (2026-11-25); projects under 1K show the exact §8 count. Never write "rejected".
+// Stars from that file's §1 recount (2026-11-25; brozzler 2026-11-26); projects under 1K show the exact §8 count. Never write "rejected".
 
 export type Status = 'Merged' | 'Open' | 'Closed-Unmerged';
 
@@ -14,7 +14,7 @@ export interface PR {
   top?: true;
 }
 
-export const ossStats = { contributions: 79, merged: 75, credited: 4, projects: 49, stars: '525K+' };
+export const ossStats = { contributions: 80, merged: 76, credited: 4, projects: 50, stars: '526K+' };
 
 const gh = (repo: string, n: number) => `https://github.com/${repo}/pull/${n}`;
 
@@ -74,6 +74,7 @@ export const merged: PR[] = [
   { project: 'sbi', stars: '890', n: '#2079', href: gh('sbi-dev/sbi', 2079), what: 'MixtureDensityEstimator.log_prob was off by (D−1)·log(std) under structured z-scoring.', area: 'Science', top: true },
   { project: 'sbi', stars: '890', n: '#2157', href: gh('sbi-dev/sbi', 2157), what: 'The MMD misspecification test no longer returns p = 1.0 when there are as many observations as max_samples; the maintainer added further fixes on top before merging.', area: 'Science' },
   { project: 'sbi', stars: '890', n: '#2171', href: gh('sbi-dev/sbi', 2171), what: 'Structured z-scoring now takes the per-sample std over the whole event; for single-channel image data it was NaN, so building the network failed.', area: 'Science' },
+  { project: 'brozzler', stars: '826', n: '#500', href: gh('internetarchive/brozzler', 500), what: 'Sites whose warcprox_meta has no metadata block no longer crash page crawls with a KeyError.', area: 'Tooling' },
   { project: 'Sentient', stars: '719', n: '#553', href: gh('existence-master/Sentient', 553), what: 'A claimed memory save in a memory-off turn no longer triggers the stored-memory check.', area: 'Agents' },
   { project: 'bandersnatch', stars: '559', n: '#2402', href: gh('pypa/bandersnatch', 2402), what: 'The prerelease filter now matches projects whose PyPI name is not canonical, such as Django.', area: 'Tooling' },
   { project: 'Charon', stars: '477', n: '#1597', href: gh('AeneasVerif/charon', 1597), what: 'Fixed --dest-file and --dest-dir being resolved against the manifest directory instead of the working directory under charon cargo.', area: 'Tooling' },
